@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_rectangle_menu_item">
+    <sp_rectangle_menu_item action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <color>default</color>
+        <condition/>
+        <display_1/>
+        <display_2/>
+        <display_date/>
+        <filter/>
+        <glyph/>
+        <hint/>
+        <kb_article/>
+        <kb_category/>
+        <kb_topic/>
+        <label>My Transcripts</label>
+        <order>100</order>
+        <record_script/>
+        <sc_cat_item/>
+        <sc_category/>
+        <short_description/>
+        <sp_page display_value="snow_requests">7ee7b0f7dbb32410b6429db2ca961928</sp_page>
+        <sp_rectangle_menu display_value="Snow Menu">2cb2b473db732410b6429db2ca961987</sp_rectangle_menu>
+        <sp_rectangle_menu_item/>
+        <sys_class_name>sp_rectangle_menu_item</sys_class_name>
+        <sys_created_by>KNGUYEN232</sys_created_by>
+        <sys_created_on>2021-05-05 08:30:18</sys_created_on>
+        <sys_id>20a17cffdb332410b6429db2ca96196b</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>My Transcripts</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_rectangle_menu_item_20a17cffdb332410b6429db2ca96196b</sys_update_name>
+        <sys_updated_by>KNGUYEN232</sys_updated_by>
+        <sys_updated_on>2021-05-05 08:58:48</sys_updated_on>
+        <table/>
+        <type>page</type>
+        <url>?id=snow_cat_item</url>
+        <url_target/>
+    </sp_rectangle_menu_item>
+    <sys_translated_text action="delete_multiple" query="documentkey=20a17cffdb332410b6429db2ca96196b"/>
+</record_update>
