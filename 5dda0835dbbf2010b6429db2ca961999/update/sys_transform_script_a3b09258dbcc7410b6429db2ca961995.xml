@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_transform_script">
+    <sys_transform_script action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <map display_value="Question Bank Transform Map">cbed0ad0dbcc7410b6429db2ca96194c</map>
+        <order>100</order>
+        <script><![CDATA[(function runTransformScript(source, map, log, target /*undefined onStart*/ ) {
+
+	var questionID = target.getUniqueValue();
+    var answer = new GlideRecord('x_292088_snow_exam_question_keys');
+    answer.addQuery('question_id', questionID);
+    answer.query();
+    if (answer.next()) {
+        answer.option_a = source.u_a;
+        answer.option_b = source.u_b;
+        answer.option_c = source.u_c;
+        answer.option_d = source.u_d;
+		answer.option_e = source.u_e;
+		answer.option_f = source.u_f;
+        answer.update();
+    } else {
+        answer.option_a = source.u_a;
+        answer.option_b = source.u_b;
+        answer.option_c = source.u_c;
+        answer.option_d = source.u_d;
+		answer.option_e = source.u_e;
+		answer.option_f = source.u_f;
+		answer.question_id = questionID;
+        answer.insert();
+    }
+
+})(source, map, log, target);]]></script>
+        <sys_class_name>sys_transform_script</sys_class_name>
+        <sys_created_by>HLE81</sys_created_by>
+        <sys_created_on>2021-05-07 04:43:23</sys_created_on>
+        <sys_id>a3b09258dbcc7410b6429db2ca961995</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>onAfter</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_transform_script_a3b09258dbcc7410b6429db2ca961995</sys_update_name>
+        <sys_updated_by>CPHAN20</sys_updated_by>
+        <sys_updated_on>2021-05-16 17:08:51</sys_updated_on>
+        <when>onAfter</when>
+    </sys_transform_script>
+</record_update>
