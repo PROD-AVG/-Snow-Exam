@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_292088_snow_exam.SnowPortalUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>SnowPortalUtils</name>
+        <script><![CDATA[var SnowPortalUtils = Class.create();
+SnowPortalUtils.prototype = {
+    initialize: function(catItem) {
+		this.CAT_ITEM = catItem;
+		this.NUMBQUESTION = this._getNumbQ(this.CAT_ITEM) || 30;
+		this.TABLE_QB = 'x_292088_snow_exam_question_banks';
+		this.TABLE_QK = 'x_292088_snow_exam_question_keys';
+    },
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	getTopicDetail: function (catItem) {
+		var service = new GlideRecord('sn_hr_core_service');
+		service.addActiveQuery();
+		service.addQuery('producer',catItem);
+		service.query();
+		if (service.next()) {
+			return service.getValue('topic_detail');
+		}
+	},
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	getTopicDetailName: function (topic) {
+		var t = new GlideRecord('sn_hr_core_topic_detail');
+		if (t.get(topic)) {
+			return t.getValue('name');
+		}
+	},
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	getTotalQB: function (topic) {
+		var choice = new GlideRecord(this.TABLE_QB);
+		choice.addQuery('topic_details',topic);
+		choice.query();
+		return choice.getRowCount();
+	},
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	getListType: function (topic) {
+		var list = [];
+		var choice = new GlideRecord('sys_choice');
+		choice.addQuery('name',this.TABLE_QB);
+		choice.addQuery('element','sub_category');
+		choice.addQuery('dependent_value',this.getTopicDetailName(topic));
+		choice.query();
+		while (choice.next()) {
+			list.push(choice.getValue('value'));
+		}
+		return list;
+	},
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	getQBByTopic: function (topic,listType) {
+		var list = [];
+		var arr,limit,question;
+		if (listType == undefined || listType.length == 0) {
+			limit = 30;
+			arr = [];
+			question = new GlideRecord(this.TABLE_QB);
+			question.addQuery('topic_details',topic);
+			question.setLimit(limit);
+			question.orderBy('number');
+			question.query();
+			while (question.next()) {
+				arr.push({
+					id: question.getUniqueValue(),
+					number: question.getValue('number'),
+					correctAnswers: question.getValue('correct_answer'),
+					type: question.getValue('type'),
+					question: question.getValue('question'),
+					module: question.getDisplayValue('module_id'),
+					keys: this.getOptions(question.getUniqueValue())
+				});
+			}
+			return arr;
+		} else {
+			
+			limit = Math.floor(this.NUMBQUESTION/listType.length);
+			var totalQB = this.getTotalQB(topic);
+			if (totalQB < 35 || listType.length == 1) {
+				limit = 30;
+			}
+			for (var i=0; i<listType.length; i++) {
+				arr = [];
+				question = new GlideRecord(this.TABLE_QB);
+				question.addQuery('topic_details',topic);
+				question.addQuery('sub_category',listType[i]);
+				question.setLimit(limit);
+				question.orderBy('number');
+				question.query();
+				while (question.next()) {
+					arr.push({
+						id: question.getUniqueValue(),
+						number: question.getValue('number'),
+						correctAnswers: question.getValue('correct_answer'),
+						type: question.getValue('type'),
+						question: question.getValue('question'),
+						module: question.getDisplayValue('module_id'),
+						keys: this.getOptions(question.getUniqueValue())
+					});
+				}
+				list = list.concat(arr);
+			}
+			return list;
+		}
+		
+		
+		
+	},
+	
+	
+	
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	getOptions: function (question) {
+		var options = [];
+		var option = new GlideRecord(this.TABLE_QK);
+		option.addQuery('question_id',question);
+		option.query();
+		if (option.next()) {
+			options.push({label: option.getValue('option_a'), empty: option.getValue('option_a') == null});
+			options.push({label: option.getValue('option_b'), empty: option.getValue('option_b') == null});
+			options.push({label: option.getValue('option_c'), empty: option.getValue('option_c') == null});
+			options.push({label: option.getValue('option_d'), empty: option.getValue('option_d') == null});
+			options.push({label: option.getValue('option_d'), empty: option.getValue('option_e') == null});
+			options.push({label: option.getValue('option_d'), empty: option.getValue('option_f') == null});
+		}
+		
+		return options;
+	},
+	
+	/**
+	* Description: 
+	* Parameters: 
+	* Returns:
+	*/
+	_getNumbQ: function (catID) {
+		var rec = new GlideRecord('sc_cat_item_producer');
+		if (rec.get(catID)) {
+			return rec.getValue('u_number_of_questions');
+		}
+	},
+	
+
+	
+    type: 'SnowPortalUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>TDO55</sys_created_by>
+        <sys_created_on>2021-05-06 06:09:34</sys_created_on>
+        <sys_id>d8ea5100db007410b6429db2ca96199e</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>SnowPortalUtils</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_script_include_d8ea5100db007410b6429db2ca96199e</sys_update_name>
+        <sys_updated_by>CPHAN20</sys_updated_by>
+        <sys_updated_on>2021-05-17 02:30:21</sys_updated_on>
+    </sys_script_include>
+</record_update>
