@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function snowCountDownTimerController($scope) {
+  /* widget controller */
+  var c = this;
+
+	// Set the date we're counting down to
+	c.duration = $scope.data.duration;
+	var countDownDate = new Date();
+	countDownDate = countDownDate.setMinutes(countDownDate.getMinutes() + c.duration);
+	//countDownDate = countDownDate.getTime();
+
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+		
+		//Clear Inteval if not cat page
+		if ($scope.data.isTicketPage) {
+			clearInterval(x);
+			return;
+		}
+			
+
+		// Get today's date and time
+		var now = new Date().getTime();
+
+
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+
+		// Time calculations for days, hours, minutes and seconds
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Output the result in an element with id="demo"
+		document.getElementById("timer").innerHTML = hours + "h " +
+			minutes + "m " + seconds + "s ";
+
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			clearInterval(x);
+			document.getElementById("timer").innerHTML = "EXPIRED";
+			//Auto submit
+			$("button[name='submit'")[0].click() 
+		}
+	}, 1000);
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#timer {&#13;
+  font-size: large;&#13;
+  font-weight: bold;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>snow_countdown_timer</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Snow CountDown Timer</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.itemSysId = $sp.getParameter('sys_id');
+	data.isTicketPage = $sp.getParameter('id') == 'ticket';
+	data.duration = 0;
+	var rec = new GlideRecord('sc_cat_item_producer');
+	if (rec.get(data.itemSysId)) {
+		data.duration = parseInt(rec.getValue('u_duration_minutes'));
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>TDO55</sys_created_by>
+        <sys_created_on>2021-05-05 04:38:26</sys_created_on>
+        <sys_id>901cbfa7db7fe010b6429db2ca96196a</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Snow CountDown Timer</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_901cbfa7db7fe010b6429db2ca96196a</sys_update_name>
+        <sys_updated_by>TDO55</sys_updated_by>
+        <sys_updated_on>2021-05-05 04:39:10</sys_updated_on>
+        <template><![CDATA[<p id="timer"></p>]]></template>
+    </sp_widget>
+</record_update>
