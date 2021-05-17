@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="Snow Exam">f0f70a84dbc07410b6429db2ca9619f4</application>
+        <filter/>
+        <name>Question Keys</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_292088_snow_exam.question_keys_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>TNGUYEN585</sys_created_by>
+        <sys_created_on>2021-05-06 09:49:30</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a65d020cdbc07410b6429db2ca96193f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Question Keys</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_ui_module_a65d020cdbc07410b6429db2ca96193f</sys_update_name>
+        <sys_updated_by>TNGUYEN585</sys_updated_by>
+        <sys_updated_on>2021-05-06 09:49:30</sys_updated_on>
+        <table>x_292088_snow_exam_question_keys</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>
