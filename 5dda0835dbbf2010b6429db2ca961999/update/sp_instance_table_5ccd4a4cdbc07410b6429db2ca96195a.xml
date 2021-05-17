@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_table">
+    <sp_instance_table action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <class_name/>
+        <color>default</color>
+        <css/>
+        <display_field/>
+        <field_list/>
+        <filter/>
+        <glyph>empty</glyph>
+        <id/>
+        <maximum_entries>5</maximum_entries>
+        <order>1</order>
+        <order_by/>
+        <order_direction>asc</order_direction>
+        <roles/>
+        <short_description/>
+        <size>md</size>
+        <sp_column/>
+        <sp_page display_value="ticket">84af292247132100ba13a5554ee4909e</sp_page>
+        <sp_widget display_value="Data Table from Instance Definition">38058ff1cb11020000f8d856634c9c8c</sp_widget>
+        <sys_class_name>sp_instance_table</sys_class_name>
+        <sys_created_by>KNGUYEN232</sys_created_by>
+        <sys_created_on>2021-05-06 09:53:28</sys_created_on>
+        <sys_id>5ccd4a4cdbc07410b6429db2ca96195a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Snow Requests</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_instance_table_5ccd4a4cdbc07410b6429db2ca96195a</sys_update_name>
+        <sys_updated_by>KNGUYEN232</sys_updated_by>
+        <sys_updated_on>2021-05-06 10:01:03</sys_updated_on>
+        <table>x_292088_snow_exam_snow_exam_case</table>
+        <title>Snow Requests</title>
+        <url/>
+        <widget_parameters/>
+    </sp_instance_table>
+    <sys_translated_text action="delete_multiple" query="documentkey=5ccd4a4cdbc07410b6429db2ca96195a"/>
+</record_update>
