@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="Requested Details" section_id="a7daea97db88bc10b6429db2ca961915" sys_domain="global" table="x_292088_snow_exam_snow_exam_case" version="3" view="sp">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>com_glideapp_questionset_default_question_editor.xml</element>
+            <position>0</position>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-16 14:18:52</sys_created_on>
+            <sys_id>35eae697db88bc10b6429db2ca9619b7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="Variable Editor">1b6e4e8cdbc07410b6429db2ca961938</sys_ui_formatter>
+            <sys_ui_section caption="Requested Details" display_value="Requested Details" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="ec2daaf9d7523100a9ad1e173e24d4ea">a7daea97db88bc10b6429db2ca961915</sys_ui_section>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-16 14:18:52</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Requested Details</caption>
+            <header>false</header>
+            <name>x_292088_snow_exam_snow_exam_case</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-16 14:18:42</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a7daea97db88bc10b6429db2ca961915</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Requested Details</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_ui_section_a7daea97db88bc10b6429db2ca961915</sys_update_name>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-16 14:18:42</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Service Portal" name="sp">ec2daaf9d7523100a9ad1e173e24d4ea</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
