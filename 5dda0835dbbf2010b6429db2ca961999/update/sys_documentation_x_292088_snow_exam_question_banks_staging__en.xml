@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="" label="Question Bank Sheet" language="en" table="x_292088_snow_exam_question_banks_staging">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element/>
+            <help/>
+            <hint/>
+            <label>Question Bank Sheet</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_question_banks_staging</name>
+            <plural>Question Bank Sheets</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>HLE81</sys_created_by>
+            <sys_created_on>2021-05-07 04:39:32</sys_created_on>
+            <sys_id>73ff0a18dbcc7410b6429db2ca9619ff</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Question Bank Sheet</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_documentation_x_292088_snow_exam_question_banks_staging__en</sys_update_name>
+            <sys_updated_by>HLE81</sys_updated_by>
+            <sys_updated_on>2021-05-07 04:39:32</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
