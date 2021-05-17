@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_view">
+    <sys_ui_view action="INSERT_OR_UPDATE">
+        <group/>
+        <hidden>false</hidden>
+        <name>case_creation</name>
+        <roles/>
+        <sys_class_name>sys_ui_view</sys_class_name>
+        <sys_created_by>CPHAN20</sys_created_by>
+        <sys_created_on>2021-05-04 09:04:26</sys_created_on>
+        <sys_id>b2dfa3d7db73e010b6429db2ca9619a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Case_creation</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_ui_view_b2dfa3d7db73e010b6429db2ca9619a8</sys_update_name>
+        <sys_updated_by>CPHAN20</sys_updated_by>
+        <sys_updated_on>2021-05-04 09:04:26</sys_updated_on>
+        <title>Case_creation</title>
+        <user/>
+    </sys_ui_view>
+</record_update>
