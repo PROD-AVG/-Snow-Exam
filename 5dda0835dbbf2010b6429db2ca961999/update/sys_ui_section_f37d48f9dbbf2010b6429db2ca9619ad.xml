@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="f37d48f9dbbf2010b6429db2ca9619ad" sys_domain="global" table="x_292088_snow_exam_snow_exam_case" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sn_hr_le_activity_set_progress_bar.xml</element>
+            <position>0</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>47edc03ddbbf2010b6429db2ca9619ab</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="sn_hr_le_activity_set_progress_bar">62c9bcae775f23003a1c455caa106131</sys_ui_formatter>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>1</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0fedc03ddbbf2010b6429db2ca9619ab</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>number</element>
+            <position>2</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>8fedc03ddbbf2010b6429db2ca9619ab</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>transferred_from</element>
+            <position>3</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>03edc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opened_for</element>
+            <position>4</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>83edc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>subject_person</element>
+            <position>5</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>07edc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>hr_service</element>
+            <position>6</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>87edc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>parent</element>
+            <position>7</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0bedc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>hr_profile</element>
+            <position>8</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>8bedc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>pdf_template</element>
+            <position>9</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0fedc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>skills</element>
+            <position>10</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>8fedc03ddbbf2010b6429db2ca9619ac</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>correct_answers</element>
+            <position>11</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>03edc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>percentage</element>
+            <position>12</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>83edc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>13</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>07edc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <position>14</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>87edc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>priority</element>
+            <position>15</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0bedc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>contact_type</element>
+            <position>16</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>8bedc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opened_at</element>
+            <position>17</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0fedc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>opened_by</element>
+            <position>18</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>8fedc03ddbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>assignment_group</element>
+            <position>19</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>03edc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>assigned_to</element>
+            <position>20</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>83edc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>collaborators</element>
+            <position>21</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>07edc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>watch_list</element>
+            <position>22</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>87edc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>23</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0bedc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>short_description</element>
+            <position>24</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>8bedc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cxs_table_search.xml</element>
+            <position>25</position>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:46:25</sys_created_on>
+            <sys_id>0fedc03ddbbf2010b6429db2ca9619ae</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter display_value="Contextual Search Results">11eb1622eb1121003623666cd206fe56</sys_ui_formatter>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">f37d48f9dbbf2010b6429db2ca9619ad</sys_ui_section>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:46:25</sys_updated_on>
+            <sys_user/>
+            <type>formatter</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_292088_snow_exam_snow_exam_case</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>KNGUYEN236</sys_created_by>
+            <sys_created_on>2021-04-29 00:44:33</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f37d48f9dbbf2010b6429db2ca9619ad</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_292088_snow_exam_snow_exam_case</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_ui_section_f37d48f9dbbf2010b6429db2ca9619ad</sys_update_name>
+            <sys_updated_by>KNGUYEN236</sys_updated_by>
+            <sys_updated_on>2021-04-29 00:44:33</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
