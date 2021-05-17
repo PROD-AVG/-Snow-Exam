@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="MTOM Answer Sheets">723660b3db332410b6429db2ca9619a7</application>
+        <filter/>
+        <name>MTOM Answer Sheets</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_292088_snow_exam.snow_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>KNGUYEN236</sys_created_by>
+        <sys_created_on>2021-05-05 07:40:29</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>363660b3db332410b6429db2ca9619a9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>MTOM Answer Sheets</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_ui_module_363660b3db332410b6429db2ca9619a9</sys_update_name>
+        <sys_updated_by>KNGUYEN236</sys_updated_by>
+        <sys_updated_on>2021-05-05 07:40:29</sys_updated_on>
+        <table>x_292088_snow_exam_mtom_answer_sheets</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+</record_update>
