@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+    <sys_security_acl_role action="INSERT_OR_UPDATE">
+        <sys_class_name>sys_security_acl_role</sys_class_name>
+        <sys_created_by>KNGUYEN236</sys_created_by>
+        <sys_created_on>2021-05-05 07:40:29</sys_created_on>
+        <sys_id>ba3660b3db332410b6429db2ca9619af</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_292088_snow_exam_mtom_answer_sheets.x_292088_snow_exam.snow_user</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_security_acl display_value="x_292088_snow_exam_mtom_answer_sheets">7e3660b3db332410b6429db2ca9619ab</sys_security_acl>
+        <sys_update_name>sys_security_acl_role_ba3660b3db332410b6429db2ca9619af</sys_update_name>
+        <sys_updated_by>KNGUYEN236</sys_updated_by>
+        <sys_updated_on>2021-05-05 07:40:29</sys_updated_on>
+        <sys_user_role display_value="x_292088_snow_exam.snow_user" name="x_292088_snow_exam.snow_user">0aea8c71db3f2010b6429db2ca961983</sys_user_role>
+        <transaction_id/>
+    </sys_security_acl_role>
+</record_update>
