@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_292088_snow_exam.snow_ServicesUtil</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>Utilities for creating Snow Exam Cases</description>
+        <name>snow_ServicesUtil</name>
+        <script><![CDATA[var snow_ServicesUtil = Class.create();
+snow_ServicesUtil.prototype = {
+    initialize: function(_case, _gs) {
+        if (!_case)
+            return;
+
+        this._case = _case;
+        this._gs = _gs || gs;
+        this._hrCaseUtils = new sn_hr_core.hr_CaseUtils(this._case, this._gs);
+    },
+
+    /*
+     * Return the HR Service sys_id for a given value
+     * @param rpId The record producer that invoked this
+     */
+    getServiceSysIdByProducerId: function(rpId) {
+        var serviceGr = new GlideRecord("sn_hr_core_service");
+        serviceGr.addActiveQuery();
+        serviceGr.addQuery('producer', rpId);
+        serviceGr.query();
+        if (serviceGr.next())
+            return serviceGr.getUniqueValue();
+        return null;
+    },
+
+    /*
+     * Create case from producer and a service
+     * @param producer Structure passed by RP that holds questions and answers from RP
+     * @param rpId     The record producer that invoked this
+     */
+    createCaseFromProducer: function(producer, rpId) {
+        var serviceSysId = this.getServiceSysIdByProducerId(rpId);
+        if (serviceSysId) {
+            this.createCaseFromProducerByService(producer, serviceSysId, rpId);
+            this.calculateMark(producer);
+        }
+
+// 		if (!gs.isMobile() && !new global.HRSecurityUtils().isTablet()) {
+// 			var page = GlidePluginManager.isActive('com.sn_hr_service_portal') ? 'standard_ticket' : 'hrsp_ticket';
+// 			producer.portal_redirect = '?id=' + page + '&sys_id=' + this._case.sys_id + '&table=' + this._case.sys_class_name;
+// 		}
+    },
+
+    /*
+     * Calculate Mark
+     *
+     * @param producer structure passed by RP that holds questions and answers from RP
+     * @param service  sys_id of service being used (see sn_hr_core_service)
+     */
+
+    calculateMark: function(producer) {
+        var dataJSON = JSON.parse(producer.dataload);
+        var count = 0;
+        var total = dataJSON.length;
+
+        for (var i in dataJSON) {
+            this._insertAnswer(dataJSON[i]);
+            if (this._isCorrect(dataJSON[i])) {
+                count++;
+            }
+        }
+        this._case.correct_answers = count;
+        this._case.percentage = ((count / total) * 100);
+    },
+
+    /**
+     * Description: 
+     * Parameters: 
+     * Returns:
+     */
+
+    _isCorrect: function(obj) {
+        var arr1 = obj.correctAnswers.split(',');
+        var arr2 = obj.answerSelected;
+        var isCorrect;
+        if (arr1.length != arr2.length || arr2.length == 0) {
+            return false;
+        }
+        for (var i = 0; i < arr1.length; i++) {
+            isCorrect = this._search(arr1[i], arr2);
+        }
+        return isCorrect;
+    },
+
+    /**
+     * Description: 
+     * Parameters: 
+     * Returns:
+     */
+
+    _search: function(nameKey, myArray) {
+        for (var i = 0; i < myArray.length; i++) {
+            if (myArray[i].label !== nameKey) {
+                return false;
+            }
+        }
+        return true;
+    },
+
+    /**
+     * Description: 
+     * Parameters: 
+     * Returns:
+     */
+
+    _insertAnswer: function(obj) {
+        var rec = new GlideRecord('x_292088_snow_exam_mtom_answer_sheets');
+        rec.case_id = current.sys_id;
+        rec.question_id = obj.id;
+        rec.selected_answers = this._convertToString(obj.answerSelected);
+        rec.insert();
+    },
+
+    /**
+     * Description: 
+     * Parameters: 
+     * Returns:
+     */
+
+    _convertToString: function(obj) {
+        var value = [];
+        for (var i in obj) {
+            value.push(obj[i].label);
+        }
+        return value.toString();
+    },
+
+
+    /*
+     * Fills in a HR Case with service and question fields. This is entry point for RP 
+     * driven case updates.  Lookup is done by service sys_id.
+     *
+     * @param producer structure passed by RP that holds questions and answers from RP
+     * @param service  sys_id of service being used (see sn_hr_core_service)
+     */
+    createCaseFromProducerByService: function(producer, service, rpId) {
+
+        // Convert the producer to a question list object
+        var questions = this._getProducerQuestions(producer, rpId);
+
+        // Set the proper HR Case fields 
+        this.updateCase(service, questions, 'self_service');
+
+        // Set the redirect for the producer back to Case list
+        producer.redirect = 'x_292088_snow_exam_case_list.do?sysparm_query=active%3Dtrue^opened_byDYNAMIC90d1921e5f510100a9ad2572f2b477fe^ORDERBYDESCnumber&sysparm_titleless=true';
+    },
+
+
+    /*
+     * Fills in a HR Case with service and question fields. This is entry point for scripted 
+     * (i.e. non-RP) case updates.
+     *
+     * @param service sys_id of service being used (see sn_hr_core_service)
+     * @param questions a map of the questions and answer values
+     */
+    updateCase: function(service, questions, source) {
+        // Set the proper HR Case fields 
+        this._hrCaseUtils.populateCase(service, questions, source);
+    },
+
+    /*
+     * Retrieves all the variables in question form and values from the record producer instance
+     *
+     * @param producer object that holds the questions/answers from user input on an RP
+     * @Returns a map of the questions and values
+     */
+    _getProducerQuestions: function(producer, rpId) {
+        var relevantVariables = new global.HRSecurityUtils().getRelevantVariablesForCatItem(rpId);
+        var questions = [];
+
+        for (var i = 0; i < relevantVariables.length; i++) {
+            var variable = relevantVariables[i];
+            if (variable.type == 'sc_multi_row') {
+                var variableSet = new sn_sc.CatItem(rpId).getVariableSet();
+                var variableSetMap = this._getVariableFromVariableSetForCatItem(variableSet);
+                var multiVarArray = JSON.parse(producer[variable.name]);
+                for (var j = 0; j < multiVarArray.length; j++) {
+                    var dataObj = multiVarArray[j];
+                    for (var key in dataObj)
+                        if (dataObj.hasOwnProperty(key)) {
+                            var displayValue = this._getDisplayValue(variableSetMap[key], dataObj[key]);
+                            questions.push(this._hrCaseUtils.getQuestion(variableSetMap[key]['label'], key, dataObj[key], dataObj[key], '', displayValue));
+                        }
+                }
+                continue;
+            }
+            var producerValue = producer['IO' + variable.id];
+            if (producerValue) {
+                var answer = this._getDisplayValue(variable, producerValue);
+                var displayValue = this._getDisplayValue(variable, producerValue, producerValue.getDisplayValue());
+                questions.push(this._hrCaseUtils.getQuestion(variable.label, variable.name, answer, producerValue, '', displayValue));
+            }
+        }
+
+        return questions;
+    },
+
+    _getVariableFromVariableSetForCatItem: function(variableSetId) {
+        var variablesNames = {};
+        var variable = {};
+        var gr = new GlideRecord("item_option_new");
+        gr.addQuery("variable_set", variableSetId);
+        gr.addQuery('type', 'NOT IN', '19, 20, 24'); // Container start, end and split
+        gr.query();
+        while (gr.next()) {
+            variable = {};
+            variable['label'] = gr.getValue('question_text');
+            variable['reference'] = gr.getValue('reference');
+            variable['type'] = gr.getValue('type');
+            variablesNames[gr.getValue('name')] = variable;
+        }
+        return variablesNames;
+    },
+    /*
+     * Gets display value for passed in variable
+     *
+     * @param variable The variable whose value is wanted
+     * @param defaultAnswer The value to return if a display value could not be found
+     * @return The value to display for the passed in variable
+     */
+    _getDisplayValue: function(variable, defaultAnswer, defaultDisplayValue) {
+        var value = defaultDisplayValue ? defaultDisplayValue : defaultAnswer;
+
+        if (variable.type == '9' && defaultAnswer) { // Date
+            var date = new GlideDate();
+            date.setValue(defaultAnswer);
+            return date.getDisplayValue();
+        }
+
+        var tableName = variable.reference;
+        if (!tableName)
+            return value;
+
+        var record = new GlideRecord(tableName);
+        return (record.get(defaultAnswer)) ? record.getDisplayValue() : value;
+    },
+
+    getProfileSubjectFilter: function() {
+        var refQual = "basic_apply_to=sn_hr_core_case";
+
+        var tableList = new GlideTableHierarchy("sn_hr_core_benefit").getAllExtensions();
+        tableList = tableList.concat(new GlideTableHierarchy("sn_hr_core_beneficiary").getAllExtensions());
+        tableList = tableList.concat(new GlideTableHierarchy("sn_hr_core_direct_deposit").getAllExtensions());
+        tableList = tableList.concat(new GlideTableHierarchy("sn_hr_core_tuition_reimbursement").getAllExtensions());
+
+        if (tableList)
+            refQual += "^basic_query_fromIN" + tableList;
+
+        return refQual;
+    },
+
+    type: 'snow_ServicesUtil'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>TDO55</sys_created_by>
+        <sys_created_on>2021-05-05 02:17:05</sys_created_on>
+        <sys_id>e1cb172fdbfbe010b6429db2ca9619e1</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>snow_ServicesUtil</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_script_include_e1cb172fdbfbe010b6429db2ca9619e1</sys_update_name>
+        <sys_updated_by>CPHAN20</sys_updated_by>
+        <sys_updated_on>2021-05-10 03:30:10</sys_updated_on>
+    </sys_script_include>
+</record_update>
