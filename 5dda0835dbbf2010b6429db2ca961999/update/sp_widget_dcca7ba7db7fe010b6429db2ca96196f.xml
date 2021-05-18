@@ -15,8 +15,14 @@
 	// On Load Ticket Page
 	$scope.checkCorrectAnswer = function(key,question) {
 		var correctAnswers = question.correctAnswers.toLowerCase();
+		var keyAnswer = key.label.toLowerCase();
 		var found = false;
-		found = correctAnswers.includes(key.label.toLowerCase());
+	
+		//found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
+		found = correctAnswers.includes(keyAnswer);
+		if (correctAnswers.split(',').length == 1) {
+			found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
+		}
 		
 		if (found) {
 			return "fa fa-check";
@@ -259,14 +265,14 @@
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-05 04:36:11</sys_created_on>
         <sys_id>dcca7ba7db7fe010b6429db2ca96196f</sys_id>
-        <sys_mod_count>50</sys_mod_count>
+        <sys_mod_count>66</sys_mod_count>
         <sys_name>Snow Exam Loader</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_dcca7ba7db7fe010b6429db2ca96196f</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-05-18 11:59:01</sys_updated_on>
+        <sys_updated_on>2021-05-18 16:50:39</sys_updated_on>
         <template><![CDATA[<div class="center" ng-click="c.showTest()" ng-if="!c.isBegun">
   ${Begin}
 </div>
