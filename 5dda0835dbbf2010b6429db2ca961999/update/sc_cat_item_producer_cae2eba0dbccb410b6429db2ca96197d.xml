@@ -63,19 +63,19 @@ Good Luck!]]></description>
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-08 05:20:16</sys_created_on>
         <sys_id>cae2eba0dbccb410b6429db2ca96197d</sys_id>
-        <sys_mod_count>8</sys_mod_count>
+        <sys_mod_count>11</sys_mod_count>
         <sys_name>ServiceNow SysAdmin</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_cae2eba0dbccb410b6429db2ca96197d</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-05-17 02:29:26</sys_updated_on>
+        <sys_updated_on>2021-05-18 10:44:21</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
         <template/>
         <type>item</type>
         <u_duration_minutes>30</u_duration_minutes>
-        <u_number_of_questions>30</u_number_of_questions>
+        <u_number_of_questions>40</u_number_of_questions>
         <u_owner display_value="Nam Vy Hoang Nam">dc96c4c5dbd20010d606e04a489619fe</u_owner>
         <u_passing_score>70</u_passing_score>
         <use_sc_layout>true</use_sc_layout>
