@@ -81,31 +81,74 @@ snow_ServicesUtil.prototype = {
     _isCorrect: function(obj) {
         var arr1 = obj.correctAnswers.split(',');
         var arr2 = obj.answerSelected;
-        var isCorrect;
-        if (arr1.length != arr2.length || arr2.length == 0) {
-            return false;
-        }
-        for (var i = 0; i < arr1.length; i++) {
-            isCorrect = this._search(arr1[i], arr2);
-        }
+		
+		var isCorrect = false;
+		
+		// No select
+		if (arr2.length == 0) {
+			isCorrect = false;
+		}
+		// 1 Select
+		if (arr2.length == 1) {
+			if (arr2[0].label === obj.correctAnswers) {
+				isCorrect = true;
+			} 
+		}
+		// Multiple Selects
+		if (arr2.length > 1) {
+			// If selects contains commma, split to compare length first
+			var lengthArr1 = arr1.length;
+			var combinedArr = this._combineArr(arr2);
+			var lengthArr2 = combinedArr.length;
+			if (lengthArr1 != lengthArr2) {
+				isCorrect = false;
+			} else {
+				for (var i = 0; i < arr1.length; i++) {
+					isCorrect = this._search(arr1[i], combinedArr);
+				}
+			}
+		}
+
         return isCorrect;
     },
 
-    /**
+	/**
+     * Description: 
+     * Parameters: 
+     * Returns:
+     */
+
+	_combineArr: function(myArray) {
+		var arr = [];
+		for (var i = 0; i < myArray.length; i++) {
+			var str = myArray[i].label;
+			if (str.indexOf(',') > -1) { 
+				var temp = myArray[i].label.split(',');
+				arr = arr.concat(temp);
+			} else {
+				arr.push(str);
+			}
+		}
+		return arr;
+	},
+	
+	/**
      * Description: 
      * Parameters: 
      * Returns:
      */
 
     _search: function(nameKey, myArray) {
+		var found = false;
         for (var i = 0; i < myArray.length; i++) {
-            if (myArray[i].label !== nameKey) {
-                return false;
+            if (myArray[i] === nameKey) {
+                found = true;
             }
         }
-        return true;
+        return found;
     },
-
+	
+	
     /**
      * Description: 
      * Parameters: 
@@ -264,13 +307,13 @@ snow_ServicesUtil.prototype = {
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-05 02:17:05</sys_created_on>
         <sys_id>e1cb172fdbfbe010b6429db2ca9619e1</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>29</sys_mod_count>
         <sys_name>snow_ServicesUtil</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sys_script_include_e1cb172fdbfbe010b6429db2ca9619e1</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-05-10 03:30:10</sys_updated_on>
+        <sys_updated_on>2021-05-18 08:30:14</sys_updated_on>
     </sys_script_include>
 </record_update>
