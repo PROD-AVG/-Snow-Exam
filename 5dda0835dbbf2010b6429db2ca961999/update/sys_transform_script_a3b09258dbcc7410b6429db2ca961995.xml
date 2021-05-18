@@ -10,37 +10,55 @@
     answer.addQuery('question_id', questionID);
     answer.query();
     if (answer.next()) {
-        answer.option_a = source.u_a;
-        answer.option_b = source.u_b;
-        answer.option_c = source.u_c;
-        answer.option_d = source.u_d;
-		answer.option_e = source.u_e;
-		answer.option_f = source.u_f;
+        answer.option_a = trimArr(source.u_a);
+        answer.option_b = trimArr(source.u_b);
+        answer.option_c = trimArr(source.u_c);
+        answer.option_d = trimArr(source.u_d);
+		answer.option_e = trimArr(source.u_e);
+		answer.option_f = trimArr(source.u_f);
         answer.update();
     } else {
-        answer.option_a = source.u_a;
-        answer.option_b = source.u_b;
-        answer.option_c = source.u_c;
-        answer.option_d = source.u_d;
-		answer.option_e = source.u_e;
-		answer.option_f = source.u_f;
+        answer.option_a = trimArr(source.u_a);
+        answer.option_b = trimArr(source.u_b);
+        answer.option_c = trimArr(source.u_c);
+        answer.option_d = trimArr(source.u_d);
+		answer.option_e = trimArr(source.u_e);
+		answer.option_f = trimArr(source.u_f);
 		answer.question_id = questionID;
         answer.insert();
     }
+	
+	
+	function trimArr(str) {
+		str = str.toString();
+		var arr = str.split(',');
+		
+		// Add your code here
+		if (arr == undefined || arr.length == 0)
+			return '';
+		
+		if (arr.length == 1)
+			return str;
+
+		arr = arr.map(function (el) {
+			return el.trim();
+		});
+		return arr.toString(); // return the value to be put into the target field
+	}
 
 })(source, map, log, target);]]></script>
         <sys_class_name>sys_transform_script</sys_class_name>
         <sys_created_by>HLE81</sys_created_by>
         <sys_created_on>2021-05-07 04:43:23</sys_created_on>
         <sys_id>a3b09258dbcc7410b6429db2ca961995</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>9</sys_mod_count>
         <sys_name>onAfter</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sys_transform_script_a3b09258dbcc7410b6429db2ca961995</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-05-16 17:08:51</sys_updated_on>
+        <sys_updated_on>2021-05-18 06:02:02</sys_updated_on>
         <when>onAfter</when>
     </sys_transform_script>
 </record_update>
