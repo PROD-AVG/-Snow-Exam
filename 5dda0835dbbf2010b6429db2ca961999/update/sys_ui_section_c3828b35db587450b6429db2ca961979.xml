@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_section caption="" section_id="c3828b35db587450b6429db2ca961979" sys_domain="global" table="x_292088_snow_exam_mtom_answer_sheets" version="3" view="sp">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>case_id</element>
+            <position>0</position>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-24 10:26:58</sys_created_on>
+            <sys_id>07820375db587450b6429db2ca9619d8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_mtom_answer_sheets" sys_domain="global" view="ec2daaf9d7523100a9ad1e173e24d4ea">c3828b35db587450b6429db2ca961979</sys_ui_section>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-24 10:26:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>selected_answers</element>
+            <position>1</position>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-24 10:26:58</sys_created_on>
+            <sys_id>03820375db587450b6429db2ca9619d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_mtom_answer_sheets" sys_domain="global" view="ec2daaf9d7523100a9ad1e173e24d4ea">c3828b35db587450b6429db2ca961979</sys_ui_section>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-24 10:26:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>question_id</element>
+            <position>2</position>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-24 10:26:58</sys_created_on>
+            <sys_id>87820375db587450b6429db2ca9619d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_mtom_answer_sheets" sys_domain="global" view="ec2daaf9d7523100a9ad1e173e24d4ea">c3828b35db587450b6429db2ca961979</sys_ui_section>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-24 10:26:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>question_id.correct_answer</element>
+            <position>3</position>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-24 10:26:58</sys_created_on>
+            <sys_id>0f820375db587450b6429db2ca9619d9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_292088_snow_exam_mtom_answer_sheets" sys_domain="global" view="ec2daaf9d7523100a9ad1e173e24d4ea">c3828b35db587450b6429db2ca961979</sys_ui_section>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-24 10:26:58</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_292088_snow_exam_mtom_answer_sheets</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>CPHAN20</sys_created_by>
+            <sys_created_on>2021-05-24 10:26:58</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>c3828b35db587450b6429db2ca961979</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_292088_snow_exam_mtom_answer_sheets</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_ui_section_c3828b35db587450b6429db2ca961979</sys_update_name>
+            <sys_updated_by>CPHAN20</sys_updated_by>
+            <sys_updated_on>2021-05-24 10:26:58</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Service Portal" name="sp">ec2daaf9d7523100a9ad1e173e24d4ea</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>
