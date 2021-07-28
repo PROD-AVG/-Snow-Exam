@@ -6,6 +6,12 @@
   var c = this;
 	// Set the date we're counting down to
 	c.duration = $scope.data.duration;
+	if (localStorage.getItem("item") && localStorage.getItem("item") == $scope.data.itemSysId) {
+		var timeLeftSec = localStorage.getItem("duration");
+		var timeLeftMinutes = Math.floor((timeLeftSec % (1000 * 60 * 60)) / (1000 * 60));
+		c.duration = timeLeftMinutes;
+	}
+	
 	var g_form = $('sp-variable-layout').scope().getGlideForm()
 	var countDownDate = new Date();
 	countDownDate = countDownDate.setMinutes(countDownDate.getMinutes() + c.duration);
@@ -27,7 +33,8 @@
 
 		// Find the distance between now and the count down date
 		var distance = countDownDate - now;
-
+		localStorage.setItem("distance", JSON.stringify(distance));
+		
 		// Time calculations for days, hours, minutes and seconds
 		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
 		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
@@ -39,6 +46,7 @@
 
 		// If the count down is over, write some text 
 		if (distance < 0) {
+			localStorage.removeItem("duration");
 			clearInterval(x);
 			document.getElementById("timer").innerHTML = "EXPIRED";
 			//Auto submit
@@ -46,7 +54,7 @@
 			$("button[name='submit'")[0].click();
 		}
 	}, 1000);
-};]]></client_script>
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>#timer {&#13;
   font-size: large;&#13;
@@ -84,14 +92,14 @@
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-05 04:38:26</sys_created_on>
         <sys_id>901cbfa7db7fe010b6429db2ca96196a</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>20</sys_mod_count>
         <sys_name>Snow CountDown Timer</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_901cbfa7db7fe010b6429db2ca96196a</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-05-24 06:51:34</sys_updated_on>
+        <sys_updated_on>2021-06-27 16:13:52</sys_updated_on>
         <template><![CDATA[<p id="timer"></p>]]></template>
     </sp_widget>
 </record_update>
