@@ -1,16 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function snowExamLoaderController($scope,$sce) {
+        <client_script><![CDATA[function snowExamLoaderController($rootScope,$scope,$sce,glideUserSession,spModal) {
+	
 
+	
+	
 	/* widget controller */
 	var c = this;
 	var g_form = $scope.page.g_form;
 	c.isBegun = false;
 	c.isTicketPage = false;
+
+	//Show Exam
 	c.showTest = function() {
 		c.isBegun = !c.isBegun;
 	};
+	
+	//enter password
+	c.onPrompt = function() {
+		spModal.prompt("Test Code, Please", c.name).then(function(name) {
+			c.name = name;
+			
+			if (c.name == $scope.data.password) {
+				spModal.alert('Your exam will last in '+ $scope.data.duration+' minutes. Are you ready?').then(function (answer) {
+					c.simple = answer;
+					if (answer == true) {
+						c.showTest();
+					}
+				});
+				
+			} else {
+				spModal.alert('Incorrect Code, try again or reach out to ADMIN').then(function (answer) {
+            c.simple = answer;
+					if (answer == true) {
+						c.onPrompt();
+					}
+        });
+			}
+
+		})
+	}
 
 	// On Load Ticket Page
 	$scope.checkCorrectAnswer = function(key,question) {
@@ -31,7 +61,6 @@
 		}
 		
 	}
-	
 	
 	// On Change
 	$scope.selectKey = function(event,keySelected,question) {
@@ -55,7 +84,13 @@
 
 		// Set value to dataload field
 		var field = 'dataload';
-		g_form.setValue(field,JSON.stringify(c.data.items));
+		var dataStr = JSON.stringify(c.data.items)
+		g_form.setValue(field,dataStr);
+		// save session
+		localStorage.setItem("item",$scope.data.catItem);
+		localStorage.setItem("examData",dataStr);
+		localStorage.setItem("duration",localStorage.getItem("distance"));
+		
 	};
 
 	// Loading Question and check selected
@@ -71,14 +106,28 @@
 
 	// On New Cate Item Page Load
 	if ($scope.data.page == 'sc_cat_item') {
-		c.data.items = $scope.data.items;
+		// Check local Session
+		if (localStorage.getItem("item") && localStorage.getItem("item") == $scope.data.catItem) {
+			// Set value to dataload field
+			var field = 'dataload';
+			var dataStr = JSON.stringify(c.data.items)
+			g_form.setValue(field,dataStr);
+			c.data.items = JSON.parse(localStorage.getItem("examData"));
+		} else {
+			c.data.items = $scope.data.items;
+		}
+		
 		for(var k in c.data.items) {
 			c.data.items[k].answerSelected = [];
 			for (var j in k.keys) {
 				k.keys[j].isSected = 'unSelected';
 			}
 		}
-		c.data.items = shuffle(c.data.items);
+		
+		if (!localStorage.getItem("item")) {
+			c.data.items = shuffle(c.data.items);
+		}
+		
 	}
 
 	// On TicketPage
@@ -117,6 +166,7 @@
 		c.indexEnd = (c.indexEnd + c.range*(c.currentPage-pre));
 	};
 
+	
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Btn and Timer */
@@ -219,12 +269,21 @@
 	/* populate the 'data' object */
 	/* e.g., data.table = $sp.getValue('table'); */
 
+
 	data.isAdmin = gs.hasRole('admin');	
 	data.items = [];
+	data.password = '';
 	data.catItem = $sp.getParameter('sys_id');
 	var util = new SnowPortalUtils(data.catItem);
 	data.table = $sp.getParameter('table');
 	data.page = $sp.getParameter('id');
+	
+	var rec = new GlideRecord('sc_cat_item_producer');
+	if (rec.get(data.catItem)) {
+		data.password = rec.getValue('u_password');
+		data.duration = parseInt(rec.getValue('u_duration_minutes'));
+	}
+	
 
 	//Load data for new Page
 	if (data.page == 'sc_cat_item') {
@@ -233,6 +292,7 @@
 		var listTypes = util.getListType(topicDetail);
 		var list = util.getQBByTopic(topicDetail,listTypes);
 		data.items = list;
+		console.log(data.items)
 	}
 
 	//Load data for Ticket Page
@@ -256,7 +316,8 @@
 
 
 	data.catalogItemWidget = $sp.getWidget("snow_countdown_timer");
-
+	
+	
 
 })();]]></script>
         <servicenow>false</servicenow>
@@ -264,15 +325,15 @@
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-05 04:36:11</sys_created_on>
         <sys_id>dcca7ba7db7fe010b6429db2ca96196f</sys_id>
-        <sys_mod_count>70</sys_mod_count>
+        <sys_mod_count>180</sys_mod_count>
         <sys_name>Snow Exam Loader</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_dcca7ba7db7fe010b6429db2ca96196f</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-06-06 13:19:37</sys_updated_on>
-        <template><![CDATA[<div class="center" ng-click="c.showTest()" ng-if="!c.isBegun">
+        <sys_updated_on>2021-06-27 16:09:20</sys_updated_on>
+        <template><![CDATA[<div class="center" ng-click="c.onPrompt()" ng-if="!c.isBegun">
   ${Begin}
 </div>
 
