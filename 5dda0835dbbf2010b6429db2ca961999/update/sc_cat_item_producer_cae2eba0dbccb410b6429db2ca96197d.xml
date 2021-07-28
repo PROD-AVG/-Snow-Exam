@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_producer">
     <sc_cat_item_producer action="INSERT_OR_UPDATE">
+        <access_type>restricted</access_type>
         <active>true</active>
+        <allow_edit>false</allow_edit>
         <availability>on_desktop</availability>
         <billable>false</billable>
         <can_cancel>false</can_cancel>
         <category display_value="ServiceNow Test">5288fb27db7fe010b6429db2ca961919</category>
+        <checked_out/>
         <cost>0</cost>
         <custom_cart/>
         <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[Test duration: 30 minutes
-You can read document while taking the exam.
-Good Luck!]]></description>
+        <description><![CDATA[<p>Test duration: 30 minutes You can read document while taking the exam. Good Luck!</p>]]></description>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
+        <flow_designer_flow/>
         <group/>
         <hide_sp>false</hide_sp>
         <icon/>
@@ -43,40 +45,47 @@ Good Luck!]]></description>
         <omit_price>false</omit_price>
         <order>0</order>
         <ordered_item_link/>
+        <owner/>
         <picture/>
         <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=cae2eba0dbccb410b6429db2ca96197d&amp;sysparm_preview=true", "summary");</preview>
         <price>0</price>
+        <published_ref/>
         <recurring_frequency/>
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
         <request_method/>
         <roles/>
+        <save_options/>
+        <save_script/>
         <sc_catalogs>8ce7b327db7fe010b6429db2ca96192d</sc_catalogs>
         <sc_ic_item_staging/>
         <sc_ic_version/>
+        <sc_template/>
         <script><![CDATA[new x_292088_snow_exam.snow_ServicesUtil(current, gs).createCaseFromProducer(producer, cat_item.sys_id);]]></script>
         <short_description>ServiceNow Admin Final Test</short_description>
         <show_variable_help_on_load>false</show_variable_help_on_load>
         <start_closed>false</start_closed>
+        <state/>
         <sys_class_name>sc_cat_item_producer</sys_class_name>
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-08 05:20:16</sys_created_on>
         <sys_id>cae2eba0dbccb410b6429db2ca96197d</sys_id>
-        <sys_mod_count>11</sys_mod_count>
+        <sys_mod_count>14</sys_mod_count>
         <sys_name>ServiceNow SysAdmin</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_cae2eba0dbccb410b6429db2ca96197d</sys_update_name>
         <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-05-18 10:44:21</sys_updated_on>
+        <sys_updated_on>2021-06-27 08:28:38</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
         <template/>
+        <template_manager_roles/>
         <type>item</type>
         <u_duration_minutes>30</u_duration_minutes>
         <u_number_of_questions>40</u_number_of_questions>
-        <u_owner display_value="Nam Vy Hoang Nam">dc96c4c5dbd20010d606e04a489619fe</u_owner>
+        <u_owner display_value="Nam Vy Hoang">dc96c4c5dbd20010d606e04a489619fe</u_owner>
         <u_passing_score>70</u_passing_score>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
@@ -85,6 +94,7 @@ Good Luck!]]></description>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
+        <u_password>ADMIN2021</u_password>
     </sc_cat_item_producer>
     <sys_translated_text action="delete_multiple" query="documentkey=cae2eba0dbccb410b6429db2ca96197d"/>
     <fx_price action="delete_multiple" query="id=cae2eba0dbccb410b6429db2ca96197d"/>
