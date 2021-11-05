@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="result" label="Result" language="en" table="x_292088_snow_exam_mtom_answer_sheets">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>result</element>
+            <help/>
+            <hint/>
+            <label>Result</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_mtom_answer_sheets</name>
+            <plural>Results</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>quockimhoang.tran@dxc.com</sys_created_by>
+            <sys_created_on>2021-11-04 02:50:32</sys_created_on>
+            <sys_id>44de75e20763f8100eb2f61d7c1ed0ec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Result</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_documentation_x_292088_snow_exam_mtom_answer_sheets_result_en</sys_update_name>
+            <sys_updated_by>quockimhoang.tran@dxc.com</sys_updated_by>
+            <sys_updated_on>2021-11-04 02:50:32</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
