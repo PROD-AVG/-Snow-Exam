@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="level" table="x_292088_snow_exam_question_banks" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>level</element>
+            <name>x_292088_snow_exam_question_banks</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>quockimhoang.tran@dxc.com</sys_created_by>
+            <sys_created_on>2021-11-09 01:52:36</sys_created_on>
+            <sys_id>0481e78007f330500eb2f61d7c1ed007</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>level</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_choice_x_292088_snow_exam_question_banks_level</sys_update_name>
+            <sys_updated_by>quockimhoang.tran@dxc.com</sys_updated_by>
+            <sys_updated_on>2021-11-09 01:52:36</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Fresher</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_question_banks</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>quockimhoang.tran@dxc.com</sys_created_by>
+            <sys_created_on>2021-11-09 01:52:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7a51678407f330500eb2f61d7c1ed024</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>quockimhoang.tran@dxc.com</sys_updated_by>
+            <sys_updated_on>2021-11-09 01:52:36</sys_updated_on>
+            <value>fresher</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Experienced</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_question_banks</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>quockimhoang.tran@dxc.com</sys_created_by>
+            <sys_created_on>2021-11-09 01:53:32</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7a816b4407f330500eb2f61d7c1ed0f7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>quockimhoang.tran@dxc.com</sys_updated_by>
+            <sys_updated_on>2021-11-09 01:53:32</sys_updated_on>
+            <value>experienced</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>
