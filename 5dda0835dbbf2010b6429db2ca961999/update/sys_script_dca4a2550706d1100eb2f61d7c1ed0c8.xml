@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>false</action_insert>
+        <action_query>false</action_query>
+        <action_update>true</action_update>
+        <active>true</active>
+        <add_message>false</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>sc_req_item</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="sc_req_item">stateCHANGESTO3^cat_item=b44ecc1307659d100eb2f61d7c1ed09b^EQ<item display_value="Closed Complete" endquery="false" field="state" goto="false" newquery="false" operator="CHANGESTO" or="false" value="3"/>
+            <item display_table="sc_cat_item" display_value="Add New Question" endquery="false" field="cat_item" goto="false" newquery="false" operator="=" or="false" value="b44ecc1307659d100eb2f61d7c1ed09b"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message/>
+        <name>Avenger_SnowExam_Import questionaire</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
+
+    // Add your code here
+    var level = current.variables.level + '';
+    var answerType = current.variables.answer_type + '';
+    var subCat = current.variables.sub_category + '';
+    var topicDetail = current.variables.topic + '';
+    var correctAnswer = current.variables.correct_answer + '';
+    var question = current.variables.question + '';
+    var ANSWER_OPTION_1 = current.variables.answer_1 + '';
+    var ANSWER_OPTION_2 = current.variables.answer_2 + '';
+    var ANSWER_OPTION_3 = current.variables.answer_3 + '';
+    var ANSWER_OPTION_4 = current.variables.answer_4 + '';
+    var ANSWER_OPTION_5 = current.variables.answer_5 + '';
+    var ANSWER_OPTION_6 = current.variables.answer_6 + '';
+    var correctYesNo = current.variables.answer_7 + '';
+
+    //import question bank table
+    var grQuestion = new GlideRecord('x_292088_snow_exam_question_banks');
+
+    grQuestion.level = level == 'fresher' ? 'fresher' : 'experienced';
+    grQuestion.type = answerType == 'multiple_answers' ? 'Multiple Choice' : 'Yes/No';
+//     grQuestion.sub_category = subCat;
+    grQuestion.display_value = question;
+    grQuestion.question = question;
+    grQuestion.correct_answer = answerType == 'multiple_answers' ? correctAnswer : correctYesNo;
+    grQuestion.topic_details = topicDetail ? topicDetail : '';
+
+    newQuestion = grQuestion.insert();
+
+    //import question key table
+    if (newQuestion) {
+        var grAnswer = new GlideRecord('x_292088_snow_exam_question_keys');
+        grAnswer.question_id = newQuestion;
+		
+        if (answerType == 'multiple_answers') {
+            grAnswer.option_a = ANSWER_OPTION_1 ? ANSWER_OPTION_1 : '';
+            grAnswer.option_b = ANSWER_OPTION_2 ? ANSWER_OPTION_2 : '';
+            grAnswer.option_c = ANSWER_OPTION_3 ? ANSWER_OPTION_3 : '';
+            grAnswer.option_d = ANSWER_OPTION_4 ? ANSWER_OPTION_4 : '';
+            grAnswer.option_e = ANSWER_OPTION_5 ? ANSWER_OPTION_5 : '';
+            grAnswer.option_f = ANSWER_OPTION_6 ? ANSWER_OPTION_6 : '';
+        } else {
+            grAnswer.option_a = 'true';
+            grAnswer.option_b = 'false';
+        }
+
+        grAnswer.insert();
+    }
+
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>QDANG5</sys_created_by>
+        <sys_created_on>2022-09-19 11:12:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>dca4a2550706d1100eb2f61d7c1ed0c8</sys_id>
+        <sys_mod_count>12</sys_mod_count>
+        <sys_name>Avenger_SnowExam_Import questionaire</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_script_dca4a2550706d1100eb2f61d7c1ed0c8</sys_update_name>
+        <sys_updated_by>QDANG5</sys_updated_by>
+        <sys_updated_on>2022-09-20 13:34:09</sys_updated_on>
+        <template/>
+        <when>before</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=dca4a2550706d1100eb2f61d7c1ed0c8"/>
+</record_update>
