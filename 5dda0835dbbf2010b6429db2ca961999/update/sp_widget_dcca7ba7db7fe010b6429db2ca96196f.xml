@@ -1,181 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function snowExamLoaderController($rootScope,$scope,$sce,glideUserSession,spModal) {
-	
+        <client_script><![CDATA[function snowExamLoaderController($rootScope, $scope, $sce, glideUserSession, spModal) {
+    /* widget controller */
+    var c = this;
+    var g_form = $scope.page.g_form;
+    c.isBegun = false;
+    c.isTicketPage = false;
 
-	
-	
-	/* widget controller */
-	var c = this;
-	var g_form = $scope.page.g_form;
-	c.isBegun = false;
-	c.isTicketPage = false;
-	
-	if (localStorage.item)
-		localStorage.removeItem("item");
-	if (localStorage.examData)
-		localStorage.removeItem("examData");
+    //Show Exam
+    c.showTest = function() {
+        c.isBegun = !c.isBegun;
+    };
 
-	//Show Exam
-	c.showTest = function() {
-		c.isBegun = !c.isBegun;
-	};
-	
-	//enter password
-	c.onPrompt = function() {
-		if ($scope.data.password == null || $scope.data.password == '') {
-			c.showTest();
-		} else {
-			spModal.prompt("Test Code, Please", c.name).then(function(name) {
-				c.name = name;
+    //enter password
+    c.onPrompt = function() {
+        if ($scope.data.password == null || $scope.data.password == '') {
+            c.showTest();
+        } else {
+            spModal.prompt("Test Code, Please", c.name).then(function(name) {
+                c.name = name;
 
-				if (c.name == $scope.data.password) {
-					spModal.alert('Your exam will last in '+ $scope.data.duration+' minutes. Are you ready?').then(function (answer) {
-						c.simple = answer;
-						if (answer == true) {
-							c.showTest();
-						}
-					});
+                if (c.name == $scope.data.password) {
+                    spModal.alert('Your exam will last in ' + $scope.data.duration + ' minutes. Are you ready?').then(function(answer) {
+                        c.simple = answer;
+                        if (answer == true) {
+                            c.showTest();
+                        }
+                    });
 
-				} else {
-					spModal.alert('Incorrect Code, try again or reach out to ADMIN').then(function (answer) {
-						c.simple = answer;
-						if (answer == true) {
-							c.onPrompt();
-						}
-					});
-				}
+                } else {
+                    spModal.alert('Incorrect Code, try again or reach out to ADMIN').then(function(answer) {
+                        c.simple = answer;
+                        if (answer == true) {
+                            c.onPrompt();
+                        }
+                    });
+                }
 
-			});
-		}
-	}
+            });
+        }
+    }
 
-	// On Load Ticket Page
-	$scope.checkCorrectAnswer = function(key,question) {
-		var correctAnswers = question.correctAnswers.toLowerCase();
-		var keyAnswer = key.label.toLowerCase();
-		var found = false;
-	
-		//found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
-		found = correctAnswers.includes(keyAnswer);
-		if (correctAnswers.split(',').length == 1) {
-			found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
-		}
-		
-		if (found) {
-			return "fa fa-check";
-		} else {
-			return "fa fa-times";
-		}
-		
-	}
-	
-	// On Change
-	$scope.selectKey = function(event,keySelected,question) {
-		if (c.isTicketPage == true) {
-			g_form.addErrorMessage('You are not allow to edit');
-			return;
-		}
+    // On Load Ticket Page
+    $scope.checkCorrectAnswer = function(key, question) {
+        var correctAnswers = question.correctAnswers.toLowerCase();
+        var keyAnswer = key.label.toLowerCase();
+        var found = false;
 
-		var isSelected = !$(event.currentTarget).hasClass('element-selected');
-		if (isSelected) {
-			question.answerSelected.push(keySelected);
-			keySelected.isSected = 'selected';
-		} else {
-			for( var i = 0; i < question.answerSelected.length; i++){ 
-				if ( question.answerSelected[i].label == keySelected.label) { 
-					question.answerSelected.splice(i, 1); 
-				}
-			}
-			keySelected.isSected = 'unSelected';
-		}
+        //found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
+        found = correctAnswers.includes(keyAnswer);
+        if (correctAnswers.split(',').length == 1) {
+            found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
+        }
 
-		// Set value to dataload field
-		var field = 'dataload';
-		var dataStr = JSON.stringify(c.data.items)
-		g_form.setValue(field,dataStr);
-		// save session
-		localStorage.setItem("item",$scope.data.catItem);
-		localStorage.setItem("examData",dataStr);
-		localStorage.setItem("duration",localStorage.getItem("distance"));
-		
-	};
+        if (found) {
+            return "fa fa-check";
+        } else {
+            return "fa fa-times";
+        }
 
-	// Loading Question and check selected
-	$scope.checkSelected = function(key,question) {
-		for( var i = 0; i < question.answerSelected.length; i++){ 
-			if (question.answerSelected[i].label == key.label) { 
-				return 'selected';
-			} else {
-				return '';
-			}
-		}
-	};
+    }
 
-	// On New Cate Item Page Load
-	if ($scope.data.page == 'sc_cat_item') {
-		// Check local Session
-		if (localStorage.getItem("item") && localStorage.getItem("item") == $scope.data.catItem) {
-			// Set value to dataload field
-			var field = 'dataload';
-			var dataStr = JSON.stringify(c.data.items)
-			g_form.setValue(field,dataStr);
-			c.data.items = JSON.parse(localStorage.getItem("examData"));
-		} else {
-			c.data.items = $scope.data.items;
-		}
-		
-		for(var k in c.data.items) {
-			c.data.items[k].answerSelected = [];
-			for (var j in k.keys) {
-				k.keys[j].isSected = 'unSelected';
-			}
-		}
-		
-		if (!localStorage.getItem("item")) {
-			c.data.items = shuffle(c.data.items);
-		}
-		
-	}
+    // On Change
+    $scope.selectKey = function(event, keySelected, question) {
+        if (c.isTicketPage == true) {
+            g_form.addErrorMessage('You are not allow to edit');
+            return;
+        }
 
-	// On TicketPage
-	if ($scope.data.page == 'ticket') {
-		c.data.items = $scope.data.items;
-		c.isBegun = true;
-		c.isTicketPage = true;
-	}
+        var isSelected = !$(event.currentTarget).hasClass('element-selected');
+        if (isSelected) {
+            question.answerSelected.push(keySelected);
+            keySelected.isSected = 'selected';
+        } else {
+            for (var i = 0; i < question.answerSelected.length; i++) {
+                if (question.answerSelected[i].label == keySelected.label) {
+                    question.answerSelected.splice(i, 1);
+                }
+            }
+            keySelected.isSected = 'unSelected';
+        }
+
+        // Set value to dataload field
+        var field = 'dataload';
+        var dataStr = JSON.stringify(c.data.items)
+        g_form.setValue(field, dataStr);
+        // save session
+        localStorage.setItem("item", $scope.data.catItem);
+        localStorage.setItem("examData", dataStr);
+        localStorage.setItem("duration", localStorage.getItem("distance"));
+
+    };
+
+    // Loading Question and check selected
+    $scope.checkSelected = function(key, question) {
+        for (var i = 0; i < question.answerSelected.length; i++) {
+            if (question.answerSelected[i].label == key.label) {
+                return 'selected';
+            } else {
+                return '';
+            }
+        }
+    };
+
+    // On New Cate Item Page Load
+    if ($scope.data.page == 'sc_cat_item') {
+        // Check local Session
+        if (localStorage.getItem("item") && localStorage.getItem("item") == $scope.data.catItem) {
+            // Set value to dataload field
+            var field = 'dataload';
+            var dataStr = JSON.stringify(c.data.items)
+            g_form.setValue(field, dataStr);
+            c.data.items = JSON.parse(localStorage.getItem("examData"));
+        } else {
+            c.data.items = $scope.data.items;
+        }
+
+        for (var k in c.data.items) {
+            c.data.items[k].answerSelected = [];
+            for (var j in k.keys) {
+                k.keys[j].isSected = 'unSelected';
+            }
+        }
+
+        if (!localStorage.getItem("item")) {
+            c.data.items = shuffle(c.data.items);
+        }
+
+    }
+
+    // On TicketPage
+    if ($scope.data.page == 'ticket') {
+        c.data.items = $scope.data.items;
+        c.isBegun = true;
+        c.isTicketPage = true;
+    }
 
 
-	function shuffle(sourceArray) {
-		for (var i = 0; i < sourceArray.length - 1; i++) {
-			var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+    function shuffle(sourceArray) {
+        for (var i = 0; i < sourceArray.length - 1; i++) {
+            var j = i + Math.floor(Math.random() * (sourceArray.length - i));
 
-			var temp = sourceArray[j];
-			sourceArray[j] = sourceArray[i];
-			sourceArray[i] = temp;
-		}
-		return sourceArray;
-	}
+            var temp = sourceArray[j];
+            sourceArray[j] = sourceArray[i];
+            sourceArray[i] = temp;
+        }
+        return sourceArray;
+    }
 
-	//Pagination
-	c.indexStart = 0;
-	c.range = $scope.data.limit;
-	c.indexEnd = c.range - 1;
-	c.currentPage = 1;
+    //Pagination
+    c.indexStart = 0;
+    c.range = $scope.data.limit;
+    c.indexEnd = c.range - 1;
+    c.currentPage = 1;
 
-	$scope.goToPage = function(page) {
-		var pre = c.currentPage;
-		c.currentPage = page;
+    $scope.goToPage = function(page) {
+        var pre = c.currentPage;
+        c.currentPage = page;
+        if (page == 'end')
+            c.currentPage = $scope.data.pages.length;
+        $scope.data.temp = c.currentPage;
+        c.indexStart = (c.indexStart + c.range * (c.currentPage - pre));
+        c.indexEnd = (c.indexEnd + c.range * (c.currentPage - pre));
 
-		if (page == 'end') 
-			c.currentPage = $scope.data.pages.length;	
+    };
 
-		c.indexStart = (c.indexStart + c.range*(c.currentPage-pre));
-		c.indexEnd = (c.indexEnd + c.range*(c.currentPage-pre));
-	};
+    $scope.goNextPage = function(page) {
+        c.number = $scope.data.temp;
+        c.currentPage = page;
 
-	
+        if ((c.number != $scope.data.pages.length) && (page == 'next')) {
+            if (c.number == 0) {
+                c.number = 1;
+            }
+            c.indexStart = c.number;
+            c.indexEnd = c.number;
+            c.number = c.number + 1;
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+
+        } else if ((c.number == $scope.data.pages.length) && (page == 'next')) {
+            c.indexStart = 0;
+            c.indexEnd = 0;
+            c.number = 1;
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+        }
+    };
+
+    $scope.goPreviousPage = function(page) {
+        c.number = $scope.data.temp;
+        c.currentPage = page;
+
+        if ((c.number == 1) && (c.indexStart < 1) && (c.indexEnd < 1) && (page == 'previous')) {
+            c.indexStart = $scope.data.pages.length - 1;
+            c.indexEnd = $scope.data.pages.length - 1;
+            c.number = $scope.data.pages.length;
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+
+        } else if ((c.number > 0) && (c.indexStart != -1) && (c.indexEnd != -1) && (page == 'previous')) {
+            c.number = c.number - 1;
+            c.indexStart = c.number - 1;
+            c.indexEnd = c.number - 1;
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+        }
+    };
 }]]></client_script>
         <controller_as>c</controller_as>
         <css>/* Btn and Timer */
@@ -272,7 +304,7 @@
 }]]></link>
         <name>Snow Exam Loader</name>
         <option_schema/>
-        <public>false</public>
+        <public>true</public>
         <roles/>
         <script><![CDATA[(function(){
 	/* populate the 'data' object */
@@ -316,6 +348,7 @@
 	data.totalPages = 0;
 	data.totalQuestions = data.items.length;
 	data.pages = [];
+	data.temp = 0;
 
 	data.totalPages = Math.ceil(data.totalQuestions/data.limit);
 	for(var i = 0; i < data.totalPages; i++) {
@@ -333,14 +366,14 @@
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-05 04:36:11</sys_created_on>
         <sys_id>dcca7ba7db7fe010b6429db2ca96196f</sys_id>
-        <sys_mod_count>184</sys_mod_count>
+        <sys_mod_count>331</sys_mod_count>
         <sys_name>Snow Exam Loader</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_dcca7ba7db7fe010b6429db2ca96196f</sys_update_name>
-        <sys_updated_by>QTRAN43</sys_updated_by>
-        <sys_updated_on>2022-02-27 10:51:22</sys_updated_on>
+        <sys_updated_by>HLE219</sys_updated_by>
+        <sys_updated_on>2023-06-15 04:50:24</sys_updated_on>
         <template><![CDATA[<div class="center" ng-click="c.onPrompt()" ng-if="!c.isBegun">
   ${Begin}
 </div>
@@ -377,6 +410,8 @@
          ng-repeat="number in data.pages"
          ng-class="c.currentPage == number ? 'active' : '' " >{{number}}</a>
       <a href="javascript:void(0)" ng-click="goToPage('end')">&raquo;</a>
+      <a href="javascript:void(0)" ng-click="goNextPage('next')">Next</a>
+      <a href="javascript:void(0)" ng-click="goPreviousPage('previous')">Previous</a>
     </div>
   </div>
 </div>
