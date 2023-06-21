@@ -179,8 +179,10 @@
             c.number = c.number + 1;
             $scope.data.temp = c.number;
             c.currentPage = c.number;
+			document.getElementById("btn-button btn1").disabled = false;
 
         } else if ((c.number == $scope.data.pages.length) && (page == 'next')) {
+// 			document.getElementById("btn-button btn2").disabled = true;
             c.indexStart = 0;
             c.indexEnd = 0;
             c.number = 1;
@@ -189,10 +191,10 @@
         }
     };
 
-    $scope.goPreviousPage = function(page) {
+    $scope.goPreviousPage = function(page) {		
         c.number = $scope.data.temp;
         c.currentPage = page;
-
+		
         if ((c.number == 1) && (c.indexStart < 1) && (c.indexEnd < 1) && (page == 'previous')) {
             c.indexStart = $scope.data.pages.length - 1;
             c.indexEnd = $scope.data.pages.length - 1;
@@ -210,87 +212,100 @@
     };
 }]]></client_script>
         <controller_as>c</controller_as>
-        <css>/* Btn and Timer */
-.center {
-	color: white;
-  margin: auto;
-  width: fit-content;
-  padding: 10px 40px;
-  background-color: #1f8476;
-  border-color: #1f8476;
-  border-radius: 5px;
-}
-
-/* Test Body */
-
-
-.test-body {
-  padding: 0px 0px 10px 0px;
-  background: repeating-linear-gradient(#F1EDE9, #F1EDE9 31px, #94ACD4 31px, #94ACD4 32px); 
-}
-
-
-.test-question {
-  margin: 4% 6%;
-  font-family: roboto-regular;
-  font-size: 20px;
-  font-weight: 500;
-}
-
-.test-options {
-	font-size: 18px;
-}
-
-.test-answer-wrapper ul li {
-  text-align: center;
-  list-style: none;
-  background-color: #87c52e;
-  color: #fff;
-  border: 1px solid #87c52e;
-  border-radius: 15px;
-  padding: 10px;
-  margin: 8px 5px;
-  box-shadow: 0 9px #999;
-}
-
-.test-answer-wrapper {
-  padding: 0 30px 0 0;
-}
-
-.col-float-left {
-	float: left;
-}
-
-.element-selected {
-	background-color: #ff5722 !important;
-  box-shadow: 0 5px #666 !important;
-  transform: translateY(4px);
-}
-.element-unSelected {
-	background-color: #87c52e !important;
-  box-shadow: 0 9px #999 !important;
-}
-
-
-/* Pagination */
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-.pagination a.active {
-  background-color: #607d8b;
-  color: white;
-  border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: #ddd;
-  border-radius: 5px;
-}
-</css>
+        <css>/* Btn and Timer */&#13;
+.center {&#13;
+	color: white;&#13;
+  margin: auto;&#13;
+  width: fit-content;&#13;
+  padding: 10px 40px;&#13;
+  background-color: #1f8476;&#13;
+  border-color: #1f8476;&#13;
+  border-radius: 5px;&#13;
+}&#13;
+&#13;
+/* Test Body */&#13;
+&#13;
+&#13;
+.test-body {&#13;
+  padding: 0px 0px 10px 0px;&#13;
+  background: repeating-linear-gradient(#F1EDE9, #F1EDE9 31px, #94ACD4 31px, #94ACD4 32px); &#13;
+}&#13;
+&#13;
+&#13;
+.test-question {&#13;
+  margin: 4% 6%;&#13;
+  font-family: roboto-regular;&#13;
+  font-size: 20px;&#13;
+  font-weight: 500;&#13;
+}&#13;
+&#13;
+.test-options {&#13;
+	font-size: 18px;&#13;
+}&#13;
+&#13;
+.test-answer-wrapper ul li {&#13;
+  text-align: center;&#13;
+  list-style: none;&#13;
+  background-color: #87c52e;&#13;
+  color: #fff;&#13;
+  border: 1px solid #87c52e;&#13;
+  border-radius: 15px;&#13;
+  padding: 10px;&#13;
+  margin: 8px 5px;&#13;
+  box-shadow: 0 9px #999;&#13;
+}&#13;
+&#13;
+.test-answer-wrapper {&#13;
+  padding: 0 30px 0 0;&#13;
+}&#13;
+&#13;
+.col-float-left {&#13;
+	float: left;&#13;
+}&#13;
+&#13;
+.element-selected {&#13;
+	background-color: #ff5722 !important;&#13;
+  box-shadow: 0 5px #666 !important;&#13;
+  transform: translateY(4px);&#13;
+}&#13;
+.element-unSelected {&#13;
+	background-color: #87c52e !important;&#13;
+  box-shadow: 0 9px #999 !important;&#13;
+}&#13;
+&#13;
+&#13;
+/* Pagination */&#13;
+.pagination a {&#13;
+  color: black;&#13;
+  float: left;&#13;
+  padding: 8px 16px;&#13;
+  text-decoration: none;&#13;
+}&#13;
+&#13;
+.pagination a.active {&#13;
+  background-color: #607d8b;&#13;
+  color: white;&#13;
+  border-radius: 5px;&#13;
+}&#13;
+&#13;
+.pagination a:hover:not(.active) {&#13;
+  background-color: #ddd;&#13;
+  border-radius: 5px;&#13;
+}&#13;
+&#13;
+/* Button */&#13;
+#btn-button{&#13;
+  background-color: #007FC1;&#13;
+  color: #fff;&#13;
+  min-width: 10rem;&#13;
+  min-height: 3.4rem;&#13;
+  font-size: 1.4rem !important;&#13;
+  font-weight: 600;&#13;
+  border: 0.1rem solid transparent !important;&#13;
+  border-radius: 0.4rem !important;&#13;
+  padding: 0 2rem !important;&#13;
+  margin: 10px;&#13;
+}</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -366,14 +381,14 @@
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-05 04:36:11</sys_created_on>
         <sys_id>dcca7ba7db7fe010b6429db2ca96196f</sys_id>
-        <sys_mod_count>331</sys_mod_count>
+        <sys_mod_count>364</sys_mod_count>
         <sys_name>Snow Exam Loader</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_dcca7ba7db7fe010b6429db2ca96196f</sys_update_name>
         <sys_updated_by>HLE219</sys_updated_by>
-        <sys_updated_on>2023-06-15 04:50:24</sys_updated_on>
+        <sys_updated_on>2023-06-19 17:59:41</sys_updated_on>
         <template><![CDATA[<div class="center" ng-click="c.onPrompt()" ng-if="!c.isBegun">
   ${Begin}
 </div>
@@ -410,10 +425,12 @@
          ng-repeat="number in data.pages"
          ng-class="c.currentPage == number ? 'active' : '' " >{{number}}</a>
       <a href="javascript:void(0)" ng-click="goToPage('end')">&raquo;</a>
-      <a href="javascript:void(0)" ng-click="goNextPage('next')">Next</a>
-      <a href="javascript:void(0)" ng-click="goPreviousPage('previous')">Previous</a>
     </div>
   </div>
+  <div>
+     <button id="btn-button" ng-if="c.currentPage > 1" href="javascript:void(0)" ng-click="goPreviousPage('previous')">Previous</button>
+     <button id="btn-button" ng-if= "c.currentPage < c.data.items.length" href="javascript:void(0)" ng-click="goNextPage('next')">Next</button>
+    </div>
 </div>
 
 ]]></template>
