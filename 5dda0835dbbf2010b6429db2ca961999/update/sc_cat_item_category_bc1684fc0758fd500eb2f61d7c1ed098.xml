@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="INSERT_OR_UPDATE">
+        <sc_cat_item display_value="ANZ">281644fc0758fd500eb2f61d7c1ed0ab</sc_cat_item>
+        <sc_category display_value="Process Exam">90927baa074fed580eb2f61d7c1ed0d9</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>adang20</sys_created_by>
+        <sys_created_on>2023-07-25 02:54:12</sys_created_on>
+        <sys_id>bc1684fc0758fd500eb2f61d7c1ed098</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Process Exam.ANZ</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sc_cat_item_category_bc1684fc0758fd500eb2f61d7c1ed098</sys_update_name>
+        <sys_updated_by>adang20</sys_updated_by>
+        <sys_updated_on>2023-07-25 02:54:12</sys_updated_on>
+    </sc_cat_item_category>
+</record_update>
