@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="level" label="Level" language="en" table="x_292088_snow_exam_question_banks_staging">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>level</element>
+            <help/>
+            <hint/>
+            <label>Level</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_question_banks_staging</name>
+            <plural>Levels</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>adang20</sys_created_by>
+            <sys_created_on>2023-07-19 12:57:19</sys_created_on>
+            <sys_id>70961bf6074c39500eb2f61d7c1ed02f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Level</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_documentation_x_292088_snow_exam_question_banks_staging_level_en</sys_update_name>
+            <sys_updated_by>adang20</sys_updated_by>
+            <sys_updated_on>2023-07-19 12:57:19</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>
