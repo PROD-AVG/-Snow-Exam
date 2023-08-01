@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_hr_core_topic_detail">
+    <sn_hr_core_topic_detail action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <name>FIFA</name>
+        <sys_class_name>sn_hr_core_topic_detail</sys_class_name>
+        <sys_created_by>adang20</sys_created_by>
+        <sys_created_on>2023-07-19 11:46:52</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0d764bf6070c39500eb2f61d7c1ed03b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FIFA</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sn_hr_core_topic_detail_0d764bf6070c39500eb2f61d7c1ed03b</sys_update_name>
+        <sys_updated_by>adang20</sys_updated_by>
+        <sys_updated_on>2023-07-19 11:46:52</sys_updated_on>
+        <topic_category display_value="ServiceNow Test">46546088db0c3410b6429db2ca961904</topic_category>
+    </sn_hr_core_topic_detail>
+</record_update>
