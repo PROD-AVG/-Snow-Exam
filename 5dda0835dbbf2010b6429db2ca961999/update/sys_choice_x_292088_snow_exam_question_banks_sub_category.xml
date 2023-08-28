@@ -757,6 +757,26 @@
             <value>Admin</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>AirLiquide</dependent_value>
+            <element>sub_category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>AirLiquide Process</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_question_banks</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>adang20</sys_created_by>
+            <sys_created_on>2023-08-24 09:01:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3ae9bfd60770b5500eb2f61d7c1ed08a</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>adang20</sys_updated_by>
+            <sys_updated_on>2023-08-24 09:08:31</sys_updated_on>
+            <value>AirLiquide Process</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value>ANZ</dependent_value>
             <element>sub_category</element>
             <hint/>
