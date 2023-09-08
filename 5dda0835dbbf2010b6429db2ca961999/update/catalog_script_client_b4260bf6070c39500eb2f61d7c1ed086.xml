@@ -35,7 +35,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>b4260bf6070c39500eb2f61d7c1ed086</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Check before Submit</sys_name>
         <sys_overrides/>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
@@ -43,7 +43,7 @@
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>catalog_script_client_b4260bf6070c39500eb2f61d7c1ed086</sys_update_name>
         <sys_updated_by>adang20</sys_updated_by>
-        <sys_updated_on>2023-07-19 11:45:29</sys_updated_on>
+        <sys_updated_on>2023-09-08 15:32:02</sys_updated_on>
         <table/>
         <type>onSubmit</type>
         <ui_type>10</ui_type>
