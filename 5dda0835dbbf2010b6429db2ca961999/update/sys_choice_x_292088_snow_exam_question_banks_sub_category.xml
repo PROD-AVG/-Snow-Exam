@@ -886,15 +886,35 @@
             <name>x_292088_snow_exam_question_banks</name>
             <sequence>0</sequence>
             <synonyms/>
-            <sys_created_by>ADANG20</sys_created_by>
-            <sys_created_on>2023-09-08 15:11:49</sys_created_on>
+            <sys_created_by>adang20</sys_created_by>
+            <sys_created_on>2023-09-01 05:01:08</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>947e5213970531907fd7f97e6253af0a</sys_id>
+            <sys_id>228f480d078dfd500eb2f61d7c1ed0fb</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>ADANG20</sys_updated_by>
-            <sys_updated_on>2023-09-08 15:11:49</sys_updated_on>
+            <sys_updated_by>adang20</sys_updated_by>
+            <sys_updated_on>2023-09-01 05:01:08</sys_updated_on>
             <value>HRSD Process</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>sub_category</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>ITSM Process</label>
+            <language>en</language>
+            <name>x_292088_snow_exam_question_banks</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>adang20</sys_created_by>
+            <sys_created_on>2023-09-08 07:07:36</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>539fa853070d39900eb2f61d7c1ed01f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>adang20</sys_updated_by>
+            <sys_updated_on>2023-09-08 07:07:36</sys_updated_on>
+            <value>ITSM Process</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value>OTPPB</dependent_value>
