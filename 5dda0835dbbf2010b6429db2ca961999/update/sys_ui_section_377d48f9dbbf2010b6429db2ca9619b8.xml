@@ -3,42 +3,42 @@
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>comments</element>
             <position>0</position>
-            <sys_created_by>KNGUYEN236</sys_created_by>
-            <sys_created_on>2021-04-29 00:44:33</sys_created_on>
-            <sys_id>f37d48f9dbbf2010b6429db2ca9619b9</sys_id>
+            <sys_created_by>dnguyen322</sys_created_by>
+            <sys_created_on>2023-08-17 10:08:27</sys_created_on>
+            <sys_id>ca0684d407f07d100eb2f61d7c1ed094</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Comments and Work Notes" display_value="Comments and Work Notes" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">377d48f9dbbf2010b6429db2ca9619b8</sys_ui_section>
-            <sys_updated_by>KNGUYEN236</sys_updated_by>
-            <sys_updated_on>2021-04-29 00:44:33</sys_updated_on>
+            <sys_updated_by>dnguyen322</sys_updated_by>
+            <sys_updated_on>2023-08-17 10:08:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>work_notes</element>
             <position>1</position>
-            <sys_created_by>KNGUYEN236</sys_created_by>
-            <sys_created_on>2021-04-29 00:44:33</sys_created_on>
-            <sys_id>777d48f9dbbf2010b6429db2ca9619b9</sys_id>
+            <sys_created_by>dnguyen322</sys_created_by>
+            <sys_created_on>2023-08-17 10:08:27</sys_created_on>
+            <sys_id>ce0684d407f07d100eb2f61d7c1ed094</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter/>
             <sys_ui_section caption="Comments and Work Notes" display_value="Comments and Work Notes" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">377d48f9dbbf2010b6429db2ca9619b8</sys_ui_section>
-            <sys_updated_by>KNGUYEN236</sys_updated_by>
-            <sys_updated_on>2021-04-29 00:44:33</sys_updated_on>
+            <sys_updated_by>dnguyen322</sys_updated_by>
+            <sys_updated_on>2023-08-17 10:08:27</sys_updated_on>
             <sys_user/>
             <type/>
         </sys_ui_element>
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>activity.xml</element>
             <position>2</position>
-            <sys_created_by>KNGUYEN236</sys_created_by>
-            <sys_created_on>2021-04-29 00:44:33</sys_created_on>
-            <sys_id>f77d48f9dbbf2010b6429db2ca9619b9</sys_id>
+            <sys_created_by>dnguyen322</sys_created_by>
+            <sys_created_on>2023-08-17 10:08:27</sys_created_on>
+            <sys_id>c20684d407f07d100eb2f61d7c1ed095</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_ui_formatter display_value="Activities (filtered)">444ea5c6bf310100e628555b3f0739d6</sys_ui_formatter>
             <sys_ui_section caption="Comments and Work Notes" display_value="Comments and Work Notes" name="x_292088_snow_exam_snow_exam_case" sys_domain="global" view="Default view">377d48f9dbbf2010b6429db2ca9619b8</sys_ui_section>
-            <sys_updated_by>KNGUYEN236</sys_updated_by>
-            <sys_updated_on>2021-04-29 00:44:33</sys_updated_on>
+            <sys_updated_by>dnguyen322</sys_updated_by>
+            <sys_updated_on>2023-08-17 10:08:27</sys_updated_on>
             <sys_user/>
             <type>formatter</type>
         </sys_ui_element>
@@ -54,7 +54,7 @@
             <sys_domain_path>/</sys_domain_path>
             <sys_id>377d48f9dbbf2010b6429db2ca9619b8</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_name>Comments and Work Notes</sys_name>
+            <sys_name>x_292088_snow_exam_snow_exam_case</sys_name>
             <sys_overrides/>
             <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
             <sys_policy/>
