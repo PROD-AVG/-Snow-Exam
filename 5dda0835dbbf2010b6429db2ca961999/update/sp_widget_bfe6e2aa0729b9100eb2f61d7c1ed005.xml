@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function ($rootScope) {
+    /* widget controller */
+    var c = this;
+    c.data.items = $scope.data.items;
+    console.log('aaa ' + c.data.items);
+
+    c.openNav = function () {
+        document.getElementById("myNav").style.width = "75%";
+    };
+
+    c.closeNav = function () {
+        console.log('aaa');
+        document.getElementById("myNav").style.width = "0%";
+    };
+
+    c.openTab = function (tabId, btnId) {
+        var i;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tab = document.getElementsByClassName("tablink");
+
+        for (i = 0; i < tab.length; i++) {
+            tab[i].classList.remove("active-tab");
+        }
+
+        document.getElementById(tabId).style.display = "block";
+        document.getElementById(btnId).classList.add("active-tab")
+    };
+
+    $rootScope.$on('getExams', function(event, data) {
+        // c.server.get({
+        //     action: 'getExchangeRatesAccordingToCurrencyID',
+        //     currencyID: $rootScope.currencyID
+        // }).then(function(r) {
+        //     c.data.exchangeRates = r.data.exchangeRates;
+        //     c.data.currencyCode = $rootScope.currencyCode;
+        // });
+        c.data.test = $rootScope.test;
+    });
+
+    // $rootScope.test = 'vannnn';
+    // $rootScope.$emit('getExams');
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.btn-review {&#13;
+    font-size: 3.4rem;&#13;
+    font-weight: 600;&#13;
+    border-radius: 4rem;&#13;
+    padding: 10px 35px;&#13;
+    background-color: rebeccapurple;&#13;
+    color: white;&#13;
+}&#13;
+&#13;
+.overlay {&#13;
+    height: 100%;&#13;
+    width: 0;&#13;
+    // width: 75%;&#13;
+    position: fixed;&#13;
+    z-index: 1000;&#13;
+    top: 0;&#13;
+    right: 0;&#13;
+    background-color: white;&#13;
+    overflow-x: hidden;&#13;
+    transition: 0.5s;&#13;
+}&#13;
+&#13;
+.overlay-content {&#13;
+    display: flex;&#13;
+    border-bottom: solid 1px #dfdfdf;&#13;
+&#13;
+    div {&#13;
+        margin: 5px 10px;&#13;
+        text-align: center;&#13;
+        line-height: 75px;&#13;
+        font-size: 30px;&#13;
+    }&#13;
+}&#13;
+&#13;
+.overlay .closebtn {&#13;
+    position: absolute;&#13;
+    top: -10px;&#13;
+    right: 45px;&#13;
+    font-size: 60px;&#13;
+}&#13;
+&#13;
+.tablink {&#13;
+    background-color: white;&#13;
+    color: #555;&#13;
+    padding: 20px 50px;&#13;
+    font-size: 25px;&#13;
+    border: none;&#13;
+    outline: none;&#13;
+    cursor: pointer;&#13;
+&#13;
+    &amp;:hover,&#13;
+    &amp;:focus,&#13;
+    &amp;:active {&#13;
+        border-bottom: solid 3px #2786ff;&#13;
+    }&#13;
+&#13;
+    .bi-patch-check-fill {&#13;
+        color: #2786ff;&#13;
+        ;&#13;
+    }&#13;
+&#13;
+    .bi-bookmark-fill {&#13;
+        color: #fdaf1a;&#13;
+    }&#13;
+}&#13;
+&#13;
+.active-tab {&#13;
+    border-bottom: solid 3px #2786ff;&#13;
+}&#13;
+&#13;
+.tabcontent {&#13;
+    display: none;&#13;
+    padding: 10px 20px;&#13;
+    height: 100%;&#13;
+&#13;
+    .line {&#13;
+        display: flex;&#13;
+&#13;
+        i {&#13;
+            color: #fdaf1a;&#13;
+            margin: 10px 40px 10px 10px;&#13;
+            font-size: 20px;&#13;
+        }&#13;
+&#13;
+        span {&#13;
+            margin: 5px;&#13;
+            border: solid 2px #bdbbbb;&#13;
+            padding: 8px 15px;&#13;
+            border-radius: 30px;&#13;
+            font-size: 16px;&#13;
+            background-color: #dddcdc;&#13;
+        }&#13;
+&#13;
+        p {&#13;
+            margin: 15px 10px;&#13;
+            font-size: 16px;&#13;
+        }&#13;
+    }&#13;
+}&#13;
+&#13;
+.default-open {&#13;
+    display: block;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>exam-review-popup</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Exam Review Popup</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>VDANG25</sys_created_by>
+        <sys_created_on>2023-10-01 04:26:18</sys_created_on>
+        <sys_id>bfe6e2aa0729b9100eb2f61d7c1ed005</sys_id>
+        <sys_mod_count>47</sys_mod_count>
+        <sys_name>Exam Review Popup</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_bfe6e2aa0729b9100eb2f61d7c1ed005</sys_update_name>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-10-11 08:27:29</sys_updated_on>
+        <template><![CDATA[<div>
+    <button class="btn default btn-review" ng-click="c.openNav()">Default</button>
+    <p>{{c.data.test}}</p>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" ng-click="c.closeNav()">&times;</a>
+        <div class="overlay-content">
+            <button id="btn-all" class="tablink active-tab" ng-click="c.openTab('all', 'btn-all')">
+                <i class="bi bi-list-ul"></i>
+                <span>All</span>
+            </button>
+            <button id="btn-unanswered" class="tablink" ng-click="c.openTab('unanswered', 'btn-unanswered')">
+                <i class="bi bi-patch-exclamation-fill"></i>
+                <span>Unanswered</span>
+            </button>
+            <button id="btn-answered" class="tablink" ng-click="c.openTab('answered', 'btn-answered')">
+                <i class="bi bi-patch-check-fill"></i>
+                <span>Answered</span>
+            </button>
+            <button id="btn-marked" class="tablink" ng-click="c.openTab('marked', 'btn-marked')">
+                <i class="bi bi-bookmark-fill"></i>
+                <span>Marked for Review</span>
+            </button>
+        </div>
+
+        <div>
+            <div id="all" class="tabcontent default-open">
+                <div class="line">
+                    <i class="bi bi-bookmark-fill"></i>
+                    <span>1</span>
+                    <p>Signs of unhappy employees include (check all that apply)</p>
+                </div>
+            </div>
+
+            <div id="unanswered" class="tabcontent">
+                <h3>Unanswered</h3>
+            </div>
+
+            <div id="answered" class="tabcontent">
+                <h3>Answered</h3>
+            </div>
+
+            <div id="marked" class="tabcontent">
+                <h3>Marked for Review</h3>
+            </div>
+        </div>
+    </div>
+</div>]]></template>
+    </sp_widget>
+</record_update>
