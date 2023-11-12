@@ -2,495 +2,539 @@
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
         <client_script><![CDATA[api.controller = function (
-    $rootScope,
-    $scope,
-    $sce,
-    glideUserSession,
-    spModal,
-    $uibModal,
-    spUtil
+  $rootScope,
+  $scope,
+  $sce,
+  glideUserSession,
+  spModal,
+  $uibModal,
+  spUtil
 ) {
-    /* widget controller */
-    var c = this;
-    var g_form = $scope.page.g_form;
-    c.isBegun = false;
-    c.isTicketPage = false;
+	
+			
+  /* widget controller */
+  var c = this;
+  var g_form = $scope.page.g_form;
+  c.isBegun = false;
+  c.isTicketPage = false;
 
-    c.markedQuestions = [];
+  c.markedQuestions = [];
+  c.answeredQuestions = 0; // Van Dang
 
-    //Show Exam
-    c.showTest = function () {
-        //$scope.loadingIndicator = true;
-        var imageLoaded = document.getElementById("nhu-image").complete;
-        /*alert(imageCompleted);*/
-        while (!imageLoaded) {
-            alert(imageLoaded);
-            imageLoaded = document.getElementById("nhu-image").complete;
-        }
+  // hide submit button on form
+  $("#submit-btn").hide();
 
-        //snowCountDownTimerController();
-        //$scope.loadingIndicator = false;
-        c.modalInstance = $uibModal.open({
-            templateUrl: "modalTemplate",
-            scope: $scope,
-            size: "resize",
-            // backdrop: "static",
-        });
-        c.isBegun = !c.isBegun;
-        /*setTimeout(function () {
-          snowCountDownTimerController();
-          $scope.loadingIndicator = false;
-          c.modalInstance = $uibModal.open({
-            templateUrl: "modalTemplate",
-            scope: $scope,
-            size: "resize",
-            // backdrop: "static",
+  //Show Exam
+  c.showTest = function () {
+    $scope.loadingIndicator = true;
+    //var imageLoaded = document.getElementById("nhu-image").complete;
+    /*alert(imageCompleted);*/
+    /*while (!imageLoaded) {
+			//alert(imageLoaded);
+			imageLoaded = document.getElementById("nhu-image").complete;
+		}*/
+
+    snowCountDownTimerController();
+    // 		$scope.loadingIndicator = false;
+    // 		c.modalInstance = $uibModal.open({
+    // 			templateUrl: "modalTemplate",
+    // 			scope: $scope,
+    // 			size: "resize",
+    // 			// backdrop: "static",
+    // 		});
+    // 		c.isBegun = !c.isBegun;
+    setTimeout(function () {
+      snowCountDownTimerController();
+      $scope.loadingIndicator = false;
+      c.modalInstance = $uibModal.open({
+        templateUrl: "modalTemplate",
+        scope: $scope,
+        size: "resize",
+        // 				backdrop: "static",
+      });
+      c.isBegun = !c.isBegun;
+    }, 200);
+  };
+  //enter password
+ c.onPrompt = function () {
+  var backgroundImg = document.getElementById("preload-background");
+  if (backgroundImg.complete) {
+    checkAndShowTest();
+  } else {
+			$scope.loadingIndicator = true;
+      backgroundImg.onload = (e) => {
+        checkAndShowTest();
+    };
+  }
+
+};
+
+checkAndShowTest = function(){
+  if ($scope.data.password == null || $scope.data.password == "") {
+    c.showTest();
+  } else {
+    spModal.prompt("Test Code, Please", c.name).then(function (name) {
+      c.name = name;
+
+      if (c.name == $scope.data.password) {
+        spModal
+          .alert(
+            "Your exam will last in " +
+            $scope.data.duration +
+            " minutes. Are you ready?"
+          )
+          .then(function (answer) {
+            c.simple = answer;
+            if (answer == true) {
+              var image = document.querySelector("img");
+              var load = image.complete;
+              console.log("Load" + load);
+              c.showTest();
+            }
           });
-          c.isBegun = !c.isBegun;
-        }, 3000);*/
-    };
-    //enter password
-    c.onPrompt = function () {
-        // window.open(c.template, null, "popup");
-
-        if ($scope.data.password == null || $scope.data.password == "") {
-            c.showTest();
-        } else {
-            spModal.prompt("Test Code, Please", c.name).then(function (name) {
-                c.name = name;
-
-                if (c.name == $scope.data.password) {
-                    spModal
-                        .alert(
-                            "Your exam will last in " +
-                            $scope.data.duration +
-                            " minutes. Are you ready?"
-                        )
-                        .then(function (answer) {
-                            c.simple = answer;
-                            if (answer == true) {
-                                var image = document.querySelector('img');
-                                var load = image.complete;
-                                console.log("Load" + load);
-                                c.showTest();
-                            }
-                        });
-                } else {
-                    spModal
-                        .alert("Incorrect Code, try again or reach out to ADMIN")
-                        .then(function (answer) {
-                            c.simple = answer;
-                            if (answer == true) {
-                                c.onPrompt();
-                            }
-                        });
-                }
-            });
-        }
-    };
-
-    c.closeModal = function () {
-        var warning = '<i class="bi bi-exclamation-triangle"></i>';
-        var closeOptions = {
-            title: warning + " WARNING !!!",
-            widget: "reminderclose",
-            widgetInput: {},
-            buttons: [
-                { label: "Cancel", value: "cancel", class: "cancel" },
-                {
-                    label: "Continue",
-                    primary: true,
-                    value: "continue",
-                    // class: "continue-btn disabled",
-                },
-            ],
-            footerStyle: {
-                border: "none",
-            },
-        };
-        spModal.open(closeOptions).then(function (input) {
-            if (input.label == "Continue") {
-                c.isBegun = false;
-                localStorage.removeItem("item");
-                localStorage.removeItem("examData");
-                localStorage.removeItem("duration");
-                localStorage.removeItem("distance");
-                c.modalInstance.close();
-                window.onbeforeunload = null;
-                location.reload(true);
+      } else {
+        spModal
+          .alert("Incorrect Code, try again or reach out to ADMIN")
+          .then(function (answer) {
+            c.simple = answer;
+            if (answer == true) {
+              c.onPrompt();
             }
-        });
+          });
+      }
+    });
+  }
+}
+
+  c.closeModal = function () {
+    var warning = '<i class="bi bi-exclamation-triangle"></i>';
+    var closeOptions = {
+      title: warning + " WARNING !!!",
+      widget: "reminderclose",
+      widgetInput: {},
+      buttons: [
+        {
+          label: "Cancel",
+          value: "cancel",
+          class: "cancel",
+        },
+        {
+          label: "Continue",
+          primary: true,
+          value: "continue",
+          // class: "continue-btn disabled",
+        },
+      ],
+      footerStyle: {
+        border: "none",
+      },
     };
+    spModal.open(closeOptions).then(function (input) {
+      if (input.label == "Continue") {
+        c.isBegun = false;
+        localStorage.removeItem("item");
+        localStorage.removeItem("examData");
+        localStorage.removeItem("duration");
+        localStorage.removeItem("distance");
+        c.modalInstance.close();
+        window.onbeforeunload = null;
+        location.reload(true);
+      }
+    });
+  };
 
-    // On Load Ticket Page
-    $scope.checkCorrectAnswer = function (key, question) {
-        var correctAnswers = question.correctAnswers.toLowerCase();
-        var keyAnswer = key.label.toLowerCase();
-        var found = false;
+  // On Load Ticket Page
+  $scope.checkCorrectAnswer = function (key, question) {
+    var correctAnswers = question.correctAnswers.toLowerCase();
+    var keyAnswer = key.label.toLowerCase();
+    var found = false;
 
-        //found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
-        found = correctAnswers.includes(keyAnswer);
-        if (correctAnswers.split(",").length == 1) {
-            found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
+    //found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
+    found = correctAnswers.includes(keyAnswer);
+    if (correctAnswers.split(",").length == 1) {
+      found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
+    }
+    if (found) {
+      return "fa fa-check";
+    } else {
+      return "fa fa-times";
+    }
+  };
+
+  // On Change
+  $scope.selectKey = function (event, keySelected, question) {
+    if (c.isTicketPage == true) {
+      g_form.addErrorMessage("You are not allow to edit");
+      return;
+    }
+
+    var isSelected = !$(event.currentTarget).hasClass("element-selected");
+    if (question.type == "Multiple Choice") {
+      if (isSelected) {
+        question.answerSelected.push(keySelected);
+        keySelected.isSected = "selected";
+        //c.answeredQuestions += 1; // Van Dang
+      } else {
+        for (var i = 0; i < question.answerSelected.length; i++) {
+          if (question.answerSelected[i].label == keySelected.label) {
+            question.answerSelected.splice(i, 1);
+          }
         }
-        if (found) {
-            return "fa fa-check";
-        } else {
-            return "fa fa-times";
+        keySelected.isSected = "unSelected";
+        //c.answeredQuestions -= 1; //Van Dang
+      }
+    } else {
+      //Remove all selected
+      for (var i = 0; i < question.keys.length; i++) {
+        var text = question.keys[i];
+        question.answerSelected.splice(i, 1);
+        text.isSected = "unSelected";
+        // console.log("Label : " + text.label + " - isSelected : " + text.isSected);
+      }
+      //Hold current select
+      if (isSelected) {
+        question.answerSelected.push(keySelected);
+        keySelected.isSected = "selected";
+      } else {
+        for (var i = 0; i < question.answerSelected.length; i++) {
+          if (question.answerSelected[i].label == keySelected.label) {
+            question.answerSelected.splice(i, 1);
+          }
         }
-    };
-
-    // On Change
-    $scope.selectKey = function (event, keySelected, question) {
-        if (c.isTicketPage == true) {
-            g_form.addErrorMessage("You are not allow to edit");
-            return;
-        }
-
-        var isSelected = !$(event.currentTarget).hasClass("element-selected");
-        if (question.type == "Multiple Choice") {
-            if (isSelected) {
-                question.answerSelected.push(keySelected);
-                keySelected.isSected = "selected";
-            } else {
-                for (var i = 0; i < question.answerSelected.length; i++) {
-                    if (question.answerSelected[i].label == keySelected.label) {
-                        question.answerSelected.splice(i, 1);
-                    }
-                }
-                keySelected.isSected = "unSelected";
-            }
-        } else {
-            //Remove all selected
-            for (var i = 0; i < question.keys.length; i++) {
-                var text = question.keys[i];
-                question.answerSelected.splice(i, 1);
-                text.isSected = "unSelected";
-                // console.log("Label : " + text.label + " - isSelected : " + text.isSected);
-            }
-            //Hold current select
-            if (isSelected) {
-                question.answerSelected.push(keySelected);
-                keySelected.isSected = "selected";
-            } else {
-                for (var i = 0; i < question.answerSelected.length; i++) {
-                    if (question.answerSelected[i].label == keySelected.label) {
-                        question.answerSelected.splice(i, 1);
-                    }
-                }
-                keySelected.isSected = "unSelected";
-            }
-        }
-        //Old version
-        // if (isSelected) {
-        //   question.answerSelected.push(keySelected);
-        //   keySelected.isSected = "selected";
-        // } else {
-        //   for (var i = 0; i < question.answerSelected.length; i++) {
-        //     if (question.answerSelected[i].label == keySelected.label) {
-        //       question.answerSelected.splice(i, 1);
-        //     }
-        //   }
-        //   keySelected.isSected = "unSelected";
-        // }
-
-        // Set value to dataload field
-        var field = "dataload";
-        var dataStr = JSON.stringify(c.data.items);
-        g_form.setValue(field, dataStr);
-        // save session
-        localStorage.setItem("item", $scope.data.catItem);
-        localStorage.setItem("examData", dataStr);
-        localStorage.setItem("duration", localStorage.getItem("distance"));
-    };
-
-    // Loading Question and check selected
-    // $scope.checkSelected = function (key, question) {
+        keySelected.isSected = "unSelected";
+      }
+    }
+    //Old version
+    // if (isSelected) {
+    //   question.answerSelected.push(keySelected);
+    //   keySelected.isSected = "selected";
+    // } else {
     //   for (var i = 0; i < question.answerSelected.length; i++) {
-    //     if (question.answerSelected[i].label == key.label) {
-    //       return "selected";
-    //     } else {
-    //       return "";
+    //     if (question.answerSelected[i].label == keySelected.label) {
+    //       question.answerSelected.splice(i, 1);
     //     }
     //   }
-    // };
+    //   keySelected.isSected = "unSelected";
+    // }
 
-    // On New Cate Item Page Load
-    if ($scope.data.page == "sc_cat_item") {
-        // Check local Session
-        if (
-            localStorage.getItem("item") &&
-            localStorage.getItem("item") == $scope.data.catItem
-        ) {
-            // Set value to dataload field
-            var field = "dataload";
-            var dataStr = JSON.stringify(c.data.items);
-            g_form.setValue(field, dataStr);
-            c.data.items = JSON.parse(localStorage.getItem("examData"));
-        } else {
-            c.data.items = $scope.data.items;
-        }
-
-        for (var k in c.data.items) {
-            c.data.items[k].answerSelected = [];
-            for (var j in k.keys) {
-                k.keys[j].isSected = "unSelected";
-            }
-        }
-
-        if (!localStorage.getItem("item")) {
-            c.data.items = shuffle(c.data.items);
-        }
-    }
-
-    // On TicketPage
-    if ($scope.data.page == "ticket") {
-        c.data.items = $scope.data.items;
-        c.isBegun = true;
-        c.isTicketPage = true;
-    }
-
-    function shuffle(sourceArray) {
-        for (var i = 0; i < sourceArray.length - 1; i++) {
-            var j = i + Math.floor(Math.random() * (sourceArray.length - i));
-
-            var temp = sourceArray[j];
-            sourceArray[j] = sourceArray[i];
-            sourceArray[i] = temp;
-        }
-        return sourceArray;
-    }
-
-    //Pagination
-    c.indexStart = 0;
-    c.range = $scope.data.limit;
-    c.indexEnd = c.range - 1;
-    c.currentPage = 1;
-
-    $scope.goToPage = function (page) {
-        var pre = c.currentPage;
-        c.currentPage = page;
-        c.updateProgress(c.currentPage);
-        if (page == "end") c.currentPage = $scope.data.pages.length;
-        $scope.data.temp = c.currentPage;
-        c.indexStart = c.indexStart + c.range * (c.currentPage - pre);
-        c.indexEnd = c.indexEnd + c.range * (c.currentPage - pre);
-    };
-    var timeline = document.getElementsByClassName("timeline");
-    // Display submit button
-    c.submitBtn = function () {
-        $rootScope.$broadcast("submitBtn", "");
-    };
-    $scope.goNextPage = function (page) {
-        c.number = $scope.data.temp;
-        c.currentPage = page;
-        if (c.number != $scope.data.pages.length && page == "next") {
-            if (c.number == 0) {
-                c.number = 1;
-            }
-            c.indexStart = c.number;
-            c.indexEnd = c.number;
-            c.number = c.number + 1;
-            c.updateProgress(c.number);
-            $scope.data.temp = c.number;
-            c.currentPage = c.number;
-            // document.getElementById("btn-button btn1").disabled = false;
-        } else if (c.number == $scope.data.pages.length && page == "next") {
-            // 			document.getElementById("btn-button btn2").disabled = true;
-            c.indexStart = 0;
-            c.indexEnd = 0;
-            c.number = 1;
-            $scope.data.temp = c.number;
-            c.currentPage = c.number;
-        }
-
-        //trigger to random background
-        //c.server.update().then(function(){
-        //c.data.changeBackground='true';
-        //c.data.temp = c.number;
-        //});
-    };
-
-    $scope.goPreviousPage = function (page) {
-        c.number = $scope.data.temp;
-        c.currentPage = page;
-
-        if (
-            c.number == 1 &&
-            c.indexStart < 1 &&
-            c.indexEnd < 1 &&
-            page == "previous"
-        ) {
-            c.indexStart = $scope.data.pages.length - 1;
-            c.indexEnd = $scope.data.pages.length - 1;
-            c.number = $scope.data.pages.length;
-            $scope.data.temp = c.number;
-            c.currentPage = c.number;
-        } else if (
-            c.number > 0 &&
-            c.indexStart != -1 &&
-            c.indexEnd != -1 &&
-            page == "previous"
-        ) {
-            c.number = c.number - 1;
-            c.indexStart = c.number - 1;
-            c.indexEnd = c.number - 1;
-            c.updateProgress(c.number);
-            $scope.data.temp = c.number;
-            c.currentPage = c.number;
-        }
-    };
-
-    //Progress Bar
-    var total = c.data.pages.length;
-    c.updateProgress = function (number) {
-        var percent = (number / total) * 100;
-        var perString = percent.toString();
-        setTimeout(function () {
-            $("#timeline").css("width", perString + "%");
-        }, 100);
-        // console.log(perString);
-        // if (window)
-        //   // if CMS, don't run this
-        //   return;
-    };
+    // Set value to dataload field
+    var field = "dataload";
+    var dataStr = JSON.stringify(c.data.items);
+    g_form.setValue(field, dataStr);
+    // save session
+    localStorage.setItem("item", $scope.data.catItem);
+    localStorage.setItem("examData", dataStr);
+    localStorage.setItem("duration", localStorage.getItem("distance"));
 
     // Van Dang
-    c.openNav = function () {
-        document.getElementById("myNav").style.width = "65%";
-    };
-
-    c.closeNav = function () {
-        document.getElementById("myNav").style.width = "0%";
-    };
-
-    c.openTab = function (tabId, btnId) {
-        var i;
-
-        tabcontent = document.getElementsByClassName("tabcontent");
-
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-
-        tab = document.getElementsByClassName("tablink");
-
-        for (i = 0; i < tab.length; i++) {
-            tab[i].classList.remove("active-tab");
-        }
-
-        document.getElementById(tabId).style.display = "block";
-        document.getElementById(btnId).classList.add("active-tab");
-    };
-
-    //Nhu Dang
-    $scope.markQuestion = function () {
-        if (
-            document.getElementsByClassName("mark4review-btn")[0].checked === true
-        ) {
-            var markedQuestion =
-                document.getElementsByClassName("questionIndex")[0].textContent;
-            c.markedQuestions.push(markedQuestion);
-        } else {
-            var currentQuestion =
-                document.getElementsByClassName("questionIndex")[0].textContent;
-            var currentIndex = c.markedQuestions.indexOf(currentQuestion);
-            //In case users untick an existing marked question
-            if (currentIndex !== -1) {
-                c.markedQuestions.splice(currentIndex, 1);
-            }
-        }
-    };
-
-    $scope.onLoadQuestion = function () {
-        setTimeout(function () {
-            var currentQuestion =
-                document.getElementsByClassName("questionIndex")[0].textContent;
-            if (c.markedQuestions.indexOf(currentQuestion) === -1) {
-                document.getElementsByClassName("mark4review-btn")[0].checked = false;
-            } else {
-                document.getElementsByClassName("mark4review-btn")[0].checked = true;
-            }
-        }, 0);
-    };
-
-    //Manh Kien
-    function snowCountDownTimerController() {
-        /* widget controller */
-        c.duration = c.data.duration;
-        if (
-            localStorage.getItem("item") &&
-            localStorage.getItem("item") == $scope.data.itemSysId
-        ) {
-            console.log("go here: " + c.duration);
-            var timeLeftSec = localStorage.getItem("duration");
-            var timeLeftMinutes = Math.floor(
-                (timeLeftSec % (1000 * 60 * 60)) / (1000 * 60)
-            );
-            c.duration = timeLeftMinutes;
-
-            console.log("go here 2: " + c.duration);
-        }
-
-        var g_form = $("sp-variable-layout").scope().getGlideForm();
-        var countDownDate = new Date();
-        countDownDate = countDownDate.setMinutes(
-            countDownDate.getMinutes() + c.duration
-        );
-        //countDownDate = countDownDate.getTime();
-
-        // Update the count down every 1 second
-        var x = setInterval(function () {
-            var queryString = window.location.search;
-            var urlParams = new URLSearchParams(queryString);
-            var id = urlParams.get("id");
-            //Clear Inteval if not cat page
-
-            if (id == "ticket") {
-                clearInterval(x);
-                return;
-            }
-
-            // Get today's date and time
-            var now = new Date().getTime();
-
-            // Find the distance between now and the count down date
-            var distance = countDownDate - now;
-            localStorage.setItem("distance", JSON.stringify(distance));
-
-            // Time calculations for days, hours, minutes and seconds
-            var hours = Math.floor(
-                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-            );
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            // Output the result in an element with id="demo"
-
-            // Apply the blink effect using CSS animations
-            document.getElementById("timer").innerHTML =
-                minutes + "<p style='color: gray; font-size: 12px;'>MIN</p>";
-            if (minutes <= 2) {
-                document.getElementById("timeout").classList.add("blink");
-            } else {
-                document.getElementById("timeout").classList.remove("blink");
-            }
-
-            // If the count down is over, write some text
-            if (distance < 0) {
-                localStorage.removeItem("duration");
-                localStorage.removeItem("distance");
-                clearInterval(x);
-                if (document.getElementById("timer")) {
-                    document.getElementById("timer").innerHTML =
-                        "<span font-size: 18px;'>EXPIRED</span>";
-                }
-                //Auto submit
-                g_form.setValue("is_expired", true);
-                $("button[name='submit'")[0].click();
-            }
-        }, 1000);
+    //         if (question.answerSelected.length == 0) {
+    //             c.answeredQuestions = c.answeredQuestions - 1;
+    //         }
+    // 		if(question.answerSelected.length != 0) {
+    //             c.answeredQuestions = c.answeredQuestions + 1;
+    //         }
+    c.answeredQuestions = 0;
+    for (var i = 0; i < c.data.items.length; i++) {
+      var x = c.data.items[i];
+      if (x.answerSelected.length != 0) {
+        c.answeredQuestions += 1;
+      }
     }
+  };
+
+  // Loading Question and check selected
+  $scope.checkSelected = function (key, question) {
+    for (var i = 0; i < question.answerSelected.length; i++) {
+      if (question.answerSelected[i].label == key.label) {
+        return "selected";
+      } else {
+        return "";
+      }
+    }
+  };
+
+  // On New Cate Item Page Load
+  if ($scope.data.page == "sc_cat_item") {
+    // Check local Session
+    if (
+      localStorage.getItem("item") &&
+      localStorage.getItem("item") == $scope.data.catItem
+    ) {
+      // Set value to dataload field
+      var field = "dataload";
+      var dataStr = JSON.stringify(c.data.items);
+      g_form.setValue(field, dataStr);
+      c.data.items = JSON.parse(localStorage.getItem("examData"));
+    } else {
+      c.data.items = $scope.data.items;
+    }
+
+    for (var k in c.data.items) {
+      c.data.items[k].answerSelected = [];
+      for (var j in k.keys) {
+        k.keys[j].isSected = "unSelected";
+      }
+    }
+
+    if (!localStorage.getItem("item")) {
+      c.data.items = shuffle(c.data.items);
+    }
+  }
+
+  // On TicketPage
+  if ($scope.data.page == "ticket") {
+    c.data.items = $scope.data.items;
+    c.isBegun = true;
+    c.isTicketPage = true;
+  }
+
+  function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+      var temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+    }
+    return sourceArray;
+  }
+
+  //Pagination
+  c.indexStart = 0;
+  c.range = $scope.data.limit;
+  c.indexEnd = c.range - 1;
+  c.currentPage = 1;
+
+  $scope.goToPage = function (page) {
+    var pre = c.currentPage;
+    c.currentPage = page;
+    c.updateProgress(c.currentPage);
+    if (page == "end") c.currentPage = $scope.data.pages.length;
+    $scope.data.temp = c.currentPage;
+    c.indexStart = c.indexStart + c.range * (c.currentPage - pre);
+    c.indexEnd = c.indexEnd + c.range * (c.currentPage - pre);
+
+    c.closeNav(); // Van Dang
+  };
+  var timeline = document.getElementsByClassName("timeline");
+  // Display submit button
+  c.submitBtn = function () {
+    $rootScope.$broadcast("submitBtn");
+  };
+  $scope.goNextPage = function (page) {
+    c.number = $scope.data.temp;
+    c.currentPage = page;
+    if (c.number != $scope.data.pages.length && page == "next") {
+      if (c.number == 0) {
+        c.number = 1;
+      }
+      c.indexStart = c.number;
+      c.indexEnd = c.number;
+      c.number = c.number + 1;
+      c.updateProgress(c.number);
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+      // document.getElementById("btn-button btn1").disabled = false;
+    } else if (c.number == $scope.data.pages.length && page == "next") {
+      // 			document.getElementById("btn-button btn2").disabled = true;
+      c.indexStart = 0;
+      c.indexEnd = 0;
+      c.number = 1;
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+    }
+
+    //trigger to random background
+    //c.server.update().then(function(){
+    //c.data.changeBackground='true';
+    //c.data.temp = c.number;
+    //});
+  };
+
+  $scope.goPreviousPage = function (page) {
+    c.number = $scope.data.temp;
+    c.currentPage = page;
+
+    if (
+      c.number == 1 &&
+      c.indexStart < 1 &&
+      c.indexEnd < 1 &&
+      page == "previous"
+    ) {
+      c.indexStart = $scope.data.pages.length - 1;
+      c.indexEnd = $scope.data.pages.length - 1;
+      c.number = $scope.data.pages.length;
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+    } else if (
+      c.number > 0 &&
+      c.indexStart != -1 &&
+      c.indexEnd != -1 &&
+      page == "previous"
+    ) {
+      c.number = c.number - 1;
+      c.indexStart = c.number - 1;
+      c.indexEnd = c.number - 1;
+      c.updateProgress(c.number);
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+    }
+  };
+
+  //Progress Bar
+  var total = c.data.pages.length;
+  c.updateProgress = function (number) {
+    var percent = (number / total) * 100;
+    var perString = percent.toString();
+    setTimeout(function () {
+      $("#timeline").css("width", perString + "%");
+    }, 100);
+    // console.log(perString);
+    // if (window)
+    //   // if CMS, don't run this
+    //   return;
+  };
+
+  // Van Dang
+  c.openNav = function () {
+    document.getElementById("myNav").style.width = "65%";
+    document.getElementById("reviewBackground").style.width = "100%";
+    document.getElementById("reviewCloseBtn").style.display = "block";
+  };
+
+  c.closeNav = function () {
+    document.getElementById("myNav").style.width = "0%";
+    document.getElementById("reviewBackground").style.width = "0%";
+    document.getElementById("reviewCloseBtn").style.display = "none";
+  };
+
+  c.openTab = function (tabId, btnId) {
+    var i;
+
+    tabcontent = document.getElementsByClassName("tabcontent");
+
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    tab = document.getElementsByClassName("tablink");
+
+    for (i = 0; i < tab.length; i++) {
+      tab[i].classList.remove("active-tab");
+    }
+
+    document.getElementById(tabId).style.display = "block";
+    document.getElementById(btnId).classList.add("active-tab");
+  };
+
+  //Nhu Dang
+  $scope.markQuestion = function () {
+    if (
+      document.getElementsByClassName("mark4review-btn")[0].checked === true
+    ) {
+      var markedQuestion =
+        document.getElementsByClassName("questionIndex")[0].textContent;
+      c.markedQuestions.push(markedQuestion);
+    } else {
+      var currentQuestion =
+        document.getElementsByClassName("questionIndex")[0].textContent;
+      var currentIndex = c.markedQuestions.indexOf(currentQuestion);
+      //In case users untick an existing marked question
+      if (currentIndex !== -1) {
+        c.markedQuestions.splice(currentIndex, 1);
+      }
+    }
+  };
+
+  $scope.onLoadQuestion = function () {
+    setTimeout(function () {
+      var currentQuestion =
+        document.getElementsByClassName("questionIndex")[0].textContent;
+      if (c.markedQuestions.indexOf(currentQuestion) === -1) {
+        document.getElementsByClassName("mark4review-btn")[0].checked = false;
+      } else {
+        document.getElementsByClassName("mark4review-btn")[0].checked = true;
+      }
+    }, 0);
+  };
+
+  //Manh Kien
+  function snowCountDownTimerController() {
+    /* widget controller */
+    c.duration = c.data.duration;
+    if (
+      localStorage.getItem("item") &&
+      localStorage.getItem("item") == $scope.data.itemSysId
+    ) {
+      console.log("go here: " + c.duration);
+      var timeLeftSec = localStorage.getItem("duration");
+      var timeLeftMinutes = Math.floor(
+        (timeLeftSec % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      c.duration = timeLeftMinutes;
+
+      console.log("go here 2: " + c.duration);
+    }
+
+    var g_form = $("sp-variable-layout").scope().getGlideForm();
+    var countDownDate = new Date();
+    countDownDate = countDownDate.setMinutes(
+      countDownDate.getMinutes() + c.duration
+    );
+    //countDownDate = countDownDate.getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+      var queryString = window.location.search;
+      var urlParams = new URLSearchParams(queryString);
+      var id = urlParams.get("id");
+      //Clear Inteval if not cat page
+
+      if (id == "ticket") {
+        clearInterval(x);
+        return;
+      }
+
+      // Get today's date and time
+      var now = new Date().getTime();
+
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+      localStorage.setItem("distance", JSON.stringify(distance));
+
+      // Time calculations for days, hours, minutes and seconds
+      var hours = Math.floor(
+        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Output the result in an element with id="demo"
+
+      // Apply the blink effect using CSS animations
+      document.getElementById("timer").innerHTML =
+        minutes + "<p style='color: gray; font-size: 12px;'>MIN</p>";
+      if (minutes <= 2) {
+        document.getElementById("timeout").classList.add("blink");
+      } else {
+        document.getElementById("timeout").classList.remove("blink");
+      }
+
+      // If the count down is over, write some text
+      if (distance < 0) {
+        localStorage.removeItem("duration");
+        localStorage.removeItem("distance");
+        clearInterval(x);
+        if (document.getElementById("timer")) {
+          document.getElementById("timer").innerHTML =
+            "<span font-size: 18px;'>EXPIRED</span>";
+        }
+        //Auto submit
+        g_form.setValue("is_expired", true);
+        $("button[name='submit'")[0].click();
+      }
+    }, 1000);
+  }
 };
 ]]></client_script>
         <controller_as>c</controller_as>
@@ -517,7 +561,6 @@
   left: 50%;
   top: 50%;
 }
-
 
 /* Btn and Timer */
 
@@ -622,7 +665,7 @@
   padding: 0px;
   background-color: #5f249f;
   border-radius: 10px;
-  transition: 1s
+  transition: 1s;
 }
 
 .test-options {
@@ -696,125 +739,124 @@
 }
 /*Start button*/
 #container {
-    margin-block: 100px;
-    font-family: "Outfit", sans-serif;
-    display: flex;
-    justify-content: center;
+  margin-block: 100px;
+  font-family: "Outfit", sans-serif;
+  display: flex;
+  justify-content: center;
 }
 .start-button {
-    color: #5F249F;
+  color: #5f249f;
 }
 #container .button {
-    overflow: hidden;
-    text-transform: uppercase;
-    position: relative;
-    padding: 16px 30px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #5F249F;
-    // border: 2px solid rgba(0, 0, 0, 0.5);
-    // border: 2px solid #fff;
-    border: 2px solid hsla(269, 63%, 38%, 0.4);
-    border-radius: 12px;
-    text-shadow: 0 0 15px hsla(269, 63%, 38%, 0.8);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    transition: 0.3s;
-    z-index: 1;
+  overflow: hidden;
+  text-transform: uppercase;
+  position: relative;
+  padding: 16px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #5f249f;
+  // border: 2px solid rgba(0, 0, 0, 0.5);
+  // border: 2px solid #fff;
+  border: 2px solid hsla(269, 63%, 38%, 0.4);
+  border-radius: 12px;
+  text-shadow: 0 0 15px hsla(269, 63%, 38%, 0.8);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  transition: 0.3s;
+  z-index: 1;
 }
 #container .button:hover {
-    color: #fff;
-    // border: 2px solid rgba(0, 0, 0, 0, 0);
-    // box-shadow: 0 0 0px hsla(269, 63%, 38%, 0.3);
-    // border: 2px solid hsla(269, 63%, 38%, 0.3);
-    border-radius: 12px;
-    font-weight: 600;
+  color: #fff;
+  // border: 2px solid rgba(0, 0, 0, 0, 0);
+  // box-shadow: 0 0 0px hsla(269, 63%, 38%, 0.3);
+  // border: 2px solid hsla(269, 63%, 38%, 0.3);
+  border-radius: 12px;
+  font-weight: 600;
 }
 .button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #5F249F;
-    z-index: -1;
-    transform: scale(0);
-    transition: 0.3s;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #5f249f;
+  z-index: -1;
+  transform: scale(0);
+  transition: 0.3s;
 }
 .button:hover::before {
-    transform: scale(1);
-    border-radius: 10px;
-    transition-delay: 0.1s;
-    box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7), 0 0 30px hsla(269, 63%, 38%, 0.7), 0 0 60px hsla(269, 63%, 38%, 0.7);
+  transform: scale(1);
+  border-radius: 10px;
+  transition-delay: 0.1s;
+  box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7),
+    0 0 30px hsla(269, 63%, 38%, 0.7), 0 0 60px hsla(269, 63%, 38%, 0.7);
 }
 .button span {
-    position: absolute;
-    background: hsla(269, 63%, 38%, 0.8);
-    pointer-events: none;
-    border-radius: 2px;
-    box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7),
-        0 0 20px hsla(269, 63%, 38%, 0.7),
-        0 0 30px hsla(269, 63%, 38%, 0.7),
-        0 0 50px hsla(269, 63%, 38%, 0.7),
-        0 0 100px hsla(269, 63%, 38%, 0.7);
-    transition: 0.3s ease-in-out;
-    transition-delay: 0.25s;
+  position: absolute;
+  background: hsla(269, 63%, 38%, 0.8);
+  pointer-events: none;
+  border-radius: 2px;
+  box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7),
+    0 0 20px hsla(269, 63%, 38%, 0.7), 0 0 30px hsla(269, 63%, 38%, 0.7),
+    0 0 50px hsla(269, 63%, 38%, 0.7), 0 0 100px hsla(269, 63%, 38%, 0.7);
+  transition: 0.3s ease-in-out;
+  transition-delay: 0.25s;
 }
 .button:hover span {
-    opacity: 0;
-    transition-delay: 0s;
+  opacity: 0;
+  transition-delay: 0s;
 }
 .button span:nth-child(1),
 .button span:nth-child(3) {
-    width: 30px;
-    height: 4px;
+  width: 30px;
+  height: 4px;
 }
 .button:hover span:nth-child(1),
 .button:hover span:nth-child(3) {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 .button span:nth-child(2),
 .button span:nth-child(4) {
-    width: 4px;
-    height: 30px;
+  width: 4px;
+  height: 30px;
 }
 .button:hover span:nth-child(1),
 .button:hover span:nth-child(3) {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 .button span:nth-child(1) {
-    top: calc(50% - 2px);
-    left: -40px;
-    transform-origin: left;
+  top: calc(50% - 2px);
+  left: -40px;
+  transform-origin: left;
 }
 .button:hover span:nth-child(1) {
-    left: 50%;
+  left: 50%;
 }
 .button span:nth-child(3) {
-    top: calc(50% - 2px);
-    right: -40px;
-    transform-origin: right;
+  top: calc(50% - 2px);
+  right: -40px;
+  transform-origin: right;
 }
 .button:hover span:nth-child(3) {
-    right: 50%;
+  right: 50%;
 }
 .button span:nth-child(2) {
-    left: calc(50% - 2px);
-    top: -40px;
-    transform-origin: top;
+  left: calc(50% - 2px);
+  top: -40px;
+  transform-origin: top;
 }
 .button:hover span:nth-child(2) {
-    top: 50%;
+  top: 50%;
 }
 .button span:nth-child(4) {
-    left: calc(50% - 2px);
-    bottom: -40px;
-    transform-origin: bottom;
+  left: calc(50% - 2px);
+  bottom: -40px;
+  transform-origin: bottom;
 }
 .button:hover span:nth-child(4) {
-    bottom: 50%;
+  bottom: 50%;
 }
 
 /*End start button*/
@@ -1109,15 +1151,15 @@
     }
 
     .question-title {
-        margin: 15px 10px;
-        font-size: 1.6rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        line-height: 20px;
-     }
+      margin: 15px 10px;
+      font-size: 1.6rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      line-height: 20px;
+    }
   }
 }
 
@@ -1411,7 +1453,7 @@ label {
   }
 
   .mark4review input:checked + label {
-    background: #bada55;
+    background: #fdaf1a;
   }
 
   .mark4review input:checked + label:after {
@@ -1643,11 +1685,17 @@ label {
   // }
 }
 
-.preload-background{
-  visibility: hidden;
-  position: absolute;
-  z-index: 1;
-}</css>
+#preload-background {
+  //visibility: hidden;
+  //display: none;
+  position: fixed;
+  z-index: -1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+</css>
         <data_table>sp_instance</data_table>
         <demo_data/>
         <description/>
@@ -1781,16 +1829,16 @@ label {
         <sys_created_by>NHUYNH29</sys_created_by>
         <sys_created_on>2023-09-21 19:56:56</sys_created_on>
         <sys_id>335c52ab071d7d100eb2f61d7c1ed036</sys_id>
-        <sys_mod_count>1655</sys_mod_count>
+        <sys_mod_count>1731</sys_mod_count>
         <sys_name>New Snow Exam Loader </sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_335c52ab071d7d100eb2f61d7c1ed036</sys_update_name>
-        <sys_updated_by>DDOAN30</sys_updated_by>
-        <sys_updated_on>2023-10-20 05:49:14</sys_updated_on>
+        <sys_updated_by>htran210</sys_updated_by>
+        <sys_updated_on>2023-10-27 05:48:03</sys_updated_on>
         <template><![CDATA[<div class="exam-wrapper">
-  <img src="{{data.background}}" class="preload-background" id="nhu-image">
+  <img src="{{data.background}}" id="preload-background" onload="c.preloadImage()">
   <div id="container">
     <div class="row">
     <div class="col col-md-12">
@@ -1817,7 +1865,8 @@ label {
 
 <script type="text/ng-template" id="modalTemplate">
 <div id="test-snow-background" ng-style="{'background-image':'url({{data.background}})'}">
-
+<div class="blur-bg">
+</div>
  <!-- Manh Kien -->
  <div class="countdown-widget">
     <!-- Hình chữ nhật bên ngoài với góc bo tròn -->
@@ -1827,7 +1876,7 @@ label {
         <div class="countdown-timer" id="timer"></div>
     </div>
       <!-- "Exam Test" text cách xa hình vuông -->
-      <div class="exam-text"><b>Exam <br> Time Start</div>
+      <div class="exam-text"><b>Exam <br> Time</div>
     </div>
 
   </div>
@@ -1932,59 +1981,56 @@ label {
     </button>
     </div>
   <!-- Van Dang -->
-  <div>
+  <div id="reviewBackground" class="review-background">
     <button class="btn default btn-review" ng-click="c.openNav()">
       <span>Review</span>
       <i class="bi-bookmark-star-fill"></i>
     </button>
 
     <div id="myNav" class="overlay">
-      <a href="javascript:void(0)" class="closebtn" ng-click="c.closeNav()"
-        >&times;</a
-      >
+      
       <div class="overlay-content">
         <button
           id="btn-all"
           class="tablink active-tab"
-          ng-click="c.openTab('all', 'btn-all')"
-        >
+          ng-click="c.openTab('all', 'btn-all')">
           <i class="bi bi-list-ul"></i>
           <span>All</span>
-    </button>
+    	</button>
         <button
           id="btn-unanswered"
           class="tablink"
-          ng-click="c.openTab('unanswered', 'btn-unanswered')"
-        >
+          ng-click="c.openTab('unanswered', 'btn-unanswered')">
           <i class="bi bi-patch-exclamation-fill"></i>
           <span>Unanswered</span>
-    </button>
+          <span ng-if="(c.data.items.length - c.answeredQuestions) > 0">({{c.data.items.length - c.answeredQuestions}})</span>
+    	</button>
         <button
           id="btn-answered"
           class="tablink"
-          ng-click="c.openTab('answered', 'btn-answered')"
-        >
+          ng-click="c.openTab('answered', 'btn-answered')">
           <i class="bi bi-patch-check-fill"></i>
           <span>Answered</span>
-    </button>
+          <span ng-if="c.answeredQuestions > 0">({{c.answeredQuestions}})</span>
+    	</button>
         <button
           id="btn-marked"
           class="tablink"
-          ng-click="c.openTab('marked', 'btn-marked')"
-        >
+          ng-click="c.openTab('marked', 'btn-marked')">
           <i class="bi bi-bookmark-fill"></i>
           <span>Marked for Review</span>
-    </button>
+          <span ng-if="c.markedQuestions.length > 0">({{c.markedQuestions.length}})</span>
+    	</button>
+      <a id="reviewCloseBtn" href="javascript:void(0)" class="closebtn" ng-click="c.closeNav()"
+        >&times;</a>
     </div>
 
       <div>
         <div id="all" class="tabcontent default-open">
           <div ng-repeat="question in c.data.items">
             <div class="line" ng-click="goToPage($index+1)">
-              <i
-                ng-if="c.markedQuestions.indexOf(($index+1).toString()) != -1"
-                class="bi bi-bookmark-fill"
-              ></i>
+              <i ng-if="c.markedQuestions.indexOf(($index+1).toString()) != -1"
+                class="bi bi-bookmark-fill"></i>
               <div
                 ng-if="c.markedQuestions.indexOf(($index+1).toString()) == -1"
                 class="white-space"
@@ -2006,8 +2052,8 @@ label {
                 >{{$index+1}}</span
               >
               <p ng-bind-html="question.question" class="question-title"></p>
-    </div>
-    </div>
+    		</div>
+    	</div>
     </div>
 
         <div id="unanswered" class="tabcontent">
@@ -2017,11 +2063,12 @@ label {
               class="line"
               ng-click="goToPage($index+1)"
             >
+            	<div class="white-space"></div>
               <span ng-if="($index+1) >= 10" class="unanswered">{{$index+1}}</span>
               <span ng-if="($index+1) < 10" class="unanswered-and-index-less-than-ten">{{$index+1}}</span>
               <p ng-bind-html="question.question" class="question-title"></p>
-    </div>
-    </div>
+    		</div>
+    	</div>
     </div>
 
         <div id="answered" class="tabcontent">
@@ -2031,11 +2078,12 @@ label {
               class="line"
               ng-click="goToPage($index+1)"
             >
+            	<div class="white-space"></div>
               <span ng-if="($index+1) >= 10" class="answered">{{$index+1}}</span>
               <span ng-if="($index+1) < 10" class="answered-and-index-less-than-ten">{{$index+1}}</span>
               <p ng-bind-html="question.question" class="question-title"></p>
-    </div>
-    </div>
+    		</div>
+    	</div>
     </div>
 
         <div id="marked" class="tabcontent">
@@ -2045,13 +2093,15 @@ label {
               class="line"
               ng-click="goToPage($index+1)"
             >
+            	<div class="white-space"></div>
               <span ng-if="($index+1) >= 10" class="marked">{{$index+1}}</span>
               <span ng-if="($index+1) < 10" class="marked-and-index-less-than-ten">{{$index+1}}</span>
               <p ng-bind-html="question.question" class="question-title"></p>
-    </div>
-    </div>
-    </div>
-    </div>
+    		</div>
+    	</div>
+    </div>    
+  </div>
+<!-- Van Dang -->
     </div>
     </div>
     </div>
