@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function snowCountDownTimerController($scope) {
+  /* widget controller */
+  var c = this;
+	// Set the date we're counting down to
+	c.duration = $scope.data.duration;
+	if (localStorage.getItem("item") && localStorage.getItem("item") == $scope.data.itemSysId) {
+		var timeLeftSec = localStorage.getItem("duration");
+		var timeLeftMinutes = Math.floor((timeLeftSec % (1000 * 60 * 60)) / (1000 * 60));
+		c.duration = timeLeftMinutes;
+	}
+	
+	var g_form = $('sp-variable-layout').scope().getGlideForm();
+	var countDownDate = new Date();
+	countDownDate = countDownDate.setMinutes(countDownDate.getMinutes() + c.duration);
+	//countDownDate = countDownDate.getTime();
+		
+	
+	// Update the count down every 1 second
+	var x = setInterval(function() {
+		
+		var queryString = window.location.search;		
+		var urlParams = new URLSearchParams(queryString);
+		var id = urlParams.get('id');		
+		//Clear Inteval if not cat page
+		
+		if (id == "ticket") {
+			
+			clearInterval(x);
+			return;
+		}
+			
+
+		// Get today's date and time
+		var now = new Date().getTime();
+
+
+		// Find the distance between now and the count down date
+		var distance = countDownDate - now;
+		localStorage.setItem("distance", JSON.stringify(distance));
+		
+		// Time calculations for days, hours, minutes and seconds
+		var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+		var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+		var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+		// Output the result in an element with id="demo"
+		
+    // Apply the blink effect using CSS animations
+    document.getElementById("timer").innerHTML = minutes +
+        "<p style='color: gray; font-size: 12px;'>MIN</p>";
+		if (minutes<=2)
+			{
+				document.getElementById("timeout").classList.add("blink");
+			}
+		else {
+				document.getElementById("timeout").classList.remove("blink");
+		}
+		
+		
+		// If the count down is over, write some text 
+		if (distance < 0) {
+			localStorage.removeItem("duration");
+			localStorage.removeItem("distance");
+			clearInterval(x);
+			if (document.getElementById("timer")) { 
+				document.getElementById("timer").innerHTML =  "<span font-size: 18px;'>EXPIRED</span>";
+			}
+			//Auto submit
+			g_form.setValue('is_expired',true);
+			$("button[name='submit'")[0].click();
+		}
+	}, 1000);
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.countdown-widget {
+    text-align: center;
+    position: relative;
+  }
+
+  /* Hình chữ nhật bên ngoài với góc bo tròn */
+  .outer-rounded-rectangle {
+    width: 300px; /* Đặt chiều rộng cho hình chữ nhật (dài hơn) */
+    height: 125px; /* Đặt chiều cao cho hình chữ nhật */
+    background-color: #E9E9E9; /* Màu nền xám cho hình chữ nhật */
+    border-radius: 50px; /* Bo tròn nhiều hơn */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Dịch sang bên trái */
+    align-items: center; /* Canh giữa dọc */
+  }
+
+  /* Hình vuông bên trong với góc bo tròn và viền */
+  .inner-rounded-square {
+    width: 110px; /* Đặt chiều rộng cho hình vuông (dịch qua trái và bo tròn nhiều hơn) */
+    height: 80px; /* Đặt chiều cao cho hình vuông */
+    background-color: #FFFFFF; /* Màu nền trắng cho hình vuông */
+    border-radius: 50px; /* Bo tròn nhiều hơn */
+    margin-left: 20px; /* Khoảng cách bên trái của "exam test" so với hình vuông */
+    display: flex;
+    justify-content: center; /* Canh giữa ngang */
+    align-items: center; /* Canh giữa dọc */
+  }
+
+  .countdown-timer {
+    font-size: 26px; /* Kích thước font cho văn bản đếm ngược */
+    font-weight: bold;
+    color: black; /* Màu văn bản */
+    
+    white-space: nowrap; /* Ngăn văn bản quá dài và bị tràn dòng */
+  }
+
+  .exam-text {
+    font-size: 18px; /* Kích thước font cho "exam text" */
+    color: #333; /* Màu văn bản cho "exam test" */
+    white-space: nowrap; /* Ngăn văn bản quá dài và bị tràn dòng */
+    margin-left: 30px; /* Khoảng cách bên trái của "exam test" so với hình vuông */
+    margin-right:35px;
+  }
+@keyframes blink {
+    0%, 100% {
+        background-color: transparent;
+        transform: scale(1); /* Initial and final scale */
+    }
+    50% {
+        background-color: #fc4a03; /* Change this to the desired background color */
+        transform: scale(1.2); /* Scale up slightly at the midpoint */
+    }
+}
+
+/* Apply the animation to the 'blink' class */
+.blink {
+    animation: blink 1s infinite; /* Adjust the duration and other animation properties as needed */
+    display: inline-block; /* Prevent the element from taking up full width */
+    border-radius: 50%; /* Maintain a circular shape */
+    color: white; /* Text color */
+    font-weight: bold; /* Font weight */
+    padding: 5px 10px; /* Add padding for a more visually pleasing effect */
+}
+
+
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Snow CountDown Timer New</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+	data.itemSysId = $sp.getParameter('sys_id');
+	//data.isTicketPage = $sp.getParameter('id').toString() == 'ticket';
+
+	data.duration = 0;
+	var rec = new GlideRecord('sc_cat_item_producer');
+	if (rec.get(data.itemSysId)) {
+		data.duration = parseInt(rec.getValue('u_duration_minutes'));
+	}
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>KVUONG4</sys_created_by>
+        <sys_created_on>2023-09-21 06:20:45</sys_created_on>
+        <sys_id>4491679f07517d100eb2f61d7c1ed064</sys_id>
+        <sys_mod_count>78</sys_mod_count>
+        <sys_name>Snow CountDown Timer New</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_4491679f07517d100eb2f61d7c1ed064</sys_update_name>
+        <sys_updated_by>KVUONG4</sys_updated_by>
+        <sys_updated_on>2023-10-09 08:41:26</sys_updated_on>
+        <template><![CDATA[ <div class="countdown-widget">
+    <!-- Hình chữ nhật bên ngoài với góc bo tròn -->
+    <div class="outer-rounded-rectangle">
+      <!-- Hình vuông bên trong với góc bo tròn và viền -->
+      <div class="inner-rounded-square" id="timeout">
+        <div class="countdown-timer" id="timer"></div>
+      </div>
+      <!-- "Exam Test" text cách xa hình vuông -->
+      <div class="exam-text"><b>Exam <br> Time Start</div>
+    </div>
+  </div>]]></template>
+    </sp_widget>
+</record_update>
