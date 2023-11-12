@@ -564,7 +564,11 @@
   if (data.page == "ticket" || data.page == "form") {
     var dataJSON = new GlideRecord(data.table);
     if (dataJSON.get(data.catItem)) {
-      data.items = JSON.parse(dataJSON.variables.dataload);
+      if (!dataJSON.variables.dataload.nil()) {
+        data.items = JSON.parse(dataJSON.variables.dataload);
+      } else {
+        data.items = "";
+      }
     }
   }
 
@@ -579,8 +583,6 @@
   for (var i = 0; i < data.totalPages; i++) {
     data.pages.push(i + 1);
   }
-  gs.info("PAGE 123 : " + JSON.stringify(data));
-
   data.catalogItemWidget = $sp.getWidget("snow_countdown_timer");
 })();
 ]]></script>
@@ -589,97 +591,77 @@
         <sys_created_by>nhuynh29</sys_created_by>
         <sys_created_on>2023-10-19 08:00:34</sys_created_on>
         <sys_id>cfe48ca007467d100eb2f61d7c1ed0e7</sys_id>
-        <sys_mod_count>32</sys_mod_count>
+        <sys_mod_count>36</sys_mod_count>
         <sys_name>Exams Track</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_cfe48ca007467d100eb2f61d7c1ed0e7</sys_update_name>
         <sys_updated_by>nhuynh29</sys_updated_by>
-        <sys_updated_on>2023-10-24 20:24:06</sys_updated_on>
-        <template><![CDATA[<div ng-if="c.isBegun" class="mainWrapper">
-  <!-- <div ng-if="!c.isTicketPage" class="test-timer">
-        ng-if="!c.isBegun"
-        <sp-widget widget="data.catalogItemWidget"></sp-widget>
-    </div> -->
-  <div
-    class="test-body"
-    ng-repeat="question in c.data.items"
-    ng-if="$index <= c.indexEnd && $index >= c.indexStart"
-  >
-    <!-- <div class="test-header">
-      <h2 class="title">{{data.title}}</h2>
-      <p class="description">{{data.short_description}}</p>
-    </div> -->
-    <div class="test-progressBar">
-      <div class="questionNumber">
-        Question <span class="questionIndex">{{$index+1}}</span>/<span
-          >{{data.pages.length}}</span
-        >
-      </div>
-      <div class="line">
-        <div class="timeline" id="timeline"></div>
-      </div>
-    </div>
-    <div class="test-content">
-      <div class="test-question" ng-init="onLoadQuestion()">
-        <span class="number">{{$index+1}}.</span>
-        <span ng-bind-html="question.question"></span>
-      </div>
-
-      <div class="test-answer-wrapper">
-        <ul class="row test-options">
-          <li
-            ng-repeat="key in question.keys"
-            ng-if="!key.empty"
-            ng-click="selectKey($event,key,question)"
-            class="selection col-float-left element-{{key.isSected}}"
-          >
-            <i
-              ng-if="c.isTicketPage && data.isAdmin "
-              ng-class="checkCorrectAnswer(key,question)"
-            ></i>
-            <p>{{key.label}}</p>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- <div class="pagination">
-        <div class="text-center">
-          <a
-            href="javascript:void(0)"
-            ng-click="goToPage(number)"
-            ng-repeat="number in data.pages"
-            ng-class="c.currentPage == number ? 'active' : '' "
-            >{{number}}</a
-          >
-          <a href="javascript:void(0)" ng-click="goToPage('end')">&raquo;</a>
-    </div>
-    </div> -->
-
-  <div class="control">
-    <button
-      class="prev"
-      id="btn-button"
-      ng-if="c.currentPage > 1"
-      href="javascript:void(0)"
-      ng-click="goPreviousPage('previous')"
+        <sys_updated_on>2023-11-05 21:35:54</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.data.items">
+  <div ng-if="c.isBegun" class="mainWrapper">
+    <div
+      class="test-body"
+      ng-repeat="question in c.data.items"
+      ng-if="$index <= c.indexEnd && $index >= c.indexStart"
     >
-      <i class="bi bi-arrow-left-short"></i>
-      <span> Last Question</span>
-    </button>
-    <button
-      class="next"
-      id="btn-button"
-      ng-if="c.currentPage <  c.data.items.length"
-      href="javascript:void(0)"
-      ng-click="goNextPage('next')"
-    >
-      <span>Next Question</span>
-      <i class="bi bi-arrow-right-short"></i>
-    </button>
+      <div class="test-progressBar">
+        <div class="questionNumber">
+          Question <span class="questionIndex">{{$index+1}}</span>/<span
+            >{{data.pages.length}}</span
+          >
+        </div>
+        <div class="line">
+          <div class="timeline" id="timeline"></div>
+        </div>
+      </div>
+      <div class="test-content">
+        <div class="test-question" ng-init="onLoadQuestion()">
+          <span class="number">{{$index+1}}.</span>
+          <span ng-bind-html="question.question"></span>
+        </div>
+
+        <div class="test-answer-wrapper">
+          <ul class="row test-options">
+            <li
+              ng-repeat="key in question.keys"
+              ng-if="!key.empty"
+              ng-click="selectKey($event,key,question)"
+              class="selection col-float-left element-{{key.isSected}}"
+            >
+              <i
+                ng-if="c.isTicketPage && data.isAdmin "
+                ng-class="checkCorrectAnswer(key,question)"
+              ></i>
+              <p>{{key.label}}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="control">
+      <button
+        class="prev"
+        id="btn-button"
+        ng-if="c.currentPage > 1"
+        href="javascript:void(0)"
+        ng-click="goPreviousPage('previous')"
+      >
+        <i class="bi bi-arrow-left-short"></i>
+        <span> Last Question</span>
+      </button>
+      <button
+        class="next"
+        id="btn-button"
+        ng-if="c.currentPage <  c.data.items.length"
+        href="javascript:void(0)"
+        ng-click="goNextPage('next')"
+      >
+        <span>Next Question</span>
+        <i class="bi bi-arrow-right-short"></i>
+      </button>
+    </div>
   </div>
 </div>
 ]]></template>
