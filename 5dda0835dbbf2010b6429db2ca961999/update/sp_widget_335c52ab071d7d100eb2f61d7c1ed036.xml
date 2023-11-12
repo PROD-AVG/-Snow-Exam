@@ -1,0 +1,2061 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function (
+    $rootScope,
+    $scope,
+    $sce,
+    glideUserSession,
+    spModal,
+    $uibModal,
+    spUtil
+) {
+    /* widget controller */
+    var c = this;
+    var g_form = $scope.page.g_form;
+    c.isBegun = false;
+    c.isTicketPage = false;
+
+    c.markedQuestions = [];
+
+    //Show Exam
+    c.showTest = function () {
+        //$scope.loadingIndicator = true;
+        var imageLoaded = document.getElementById("nhu-image").complete;
+        /*alert(imageCompleted);*/
+        while (!imageLoaded) {
+            alert(imageLoaded);
+            imageLoaded = document.getElementById("nhu-image").complete;
+        }
+
+        //snowCountDownTimerController();
+        //$scope.loadingIndicator = false;
+        c.modalInstance = $uibModal.open({
+            templateUrl: "modalTemplate",
+            scope: $scope,
+            size: "resize",
+            // backdrop: "static",
+        });
+        c.isBegun = !c.isBegun;
+        /*setTimeout(function () {
+          snowCountDownTimerController();
+          $scope.loadingIndicator = false;
+          c.modalInstance = $uibModal.open({
+            templateUrl: "modalTemplate",
+            scope: $scope,
+            size: "resize",
+            // backdrop: "static",
+          });
+          c.isBegun = !c.isBegun;
+        }, 3000);*/
+    };
+    //enter password
+    c.onPrompt = function () {
+        // window.open(c.template, null, "popup");
+
+        if ($scope.data.password == null || $scope.data.password == "") {
+            c.showTest();
+        } else {
+            spModal.prompt("Test Code, Please", c.name).then(function (name) {
+                c.name = name;
+
+                if (c.name == $scope.data.password) {
+                    spModal
+                        .alert(
+                            "Your exam will last in " +
+                            $scope.data.duration +
+                            " minutes. Are you ready?"
+                        )
+                        .then(function (answer) {
+                            c.simple = answer;
+                            if (answer == true) {
+                                var image = document.querySelector('img');
+                                var load = image.complete;
+                                console.log("Load" + load);
+                                c.showTest();
+                            }
+                        });
+                } else {
+                    spModal
+                        .alert("Incorrect Code, try again or reach out to ADMIN")
+                        .then(function (answer) {
+                            c.simple = answer;
+                            if (answer == true) {
+                                c.onPrompt();
+                            }
+                        });
+                }
+            });
+        }
+    };
+
+    c.closeModal = function () {
+        var warning = '<i class="bi bi-exclamation-triangle"></i>';
+        var closeOptions = {
+            title: warning + " WARNING !!!",
+            widget: "reminderclose",
+            widgetInput: {},
+            buttons: [
+                { label: "Cancel", value: "cancel", class: "cancel" },
+                {
+                    label: "Continue",
+                    primary: true,
+                    value: "continue",
+                    // class: "continue-btn disabled",
+                },
+            ],
+            footerStyle: {
+                border: "none",
+            },
+        };
+        spModal.open(closeOptions).then(function (input) {
+            if (input.label == "Continue") {
+                c.isBegun = false;
+                localStorage.removeItem("item");
+                localStorage.removeItem("examData");
+                localStorage.removeItem("duration");
+                localStorage.removeItem("distance");
+                c.modalInstance.close();
+                window.onbeforeunload = null;
+                location.reload(true);
+            }
+        });
+    };
+
+    // On Load Ticket Page
+    $scope.checkCorrectAnswer = function (key, question) {
+        var correctAnswers = question.correctAnswers.toLowerCase();
+        var keyAnswer = key.label.toLowerCase();
+        var found = false;
+
+        //found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
+        found = correctAnswers.includes(keyAnswer);
+        if (correctAnswers.split(",").length == 1) {
+            found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
+        }
+        if (found) {
+            return "fa fa-check";
+        } else {
+            return "fa fa-times";
+        }
+    };
+
+    // On Change
+    $scope.selectKey = function (event, keySelected, question) {
+        if (c.isTicketPage == true) {
+            g_form.addErrorMessage("You are not allow to edit");
+            return;
+        }
+
+        var isSelected = !$(event.currentTarget).hasClass("element-selected");
+        if (question.type == "Multiple Choice") {
+            if (isSelected) {
+                question.answerSelected.push(keySelected);
+                keySelected.isSected = "selected";
+            } else {
+                for (var i = 0; i < question.answerSelected.length; i++) {
+                    if (question.answerSelected[i].label == keySelected.label) {
+                        question.answerSelected.splice(i, 1);
+                    }
+                }
+                keySelected.isSected = "unSelected";
+            }
+        } else {
+            //Remove all selected
+            for (var i = 0; i < question.keys.length; i++) {
+                var text = question.keys[i];
+                question.answerSelected.splice(i, 1);
+                text.isSected = "unSelected";
+                // console.log("Label : " + text.label + " - isSelected : " + text.isSected);
+            }
+            //Hold current select
+            if (isSelected) {
+                question.answerSelected.push(keySelected);
+                keySelected.isSected = "selected";
+            } else {
+                for (var i = 0; i < question.answerSelected.length; i++) {
+                    if (question.answerSelected[i].label == keySelected.label) {
+                        question.answerSelected.splice(i, 1);
+                    }
+                }
+                keySelected.isSected = "unSelected";
+            }
+        }
+        //Old version
+        // if (isSelected) {
+        //   question.answerSelected.push(keySelected);
+        //   keySelected.isSected = "selected";
+        // } else {
+        //   for (var i = 0; i < question.answerSelected.length; i++) {
+        //     if (question.answerSelected[i].label == keySelected.label) {
+        //       question.answerSelected.splice(i, 1);
+        //     }
+        //   }
+        //   keySelected.isSected = "unSelected";
+        // }
+
+        // Set value to dataload field
+        var field = "dataload";
+        var dataStr = JSON.stringify(c.data.items);
+        g_form.setValue(field, dataStr);
+        // save session
+        localStorage.setItem("item", $scope.data.catItem);
+        localStorage.setItem("examData", dataStr);
+        localStorage.setItem("duration", localStorage.getItem("distance"));
+    };
+
+    // Loading Question and check selected
+    // $scope.checkSelected = function (key, question) {
+    //   for (var i = 0; i < question.answerSelected.length; i++) {
+    //     if (question.answerSelected[i].label == key.label) {
+    //       return "selected";
+    //     } else {
+    //       return "";
+    //     }
+    //   }
+    // };
+
+    // On New Cate Item Page Load
+    if ($scope.data.page == "sc_cat_item") {
+        // Check local Session
+        if (
+            localStorage.getItem("item") &&
+            localStorage.getItem("item") == $scope.data.catItem
+        ) {
+            // Set value to dataload field
+            var field = "dataload";
+            var dataStr = JSON.stringify(c.data.items);
+            g_form.setValue(field, dataStr);
+            c.data.items = JSON.parse(localStorage.getItem("examData"));
+        } else {
+            c.data.items = $scope.data.items;
+        }
+
+        for (var k in c.data.items) {
+            c.data.items[k].answerSelected = [];
+            for (var j in k.keys) {
+                k.keys[j].isSected = "unSelected";
+            }
+        }
+
+        if (!localStorage.getItem("item")) {
+            c.data.items = shuffle(c.data.items);
+        }
+    }
+
+    // On TicketPage
+    if ($scope.data.page == "ticket") {
+        c.data.items = $scope.data.items;
+        c.isBegun = true;
+        c.isTicketPage = true;
+    }
+
+    function shuffle(sourceArray) {
+        for (var i = 0; i < sourceArray.length - 1; i++) {
+            var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+            var temp = sourceArray[j];
+            sourceArray[j] = sourceArray[i];
+            sourceArray[i] = temp;
+        }
+        return sourceArray;
+    }
+
+    //Pagination
+    c.indexStart = 0;
+    c.range = $scope.data.limit;
+    c.indexEnd = c.range - 1;
+    c.currentPage = 1;
+
+    $scope.goToPage = function (page) {
+        var pre = c.currentPage;
+        c.currentPage = page;
+        c.updateProgress(c.currentPage);
+        if (page == "end") c.currentPage = $scope.data.pages.length;
+        $scope.data.temp = c.currentPage;
+        c.indexStart = c.indexStart + c.range * (c.currentPage - pre);
+        c.indexEnd = c.indexEnd + c.range * (c.currentPage - pre);
+    };
+    var timeline = document.getElementsByClassName("timeline");
+    // Display submit button
+    c.submitBtn = function () {
+        $rootScope.$broadcast("submitBtn", "");
+    };
+    $scope.goNextPage = function (page) {
+        c.number = $scope.data.temp;
+        c.currentPage = page;
+        if (c.number != $scope.data.pages.length && page == "next") {
+            if (c.number == 0) {
+                c.number = 1;
+            }
+            c.indexStart = c.number;
+            c.indexEnd = c.number;
+            c.number = c.number + 1;
+            c.updateProgress(c.number);
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+            // document.getElementById("btn-button btn1").disabled = false;
+        } else if (c.number == $scope.data.pages.length && page == "next") {
+            // 			document.getElementById("btn-button btn2").disabled = true;
+            c.indexStart = 0;
+            c.indexEnd = 0;
+            c.number = 1;
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+        }
+
+        //trigger to random background
+        //c.server.update().then(function(){
+        //c.data.changeBackground='true';
+        //c.data.temp = c.number;
+        //});
+    };
+
+    $scope.goPreviousPage = function (page) {
+        c.number = $scope.data.temp;
+        c.currentPage = page;
+
+        if (
+            c.number == 1 &&
+            c.indexStart < 1 &&
+            c.indexEnd < 1 &&
+            page == "previous"
+        ) {
+            c.indexStart = $scope.data.pages.length - 1;
+            c.indexEnd = $scope.data.pages.length - 1;
+            c.number = $scope.data.pages.length;
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+        } else if (
+            c.number > 0 &&
+            c.indexStart != -1 &&
+            c.indexEnd != -1 &&
+            page == "previous"
+        ) {
+            c.number = c.number - 1;
+            c.indexStart = c.number - 1;
+            c.indexEnd = c.number - 1;
+            c.updateProgress(c.number);
+            $scope.data.temp = c.number;
+            c.currentPage = c.number;
+        }
+    };
+
+    //Progress Bar
+    var total = c.data.pages.length;
+    c.updateProgress = function (number) {
+        var percent = (number / total) * 100;
+        var perString = percent.toString();
+        setTimeout(function () {
+            $("#timeline").css("width", perString + "%");
+        }, 100);
+        // console.log(perString);
+        // if (window)
+        //   // if CMS, don't run this
+        //   return;
+    };
+
+    // Van Dang
+    c.openNav = function () {
+        document.getElementById("myNav").style.width = "65%";
+    };
+
+    c.closeNav = function () {
+        document.getElementById("myNav").style.width = "0%";
+    };
+
+    c.openTab = function (tabId, btnId) {
+        var i;
+
+        tabcontent = document.getElementsByClassName("tabcontent");
+
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        tab = document.getElementsByClassName("tablink");
+
+        for (i = 0; i < tab.length; i++) {
+            tab[i].classList.remove("active-tab");
+        }
+
+        document.getElementById(tabId).style.display = "block";
+        document.getElementById(btnId).classList.add("active-tab");
+    };
+
+    //Nhu Dang
+    $scope.markQuestion = function () {
+        if (
+            document.getElementsByClassName("mark4review-btn")[0].checked === true
+        ) {
+            var markedQuestion =
+                document.getElementsByClassName("questionIndex")[0].textContent;
+            c.markedQuestions.push(markedQuestion);
+        } else {
+            var currentQuestion =
+                document.getElementsByClassName("questionIndex")[0].textContent;
+            var currentIndex = c.markedQuestions.indexOf(currentQuestion);
+            //In case users untick an existing marked question
+            if (currentIndex !== -1) {
+                c.markedQuestions.splice(currentIndex, 1);
+            }
+        }
+    };
+
+    $scope.onLoadQuestion = function () {
+        setTimeout(function () {
+            var currentQuestion =
+                document.getElementsByClassName("questionIndex")[0].textContent;
+            if (c.markedQuestions.indexOf(currentQuestion) === -1) {
+                document.getElementsByClassName("mark4review-btn")[0].checked = false;
+            } else {
+                document.getElementsByClassName("mark4review-btn")[0].checked = true;
+            }
+        }, 0);
+    };
+
+    //Manh Kien
+    function snowCountDownTimerController() {
+        /* widget controller */
+        c.duration = c.data.duration;
+        if (
+            localStorage.getItem("item") &&
+            localStorage.getItem("item") == $scope.data.itemSysId
+        ) {
+            console.log("go here: " + c.duration);
+            var timeLeftSec = localStorage.getItem("duration");
+            var timeLeftMinutes = Math.floor(
+                (timeLeftSec % (1000 * 60 * 60)) / (1000 * 60)
+            );
+            c.duration = timeLeftMinutes;
+
+            console.log("go here 2: " + c.duration);
+        }
+
+        var g_form = $("sp-variable-layout").scope().getGlideForm();
+        var countDownDate = new Date();
+        countDownDate = countDownDate.setMinutes(
+            countDownDate.getMinutes() + c.duration
+        );
+        //countDownDate = countDownDate.getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function () {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var id = urlParams.get("id");
+            //Clear Inteval if not cat page
+
+            if (id == "ticket") {
+                clearInterval(x);
+                return;
+            }
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            localStorage.setItem("distance", JSON.stringify(distance));
+
+            // Time calculations for days, hours, minutes and seconds
+            var hours = Math.floor(
+                (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+
+            // Apply the blink effect using CSS animations
+            document.getElementById("timer").innerHTML =
+                minutes + "<p style='color: gray; font-size: 12px;'>MIN</p>";
+            if (minutes <= 2) {
+                document.getElementById("timeout").classList.add("blink");
+            } else {
+                document.getElementById("timeout").classList.remove("blink");
+            }
+
+            // If the count down is over, write some text
+            if (distance < 0) {
+                localStorage.removeItem("duration");
+                localStorage.removeItem("distance");
+                clearInterval(x);
+                if (document.getElementById("timer")) {
+                    document.getElementById("timer").innerHTML =
+                        "<span font-size: 18px;'>EXPIRED</span>";
+                }
+                //Auto submit
+                g_form.setValue("is_expired", true);
+                $("button[name='submit'")[0].click();
+            }
+        }, 1000);
+    }
+};
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.loading-icon {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000000;
+  position: fixed;
+}
+.loading-background {
+  opacity: 30%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  opacity: 40%;
+}
+.spinner-icon {
+  color: #000000;
+  font-weight: bold;
+  font-size: 50px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+
+/* Btn and Timer */
+
+.center {
+  font-family: "Outfit";
+  font-weight: bold;
+  color: white;
+  margin: auto;
+  width: fit-content;
+  padding: 10px 40px;
+  background-color: #5348e9;
+  border-color: #aab5fd !important;
+  border-width: 2px;
+  border-radius: 5px;
+}
+
+/* Test Body */
+
+// .test-body {
+//   padding: 0px 0px 10px 0px;
+//   background: repeating-linear-gradient(
+//     #f1ede9,
+//     #f1ede9 31px,
+//     #94acd4 31px,
+//     #94acd4 32px
+//   );
+// }
+.test-body {
+  margin: auto;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // width: 65vw;
+  // height: 80vh;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 7% 7% 2% 7%;
+  font-family: "Outfit";
+  color: #000a38;
+  border-color: #000a38;
+}
+
+.test-header .title {
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1.55px;
+}
+
+.test-header .description {
+  font-size: 20px;
+  letter-spacing: 1.25px;
+}
+
+.test-question {
+  display: inline-flex;
+  // margin: 4% 6%;
+  font-family: "Outfit";
+  letter-spacing: 1.25px;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.test-question .number {
+  margin-right: 5px;
+}
+
+.test-progressBar {
+  margin: 20px 0px 28px 0px;
+}
+
+.test-progressBar .line {
+  width: 100%;
+  height: 15px;
+  background-color: #e9e9e9;
+  border-radius: 10px;
+}
+
+.test-progressBar .questionNumber {
+  font-family: "Outfit";
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1.25px;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.test-progressBar .questionNumber span {
+  margin: 0px 6px;
+}
+
+.test-progressBar .line .timeline {
+  width: 0%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  background-color: #5f249f;
+  border-radius: 10px;
+  transition: 1s
+}
+
+.test-options {
+  font-size: 18px;
+}
+
+// .test-answer-wrapper ul li {
+//   display: flex;
+//   align-items: center;
+//   height: 70px;
+//   border-radius: 35px;
+//   // text-align: center;
+//   // list-style: none;
+//   // background-color: #87c52e;
+//   // color: #fff;
+//   // border: 1px solid #87c52e;
+//   // border-radius: 15px;
+//   // padding: 10px;
+//   // margin: 8px 5px;
+//   // box-shadow: 0 9px #999;
+// }
+// .test-answer-wrapper ul li:hover {
+//   background-color: #e9e9e9;
+//   // border-radius: 25%;
+// }
+.test-answer-wrapper ul {
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.test-answer-wrapper {
+  padding: 0 30px 0 0;
+}
+
+// .col-float-left {
+//   float: left;
+// }
+
+// .element-selected {
+//   background-color: #ff5722 !important;
+//   box-shadow: 0 5px #666 !important;
+//   transform: translateY(4px);
+// }
+// .element-unSelected {
+//   background-color: #87c52e !important;
+//   box-shadow: 0 9px #999 !important;
+// }
+
+/* Pagination */
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {
+  background-color: #607d8b;
+  color: white;
+  border-radius: 5px;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+/*Start button*/
+#container {
+    margin-block: 100px;
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.start-button {
+    color: #5F249F;
+}
+#container .button {
+    overflow: hidden;
+    text-transform: uppercase;
+    position: relative;
+    padding: 16px 30px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #5F249F;
+    // border: 2px solid rgba(0, 0, 0, 0.5);
+    // border: 2px solid #fff;
+    border: 2px solid hsla(269, 63%, 38%, 0.4);
+    border-radius: 12px;
+    text-shadow: 0 0 15px hsla(269, 63%, 38%, 0.8);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: 0.3s;
+    z-index: 1;
+}
+#container .button:hover {
+    color: #fff;
+    // border: 2px solid rgba(0, 0, 0, 0, 0);
+    // box-shadow: 0 0 0px hsla(269, 63%, 38%, 0.3);
+    // border: 2px solid hsla(269, 63%, 38%, 0.3);
+    border-radius: 12px;
+    font-weight: 600;
+}
+.button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #5F249F;
+    z-index: -1;
+    transform: scale(0);
+    transition: 0.3s;
+}
+.button:hover::before {
+    transform: scale(1);
+    border-radius: 10px;
+    transition-delay: 0.1s;
+    box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7), 0 0 30px hsla(269, 63%, 38%, 0.7), 0 0 60px hsla(269, 63%, 38%, 0.7);
+}
+.button span {
+    position: absolute;
+    background: hsla(269, 63%, 38%, 0.8);
+    pointer-events: none;
+    border-radius: 2px;
+    box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7),
+        0 0 20px hsla(269, 63%, 38%, 0.7),
+        0 0 30px hsla(269, 63%, 38%, 0.7),
+        0 0 50px hsla(269, 63%, 38%, 0.7),
+        0 0 100px hsla(269, 63%, 38%, 0.7);
+    transition: 0.3s ease-in-out;
+    transition-delay: 0.25s;
+}
+.button:hover span {
+    opacity: 0;
+    transition-delay: 0s;
+}
+.button span:nth-child(1),
+.button span:nth-child(3) {
+    width: 30px;
+    height: 4px;
+}
+.button:hover span:nth-child(1),
+.button:hover span:nth-child(3) {
+    transform: translateX(0);
+}
+.button span:nth-child(2),
+.button span:nth-child(4) {
+    width: 4px;
+    height: 30px;
+}
+.button:hover span:nth-child(1),
+.button:hover span:nth-child(3) {
+    transform: translateY(0);
+}
+.button span:nth-child(1) {
+    top: calc(50% - 2px);
+    left: -40px;
+    transform-origin: left;
+}
+.button:hover span:nth-child(1) {
+    left: 50%;
+}
+.button span:nth-child(3) {
+    top: calc(50% - 2px);
+    right: -40px;
+    transform-origin: right;
+}
+.button:hover span:nth-child(3) {
+    right: 50%;
+}
+.button span:nth-child(2) {
+    left: calc(50% - 2px);
+    top: -40px;
+    transform-origin: top;
+}
+.button:hover span:nth-child(2) {
+    top: 50%;
+}
+.button span:nth-child(4) {
+    left: calc(50% - 2px);
+    bottom: -40px;
+    transform-origin: bottom;
+}
+.button:hover span:nth-child(4) {
+    bottom: 50%;
+}
+
+/*End start button*/
+
+/* Button */
+.control {
+  padding: 2% 7%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  grid-auto-flow: column;
+}
+
+.control span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Outfit";
+  font-size: 18px;
+}
+
+.control .bi {
+  font-size: 30px;
+}
+
+.control #btn-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5f249f;
+  color: #fff;
+  min-width: 10rem;
+  min-height: 3.4rem;
+  font-size: 1.4rem !important;
+  font-weight: 600;
+  border: 0.1rem solid transparent !important;
+  border-radius: 5rem !important;
+  padding: 1.5rem 7rem !important;
+  margin: 10px;
+  text-transform: uppercase;
+}
+
+.control #btn-button:first-child {
+  background-color: #2c2a2a;
+}
+
+.mark4review {
+  padding: 0% 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.mark4review p {
+  font-family: "Outfit";
+  font-size: 18px;
+  margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  margin-left: 15px;
+}
+
+.mark4review input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.mark4review label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 60px;
+  height: 30px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+.mark4review label:after {
+  content: "";
+  position: absolute;
+  top: 2.3px;
+  left: 4px;
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.3s;
+}
+
+.mark4review input:checked + label {
+  background: #bada55;
+}
+
+.mark4review input:checked + label:after {
+  left: calc(100% - 3px);
+  transform: translateX(-100%);
+}
+
+.mark4review label:active:after {
+  width: 40px;
+}
+
+//Selector css
+.selection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  // display: grid;
+  // grid-template-columns: 5% 93%;
+  // gap: 2%;
+  // justify-content: space-between;
+  // align-items: center;
+  padding: 20px;
+  margin: 5px 0px;
+  border-radius: 100px;
+}
+
+.selection:hover {
+  background-color: #d6d6e5;
+  transition: 0.25s ease;
+}
+
+.selection i {
+  margin-right: 1rem;
+}
+
+.element-selected {
+  background-color: #d6d6e5;
+  transition: 0.25s ease;
+}
+
+.element-unSelected {
+  background-color: transparent;
+  transition: 0.25s ease;
+}
+
+.selection p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+.selection p::before {
+  display: flex;
+  flex-shrink: 0;
+  content: "";
+  background-color: #fff;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  margin-right: 1em;
+  transition: 0.25s ease;
+  box-shadow: inset 0 0 0 0.135em #00005c;
+}
+
+.element-selected p::before {
+  box-shadow: inset 0 0 0 0.6em #00005c;
+}
+
+// .selection input:checked {
+//   background-color: #5f249f;
+// }
+
+// ---------------------------------------------------------------------
+// Van Dang
+.btn-review {
+  font-size: 3.4rem;
+  font-weight: 600;
+  border-radius: 5rem;
+  padding: 1rem 3.5rem;
+  background-color: #5f249f;
+  color: white;
+  height: 120px;
+  width: 300px;
+  position: absolute;
+  right: 20px;
+  top: 100px;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  // width: 75%;
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  display: flex;
+  border-bottom: solid 1px #dfdfdf;
+
+  div {
+    margin: 5px 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: -10px;
+  right: 45px;
+  font-size: 60px;
+  color: #5f249f;
+}
+
+.tablink {
+  background-color: white;
+  color: #555;
+  padding: 20px 50px;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &amp;:hover,
+  &amp;:focus,
+  &amp;:active {
+    border-bottom: solid 3px #2786ff;
+  }
+
+  .bi-patch-check-fill {
+    color: #2786ff;
+  }
+
+  .bi-bookmark-fill {
+    color: #fdaf1a;
+  }
+}
+
+.active-tab {
+  border-bottom: solid 3px #2786ff;
+}
+
+.tabcontent {
+  display: none;
+  padding: 10px 20px;
+  height: 100%;
+
+  .line {
+    display: flex;
+    align-items: baseline;
+
+    i {
+      color: #fdaf1a;
+      margin: 10px 40px 10px 10px;
+      font-size: 20px;
+    }
+
+    div.white-space {
+      width: 71px;
+    }
+
+    span.unanswered {
+      margin: 5px;
+      border: solid 2px #bdbbbb;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 16px;
+      background-color: #dddcdc;
+    }
+
+    span.answered {
+      margin: 5px;
+      border: solid 2px #7bb0ff;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 16px;
+      background-color: #91bcfd;
+    }
+
+    span.marked {
+      margin: 5px;
+      border: solid 2px #faa811;
+      padding: 8px 15px;
+      border-radius: 30px;
+      font-size: 16px;
+      background-color: #fdaf1a;
+    }
+
+    .question-title {
+        margin: 15px 10px;
+        font-size: 1.6rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        line-height: 20px;
+     }
+  }
+}
+
+.default-open {
+  display: block;
+}
+
+label {
+  display: flex;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 0.375em;
+  /* Accessible outline */
+  /* Remove comment to use */
+  /* &amp;:focus-within {
+		 outline: .125em solid $primary-color;
+	}
+	 */
+}
+
+/* Btn and Timer */
+.exam-wrapper {
+  .center {
+    font-family: "Outfit";
+    font-weight: bold;
+    color: white;
+    margin: auto;
+    width: fit-content;
+    padding: 10px 40px;
+    background-color: #5348e9;
+    border-color: #aab5fd !important;
+    border-width: 2px;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  /* Test Body */
+
+  // .test-body {
+  //   padding: 0px 0px 10px 0px;
+  //   background: repeating-linear-gradient(
+  //     #f1ede9,
+  //     #f1ede9 31px,
+  //     #94acd4 31px,
+  //     #94acd4 32px
+  //   );
+  // }
+  .test-body {
+    margin: auto;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    // width: 65vw;
+    // height: 80vh;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 7% 7% 2% 7%;
+    font-family: "Outfit";
+    color: #000a38;
+    border-color: #000a38;
+  }
+
+  .test-header .title {
+    font-weight: bold;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 1.55px;
+  }
+
+  .test-header .description {
+    font-size: 20px;
+    letter-spacing: 1.25px;
+  }
+
+  .test-question {
+    display: inline-flex;
+    // margin: 4% 6%;
+    font-family: "Outfit";
+    letter-spacing: 1.25px;
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
+  .test-question .number {
+    margin-right: 5px;
+  }
+
+  .test-progressBar {
+    margin: 20px 0px 28px 0px;
+  }
+
+  .test-progressBar .line {
+    width: 100%;
+    height: 15px;
+    background-color: #e9e9e9;
+    border-radius: 10px;
+  }
+
+  .test-progressBar .questionNumber {
+    font-family: "Outfit";
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 1.25px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+  }
+
+  .test-progressBar .questionNumber span {
+    margin: 0px 6px;
+  }
+
+  .test-progressBar .line .timeline {
+    width: 0%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #5f249f;
+    border-radius: 10px;
+  }
+
+  .test-options {
+    font-size: 18px;
+  }
+
+  // .test-answer-wrapper ul li {
+  //   display: flex;
+  //   align-items: center;
+  //   height: 70px;
+  //   border-radius: 35px;
+  //   // text-align: center;
+  //   // list-style: none;
+  //   // background-color: #87c52e;
+  //   // color: #fff;
+  //   // border: 1px solid #87c52e;
+  //   // border-radius: 15px;
+  //   // padding: 10px;
+  //   // margin: 8px 5px;
+  //   // box-shadow: 0 9px #999;
+  // }
+  // .test-answer-wrapper ul li:hover {
+  //   background-color: #e9e9e9;
+  //   // border-radius: 25%;
+  // }
+  .test-answer-wrapper ul {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 1px;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .test-answer-wrapper {
+    padding: 0 30px 0 0;
+  }
+
+  // .col-float-left {
+  //   float: left;
+  // }
+
+  // .element-selected {
+  //   background-color: #ff5722 !important;
+  //   box-shadow: 0 5px #666 !important;
+  //   transform: translateY(4px);
+  // }
+  // .element-unSelected {
+  //   background-color: #87c52e !important;
+  //   box-shadow: 0 9px #999 !important;
+  // }
+
+  /* Pagination */
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
+
+  .pagination a.active {
+    background-color: #607d8b;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+
+  /* Button */
+  .control {
+    padding: 2% 7%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    grid-auto-flow: column;
+  }
+
+  .control span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Outfit";
+    font-size: 18px;
+  }
+
+  .control .bi {
+    font-size: 30px;
+  }
+
+  .control #btn-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5f249f;
+    color: #fff;
+    min-width: 10rem;
+    min-height: 3.4rem;
+    font-size: 1.4rem !important;
+    font-weight: 600;
+    border: 0.1rem solid transparent !important;
+    border-radius: 5rem !important;
+    padding: 1.5rem 7rem !important;
+    margin: 10px;
+    text-transform: uppercase;
+  }
+
+  .control #btn-button:first-child {
+    background-color: #2c2a2a;
+  }
+  //Submit
+  .control .submit {
+    // display: none !important;
+  }
+  .mark4review {
+    padding: 0% 7%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .mark4review p {
+    font-family: "Outfit";
+    font-size: 18px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-left: 15px;
+  }
+
+  .mark4review input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  .mark4review label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 60px;
+    height: 30px;
+    background: grey;
+    display: block;
+    border-radius: 100px;
+    position: relative;
+  }
+
+  .mark4review label:after {
+    content: "";
+    position: absolute;
+    top: 2.3px;
+    left: 4px;
+    width: 25px;
+    height: 25px;
+    background: #fff;
+    border-radius: 90px;
+    transition: 0.3s;
+  }
+
+  .mark4review input:checked + label {
+    background: #bada55;
+  }
+
+  .mark4review input:checked + label:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+
+  .mark4review label:active:after {
+    width: 40px;
+  }
+
+  //Selector css
+  .selection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    // display: grid;
+    // grid-template-columns: 5% 93%;
+    // gap: 2%;
+    // justify-content: space-between;
+    // align-items: center;
+    padding: 20px;
+    margin: 5px 0px;
+    border-radius: 100px;
+  }
+
+  .selection:hover {
+    background-color: #d6d6e5;
+    transition: 0.25s ease;
+  }
+
+  .selection i {
+    margin-right: 1rem;
+  }
+
+  .element-selected {
+    background-color: #d6d6e5;
+    transition: 0.25s ease;
+  }
+
+  .element-unSelected {
+    background-color: transparent;
+    transition: 0.25s ease;
+  }
+
+  .selection p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+  }
+
+  .selection p::before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    margin-right: 1em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.135em #00005c;
+  }
+
+  .element-selected p::before {
+    box-shadow: inset 0 0 0 0.6em #00005c;
+  }
+
+  // .selection input:checked {
+  //   background-color: #5f249f;
+  // }
+
+  // ---------------------------------------------------------------------
+  // Van Dang
+  .btn-review {
+    font-size: 3.4rem;
+    font-weight: 600;
+    border-radius: 5rem;
+    padding: 1rem 3.5rem;
+    background-color: #e9e9e9;
+    color: #333;
+    height: 120px;
+    width: 300px;
+  }
+
+  .overlay {
+    height: 100%;
+    width: 0;
+    // width: 75%;
+    position: fixed;
+    z-index: 300;
+    top: 0;
+    right: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+  .overlay-content {
+    display: flex;
+    border-bottom: solid 1px #dfdfdf;
+
+    div {
+      margin: 5px 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+  }
+
+  .overlay .closebtn {
+    position: absolute;
+    top: -10px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+  .tablink {
+    background-color: white;
+    color: #555;
+    padding: 20px 50px;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &amp;:hover,
+    &amp;:focus,
+    &amp;:active {
+      border-bottom: solid 3px #2786ff;
+    }
+
+    .bi-patch-check-fill {
+      color: #2786ff;
+    }
+
+    .bi-bookmark-fill {
+      color: #fdaf1a;
+    }
+  }
+
+  .active-tab {
+    border-bottom: solid 3px #2786ff;
+  }
+
+  .tabcontent {
+    display: none;
+    padding: 10px 20px;
+    height: 100%;
+
+    .line {
+      display: flex;
+      align-items: baseline;
+
+      i {
+        color: #fdaf1a;
+        margin: 10px 40px 10px 10px;
+        font-size: 20px;
+      }
+
+      div.white-space {
+        width: 71px;
+      }
+
+      span.unanswered {
+        margin: 5px;
+        border: solid 2px #bdbbbb;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 16px;
+        background-color: #dddcdc;
+      }
+
+      span.answered {
+        margin: 5px;
+        border: solid 2px #7bb0ff;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 16px;
+        background-color: #91bcfd;
+      }
+
+      span.marked {
+        margin: 5px;
+        border: solid 2px #faa811;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-size: 16px;
+        background-color: #fdaf1a;
+      }
+
+      p.question-title {
+        margin: 15px 10px;
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #878686;
+        /* font-weight: 600; */
+        /* font-size: 13px; */
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        line-height: 20px;
+      }
+    }
+  }
+
+  .default-open {
+    display: block;
+  }
+
+  label {
+    display: flex;
+    cursor: pointer;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0.375em;
+    /* Accessible outline */
+    /* Remove comment to use */
+    /* &amp;:focus-within {
+		 outline: .125em solid $primary-color;
+	}
+	 */
+  }
+  // @media (min-width: 768px) .modal-dialog {
+  //   max-width: 80rem;
+  // }
+}
+
+.preload-background{
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>exams_new</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>New Snow Exam Loader </name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function () {
+	/* populate the 'data' object */
+	/* e.g., data.table = $sp.getValue('table'); */
+
+	//Logics for getting random background
+	data.topic = getTopic();
+	data.background = getRndBackground(data.topic);
+	gs.info("1710 BACKGROUND: " + data.background);
+
+	data.isAdmin = gs.hasRole("admin");
+	data.items = [];
+	data.password = "";
+	data.catItem = $sp.getParameter("sys_id");
+	//STRY0032407 - Get value of Record Producer
+	var grCat = new GlideRecord("sc_cat_item_producer");
+	grCat.get(data.catItem);
+	data.title = grCat.getValue("name");
+	data.short_description = grCat.getValue("short_description");
+	var util = new SnowPortalUtils(data.catItem);
+	data.table = $sp.getParameter("table");
+	data.page = $sp.getParameter("id");
+
+	data.duration = 0;
+	var rec = new GlideRecord("sc_cat_item_producer");
+	if (rec.get(data.catItem)) {
+		data.password = rec.getValue("u_password");
+		data.duration = parseInt(rec.getValue("u_duration_minutes"));
+		console.log('data.duration: ' + data.duration)
+	}
+
+	//Load data for new Page
+	if (data.page == "sc_cat_item") {
+		// If this is normal snow scripting
+		var topicDetail = util.getTopicDetail(data.catItem);
+		var listTypes = util.getListType(topicDetail);
+		var list = util.getQBByTopic(topicDetail, listTypes);
+		data.items = list;
+	}
+
+	//Load data for Ticket Page
+	if (data.page == "ticket" || data.page == "form") {
+		var dataJSON = new GlideRecord(data.table);
+		if (dataJSON.get(data.catItem)) {
+			data.items = JSON.parse(dataJSON.variables.dataload);
+		}
+	}
+
+	//Pagination
+	data.limit = 1;
+	data.totalPages = 0;
+	data.totalQuestions = data.items.length;
+	data.pages = [];
+	data.temp = 0;
+
+	data.totalPages = Math.ceil(data.totalQuestions / data.limit);
+	for (var i = 0; i < data.totalPages; i++) {
+		data.pages.push(i + 1);
+	}
+	gs.info("PAGE 123 : " + JSON.stringify(data));
+
+	data.catalogItemWidget = $sp.getWidget("snow_countdown_timer");
+
+	//Manh Kien
+	data.itemSysId = $sp.getParameter("sys_id");
+
+	data.duration = 0;
+	var rec = new GlideRecord("sc_cat_item_producer");
+	if (rec.get(data.itemSysId)) {
+		data.duration = parseInt(rec.getValue("u_duration_minutes"));
+	}
+
+	function getRndBackground(topic) {
+		//Get list of images in current topic (to make sure no image in the consequence is missed)
+		var grImg = new GlideRecord("db_image");
+		grImg.addQuery('name', 'STARTSWITH', 'x_292088_snow_exam.' + topic);
+		grImg.query();
+		var images = [];
+		while(grImg.next()){
+			images.push(grImg.getValue('name'));
+		}
+
+		var start = 0;
+		var end = images.length - 1;
+		var rndNum = Math.floor(Math.random() * (end - start + 1) ) + start;
+		// var backgroundName = 'x_292088_snow_exam.' + topic + '_ExamTest_Background_' + rndNum + '.jpg';
+		backgroundName = images[rndNum];
+		return backgroundName;
+	}
+
+	function getTopic() {
+		var today = new GlideDate();
+		var events = JSON.parse(gs.getProperty('x_292088_snow_exam.dxc.snow-exam.background_topics'));
+		monthEvents = events[today.getMonthNoTZ()];
+		gs.info('1001: ' + today.getMonthNoTZ());
+		if (monthEvents){
+			for (var i = 0; i<monthEvents.length; i++){
+				var start = monthEvents[i]['start'];
+				var end = monthEvents[i]['end'];
+				var startDate = new GlideDate();
+				startDate.setValue('2023-' + start.split('-')[1] + '-' + start.split('-')[0]);
+				var endDate = new GlideDate();
+				endDate.setValue('2023-' + end.split('-')[1] + '-' + end.split('-')[0]);
+				if (today >= startDate && today <= endDate){
+					return monthEvents[i]['topic'];
+				}
+			}
+		}
+
+		return 'general';
+
+	}
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>NHUYNH29</sys_created_by>
+        <sys_created_on>2023-09-21 19:56:56</sys_created_on>
+        <sys_id>335c52ab071d7d100eb2f61d7c1ed036</sys_id>
+        <sys_mod_count>1655</sys_mod_count>
+        <sys_name>New Snow Exam Loader </sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_335c52ab071d7d100eb2f61d7c1ed036</sys_update_name>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-10-20 05:49:14</sys_updated_on>
+        <template><![CDATA[<div class="exam-wrapper">
+  <img src="{{data.background}}" class="preload-background" id="nhu-image">
+  <div id="container">
+    <div class="row">
+    <div class="col col-md-12">
+      <!-- <a class="button start-button" href="" ng-click="c.openPopUp()" ng-click="c.onPrompt()" ng-if="!c.isBegun"> -->
+      <a class="button start-button" href="" ng-click="c.onPrompt()" ng-if="!c.isBegun">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        Start
+      </a>
+    </div>
+      </div>
+  </div>
+<!--  <div class="center" ng-click="c.onPrompt()" ng-if="!c.isBegun">
+    <i class="bi bi-lightning-charge"></i> ${Start}
+  </div>-->
+  <!-- Loading icon while navigating between pages-->
+  <div class="loading-icon" ng-show="loadingIndicator">
+    <div class="loading-background"></div>
+    <span class="fa fa-spinner fa-spin spinner-icon" aria-hidden="true" name="spinner" spin="true">
+    </span>
+  </div>
+
+<script type="text/ng-template" id="modalTemplate">
+<div id="test-snow-background" ng-style="{'background-image':'url({{data.background}})'}">
+
+ <!-- Manh Kien -->
+ <div class="countdown-widget">
+    <!-- Hình chữ nhật bên ngoài với góc bo tròn -->
+    <div class="outer-rounded-rectangle">
+      <!-- Hình vuông bên trong với góc bo tròn và viền -->
+      <div class="inner-rounded-square" id="timeout">
+        <div class="countdown-timer" id="timer"></div>
+    </div>
+      <!-- "Exam Test" text cách xa hình vuông -->
+      <div class="exam-text"><b>Exam <br> Time Start</div>
+    </div>
+
+  </div>
+	<div class="close-button" ng-click="c.closeModal()"></div>
+  <div class="container wrapper-core">
+    <div ng-if="c.isBegun" class="mainWrapper col-md-12 col-lg-8">
+      <!-- <div ng-if="!c.isTicketPage" class="test-timer">
+        ng-if="!c.isBegun"
+        <sp-widget widget="data.catalogItemWidget"></sp-widget>
+    </div> -->
+      <div
+        class="test-body"
+        ng-repeat="question in c.data.items"
+        ng-if="$index <= c.indexEnd && $index >= c.indexStart"
+      >
+        <div class="test-header">
+          <h2 class="title">{{data.title}}</h2>
+          <p class="description">{{data.short_description}}</p>
+    </div>
+        <div class="test-progressBar">
+          <div class="questionNumber">
+            Question <span class="questionIndex">{{$index+1}}</span>/<span
+              >{{data.pages.length}}</span
+            >
+    </div>
+          <div class="line">
+            <div class="timeline" id="timeline"></div>
+    </div>
+    </div>
+        <div class="test-content">
+        <div class="test-question" ng-init="onLoadQuestion()">
+          <span class="number">{{$index+1}}.</span>
+          <span ng-bind-html="question.question"></span>
+    </div>
+
+        <div class="test-answer-wrapper">
+          <ul class="row test-options">
+            <li
+              ng-repeat="key in question.keys"
+              ng-if="!key.empty"
+              ng-click="selectKey($event,key,question)"
+              class="selection col-float-left element-{{key.isSected}}"
+            >
+              <i
+                ng-if="c.isTicketPage && data.isAdmin "
+                ng-class="checkCorrectAnswer(key,question)"
+              ></i>
+              <p>{{key.label}}</p>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+
+      <!-- <div class="pagination">
+        <div class="text-center">
+          <a
+            href="javascript:void(0)"
+            ng-click="goToPage(number)"
+            ng-repeat="number in data.pages"
+            ng-class="c.currentPage == number ? 'active' : '' "
+            >{{number}}</a
+          >
+          <a href="javascript:void(0)" ng-click="goToPage('end')">&raquo;</a>
+    </div>
+    </div> -->
+      <div class="mark4review">
+        <input
+          type="checkbox"
+          id="switch"
+          class="mark4review-btn"
+          ng-click="markQuestion()"
+        /><label for="switch">Toggle</label>
+        <p>Mark for review</p>
+    </div>
+      <div class="control">
+        <button
+        	class="prev"
+          id="btn-button"
+          ng-if="c.currentPage > 1"
+          href="javascript:void(0)"
+          ng-click="goPreviousPage('previous')"
+        >
+          <i class="bi bi-arrow-left-short"></i>
+          <span> Last Question</span>
+    </button>
+        <button
+        	class="next"
+          id="btn-button"
+          ng-if="c.currentPage <  c.data.items.length"
+          href="javascript:void(0)"
+          ng-click="goNextPage('next')"
+        >
+          <span>Next Question</span>
+          <i class="bi bi-arrow-right-short"></i>
+    </button>
+    </div>
+    </div>
+    <button class="btn submit" id="btn-button" ng-click="c.submitBtn()">
+      <span>Submit</span>
+      <i class="bi bi-award-fill"></i>
+    </button>
+    </div>
+  <!-- Van Dang -->
+  <div>
+    <button class="btn default btn-review" ng-click="c.openNav()">
+      <span>Review</span>
+      <i class="bi-bookmark-star-fill"></i>
+    </button>
+
+    <div id="myNav" class="overlay">
+      <a href="javascript:void(0)" class="closebtn" ng-click="c.closeNav()"
+        >&times;</a
+      >
+      <div class="overlay-content">
+        <button
+          id="btn-all"
+          class="tablink active-tab"
+          ng-click="c.openTab('all', 'btn-all')"
+        >
+          <i class="bi bi-list-ul"></i>
+          <span>All</span>
+    </button>
+        <button
+          id="btn-unanswered"
+          class="tablink"
+          ng-click="c.openTab('unanswered', 'btn-unanswered')"
+        >
+          <i class="bi bi-patch-exclamation-fill"></i>
+          <span>Unanswered</span>
+    </button>
+        <button
+          id="btn-answered"
+          class="tablink"
+          ng-click="c.openTab('answered', 'btn-answered')"
+        >
+          <i class="bi bi-patch-check-fill"></i>
+          <span>Answered</span>
+    </button>
+        <button
+          id="btn-marked"
+          class="tablink"
+          ng-click="c.openTab('marked', 'btn-marked')"
+        >
+          <i class="bi bi-bookmark-fill"></i>
+          <span>Marked for Review</span>
+    </button>
+    </div>
+
+      <div>
+        <div id="all" class="tabcontent default-open">
+          <div ng-repeat="question in c.data.items">
+            <div class="line" ng-click="goToPage($index+1)">
+              <i
+                ng-if="c.markedQuestions.indexOf(($index+1).toString()) != -1"
+                class="bi bi-bookmark-fill"
+              ></i>
+              <div
+                ng-if="c.markedQuestions.indexOf(($index+1).toString()) == -1"
+                class="white-space"
+              ></div>
+              <span
+                ng-if="question.answerSelected.length == 0 && ($index+1) >= 10"
+                class="unanswered"
+                >{{$index+1}}</span
+              >
+              <span
+                ng-if="question.answerSelected.length == 0 && ($index+1) < 10"
+                class="unanswered-and-index-less-than-ten"
+                >{{$index+1}}</span
+              >
+              <span ng-if="question.answerSelected.length != 0  && ($index+1) >= 10" class="answered"
+                >{{$index+1}}</span
+              >
+              <span ng-if="question.answerSelected.length != 0 && ($index+1) < 10" class="answered-and-index-less-than-ten"
+                >{{$index+1}}</span
+              >
+              <p ng-bind-html="question.question" class="question-title"></p>
+    </div>
+    </div>
+    </div>
+
+        <div id="unanswered" class="tabcontent">
+          <div ng-repeat="question in c.data.items">
+            <div
+              ng-if="question.answerSelected.length == 0"
+              class="line"
+              ng-click="goToPage($index+1)"
+            >
+              <span ng-if="($index+1) >= 10" class="unanswered">{{$index+1}}</span>
+              <span ng-if="($index+1) < 10" class="unanswered-and-index-less-than-ten">{{$index+1}}</span>
+              <p ng-bind-html="question.question" class="question-title"></p>
+    </div>
+    </div>
+    </div>
+
+        <div id="answered" class="tabcontent">
+          <div ng-repeat="question in c.data.items">
+            <div
+              ng-if="question.answerSelected.length != 0"
+              class="line"
+              ng-click="goToPage($index+1)"
+            >
+              <span ng-if="($index+1) >= 10" class="answered">{{$index+1}}</span>
+              <span ng-if="($index+1) < 10" class="answered-and-index-less-than-ten">{{$index+1}}</span>
+              <p ng-bind-html="question.question" class="question-title"></p>
+    </div>
+    </div>
+    </div>
+
+        <div id="marked" class="tabcontent">
+          <div ng-repeat="question in c.data.items">
+            <div
+              ng-if="c.markedQuestions.indexOf(($index+1).toString()) != -1"
+              class="line"
+              ng-click="goToPage($index+1)"
+            >
+              <span ng-if="($index+1) >= 10" class="marked">{{$index+1}}</span>
+              <span ng-if="($index+1) < 10" class="marked-and-index-less-than-ten">{{$index+1}}</span>
+              <p ng-bind-html="question.question" class="question-title"></p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+  </script>]]></template>
+    </sp_widget>
+</record_update>
