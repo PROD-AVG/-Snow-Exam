@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller=function() {
+  /* widget controller */
+  var c = this;
+	
+// 	var inputElement = document.getElementById("checkbox-input");
+// 	var submitBtn =document.getElementById("submit-btn");
+	
+// 	c.checkBox=function(){
+// 		c.value = inputElement.checked ? 'yes' : 'no';
+// // 		if(c.value == 'yes') {
+// // 			submitBtn.disabled = true;
+// // 		}
+// // 		else if(c.value == 'no') {
+			
+// // 			submitBtn.disabled = false;
+// // 		}
+		
+// 		$rootScope.$emit('isChecked',c.value);
+// 	};
+	
+	
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.check-box-wrapper{&#13;
+	display: flex;&#13;
+    align-items: center;&#13;
+}&#13;
+#checkbox-input{&#13;
+	margin-right: 14px;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>reminderclose</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {  }]]></link>
+        <name>Reminder Close</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {  /* populate the 'data' object */  /* e.g., data.table = $sp.getValue('table'); */})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>NHUYNH29</sys_created_by>
+        <sys_created_on>2023-10-15 22:22:24</sys_created_on>
+        <sys_id>ecd36257077179100eb2f61d7c1ed066</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Reminder Close</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_ecd36257077179100eb2f61d7c1ed066</sys_update_name>
+        <sys_updated_by>nhuynh29</sys_updated_by>
+        <sys_updated_on>2023-10-23 06:19:11</sys_updated_on>
+        <template><![CDATA[<div >
+<!-- your widget template -->
+  <h5>
+    Please consider before close the pop-up. Your entire answer will be lost !
+  </h5><br>
+  <!-- 
+  <div class = "check-box-wrapper">
+   <input type="checkbox" id = "checkbox-input" name="vehicle1" ng-change="c.checkBox()" ng-model="myValue" style = "width: 20px; height:20px">
+   
+  <span>
+    Confirmed to close an pop-up and refresh questions? 
+  </span>
+  </div> -->
+ 
+  
+</div>]]></template>
+    </sp_widget>
+</record_update>
