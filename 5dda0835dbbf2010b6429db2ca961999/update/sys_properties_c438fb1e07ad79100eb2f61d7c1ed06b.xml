@@ -19,16 +19,88 @@ Structure:&#13;
         <sys_created_by>NDANG8</sys_created_by>
         <sys_created_on>2023-09-30 15:45:34</sys_created_on>
         <sys_id>c438fb1e07ad79100eb2f61d7c1ed06b</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>16</sys_mod_count>
         <sys_name>x_292088_snow_exam.dxc.snow-exam.background_topics</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sys_properties_c438fb1e07ad79100eb2f61d7c1ed06b</sys_update_name>
-        <sys_updated_by>htran210</sys_updated_by>
-        <sys_updated_on>2023-10-27 05:46:49</sys_updated_on>
+        <sys_updated_by>ndang8</sys_updated_by>
+        <sys_updated_on>2023-11-01 05:25:29</sys_updated_on>
         <type>string</type>
-        <value>{"1": [{"topic": "newYear","start": "1-1","end": "15-1"}],"2": [{"topic": "tetHoliday","start": "1-2","end": "28-2"}],"3": [],"4": [],"5": [],"6": [],"7": [],"8": [{"topic": "midAutumn","start": "15-8","end": "31-8"}],"9": [{"topic": "midAutumn","start": "1-9","end": "20-9"}],"10": [{"topic": "halloween","start": "1-10","end": "31-10"}],"11": [],"12": [{"topic": "christmas","start": "1-12","end": "30-12"}]}</value>
+        <value>{&#13;
+    "1": [&#13;
+      {&#13;
+        "topic": "newYear",&#13;
+        "start": "1-1",&#13;
+        "end": "31-1"&#13;
+      }&#13;
+    ],&#13;
+    "2": [&#13;
+      {&#13;
+        "topic": "newYear",&#13;
+        "start": "1-2",&#13;
+        "end": "15-2"&#13;
+      }&#13;
+    ],&#13;
+    "3": [&#13;
+        {&#13;
+            "topic": "womanDay",&#13;
+            "start": "1-3",&#13;
+            "end": "10-3"&#13;
+          }&#13;
+    ],&#13;
+    "4": [&#13;
+        {&#13;
+            "topic": "dxcDay",&#13;
+            "start": "1-4",&#13;
+            "end": "7-4"&#13;
+          },&#13;
+        {&#13;
+            "topic": "earthDay",&#13;
+            "start": "18-4",&#13;
+            "end": "28-4"&#13;
+          }&#13;
+    ],&#13;
+    "5": [],&#13;
+    "6": [],&#13;
+    "7": [],&#13;
+    "8": [&#13;
+      {&#13;
+        "topic": "midAutumn",&#13;
+        "start": "15-8",&#13;
+        "end": "31-8"&#13;
+      }&#13;
+    ],&#13;
+    "9": [&#13;
+      {&#13;
+        "topic": "midAutumn",&#13;
+        "start": "1-9",&#13;
+        "end": "20-9"&#13;
+      }&#13;
+    ],&#13;
+    "10": [&#13;
+      {&#13;
+        "topic": "halloween",&#13;
+        "start": "15-10",&#13;
+        "end": "31-10"&#13;
+      }&#13;
+    ],&#13;
+    "11": [],&#13;
+    "12": [&#13;
+      {&#13;
+        "topic": "christmas",&#13;
+        "start": "1-12",&#13;
+        "end": "26-12"&#13;
+      },&#13;
+      {&#13;
+        "topic": "newYear",&#13;
+        "start": "27-12",&#13;
+        "end": "31-12"&#13;
+      }&#13;
+  &#13;
+    ]&#13;
+  }</value>
         <write_roles/>
     </sys_properties>
     <sys_translated_text action="delete_multiple" query="documentkey=c438fb1e07ad79100eb2f61d7c1ed06b"/>
