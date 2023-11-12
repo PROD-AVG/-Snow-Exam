@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_hr_core_service">
+    <sn_hr_core_service action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <approval_options/>
+        <auto_close_case>false</auto_close_case>
+        <auto_close_offset>0</auto_close_offset>
+        <badge/>
+        <case_creation_service_config/>
+        <case_options>64e89b75531312003066a5f4a11c08b3</case_options>
+        <close_when/>
+        <description/>
+        <flow/>
+        <fulfillment_instructions/>
+        <fulfillment_type>simple</fulfillment_type>
+        <header_config_opened_for display_value="Default for opened for/approver">86d9872eb3900300f5302ddc16a8dc8b</header_config_opened_for>
+        <header_config_subject_person display_value="Default for subject person/task assigned to">c4e9872eb3900300f5302ddc16a8dc91</header_config_subject_person>
+        <hr_criteria/>
+        <le_type/>
+        <name>ServiceNow HAM mock exam</name>
+        <producer display_value="ServiceNow HAM mock exam">0885ad3a0746b5100eb2f61d7c1ed056</producer>
+        <service_table>x_292088_snow_exam_snow_exam_case</service_table>
+        <service_table_fields/>
+        <subject_person_access>true</subject_person_access>
+        <subject_person_related_lists/>
+        <sys_class_name>sn_hr_core_service</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-10-26 14:53:51</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>0b5661ba0746b5100eb2f61d7c1ed05d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ServiceNow HAM mock exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sn_hr_core_service_0b5661ba0746b5100eb2f61d7c1ed05d</sys_update_name>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-10-26 14:53:51</sys_updated_on>
+        <template/>
+        <topic_detail display_value="ServiceNow HAM mock exam">71452db60746b5100eb2f61d7c1ed026</topic_detail>
+        <value>servicenow_ham_mock_exam</value>
+        <workflow_detail/>
+    </sn_hr_core_service>
+    <sys_translated_text action="delete_multiple" query="documentkey=0b5661ba0746b5100eb2f61d7c1ed05d"/>
+</record_update>
