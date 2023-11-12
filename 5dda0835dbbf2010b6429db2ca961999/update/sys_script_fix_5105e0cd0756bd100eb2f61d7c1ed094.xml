@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description>STRY0032451 - Update type of Question banks</description>
+        <name>Correct type of Question banks</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[var grQuestion = new GlideRecord("x_292088_snow_exam_question_banks");
+grQuestion.query();
+while (grQuestion.next()) {
+    var correctAnswer = grQuestion.getValue("correct_answer");
+
+    var grKey = new GlideRecord("x_292088_snow_exam_question_keys");
+    grKey.addQuery("question_id", grQuestion.getUniqueValue());
+    grKey.query();
+    if (grKey.next()) {    
+        var optionA = grKey.getValue("option_a");
+        var optionB = grKey.getValue("option_b");
+        var optionC = grKey.getValue("option_c");
+        var optionD = grKey.getValue("option_d");
+        var optionE = grKey.getValue("option_e");
+        var optionF = grKey.getValue("option_f");
+
+		//For type = "Yes/No"
+        if (optionA && optionB &&  !optionC && !optionD && !optionE && !optionF && ["yes", "no", "true", "false"].indexOf(optionA.toLowerCase()) !== -1 && ["yes", "no", "true", "false"].indexOf(optionB.toLowerCase()) !== -1) {
+            grQuestion.setValue("type", "Yes/No");
+            grQuestion.update();
+        }
+		
+		//For type = Multiple Choice
+        else if (correctAnswer !== optionA && correctAnswer !== optionB && correctAnswer !== optionC && correctAnswer !== optionD && correctAnswer !== optionE && correctAnswer !== optionF && correctAnswer.indexOf(",") !== -1) {
+            grQuestion.setValue("type", "Multiple Choice");
+            grQuestion.update();
+        }
+		
+		//For type = Single Choice
+        else if (correctAnswer === optionA || correctAnswer === optionB || correctAnswer === optionC || correctAnswer === optionD || correctAnswer === optionE || correctAnswer === optionF) {
+            grQuestion.setValue("type", "Single Choice");
+            grQuestion.update();
+        }
+    }
+}
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>ndang8</sys_created_by>
+        <sys_created_on>2023-11-02 09:55:58</sys_created_on>
+        <sys_id>5105e0cd0756bd100eb2f61d7c1ed094</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Correct type of Question banks</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_script_fix_5105e0cd0756bd100eb2f61d7c1ed094</sys_update_name>
+        <sys_updated_by>ndang8</sys_updated_by>
+        <sys_updated_on>2023-11-02 13:36:12</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>
