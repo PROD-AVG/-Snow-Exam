@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[function snowExamLoaderController(
+  $rootScope,
+  $scope,
+  $sce,
+  glideUserSession,
+  spModal
+) {
+  /* widget controller */
+  var c = this;
+  var g_form = $scope.page.g_form;
+  c.isBegun = false;
+  c.isTicketPage = false;
+
+  //Show Exam
+  c.showTest = function () {
+    c.isBegun = !c.isBegun;
+  };
+  // console.log("Huynh The NHan : " + data.pages);
+  //enter password
+  c.onPrompt = function () {
+    // window.open(c.template, null, "popup");
+    if ($scope.data.password == null || $scope.data.password == "") {
+      c.showTest();
+    } else {
+      spModal.prompt("Test Code, Please", c.name).then(function (name) {
+        c.name = name;
+
+        if (c.name == $scope.data.password) {
+          spModal
+            .alert(
+              "Your exam will last in " +
+                $scope.data.duration +
+                " minutes. Are you ready?"
+            )
+            .then(function (answer) {
+              c.simple = answer;
+              if (answer == true) {
+                c.showTest();
+              }
+            });
+        } else {
+          spModal
+            .alert("Incorrect Code, try again or reach out to ADMIN")
+            .then(function (answer) {
+              c.simple = answer;
+              if (answer == true) {
+                c.onPrompt();
+              }
+            });
+        }
+      });
+    }
+  };
+
+  // On Load Ticket Page
+  $scope.checkCorrectAnswer = function (key, question) {
+    var correctAnswers = question.correctAnswers.toLowerCase();
+    var keyAnswer = key.label.toLowerCase();
+    var found = false;
+
+    //found = new RegExp("\\b"+key.label.toLowerCase()+"\\b").test(correctAnswers);
+    found = correctAnswers.includes(keyAnswer);
+    if (correctAnswers.split(",").length == 1) {
+      found = correctAnswers.indexOf(keyAnswer) == 0 ? true : false;
+    }
+    if (found) {
+      return "fa fa-check";
+    } else {
+      return "fa fa-times";
+    }
+  };
+
+  // On Change
+  $scope.selectKey = function (event, keySelected, question) {
+    if (c.isTicketPage == true) {
+      g_form.addErrorMessage("You are not allow to edit");
+      return;
+    }
+
+    var isSelected = !$(event.currentTarget).hasClass("element-selected");
+    console.log(isSelected);
+    if (isSelected) {
+      question.answerSelected.push(keySelected);
+      keySelected.isSected = "selected";
+    } else {
+      for (var i = 0; i < question.answerSelected.length; i++) {
+        if (question.answerSelected[i].label == keySelected.label) {
+          question.answerSelected.splice(i, 1);
+        }
+      }
+      keySelected.isSected = "unSelected";
+    }
+
+    // Set value to dataload field
+    var field = "dataload";
+    var dataStr = JSON.stringify(c.data.items);
+    g_form.setValue(field, dataStr);
+    // save session
+    localStorage.setItem("item", $scope.data.catItem);
+    localStorage.setItem("examData", dataStr);
+    localStorage.setItem("duration", localStorage.getItem("distance"));
+  };
+
+  // Loading Question and check selected
+  // $scope.checkSelected = function (key, question) {
+  //   console.log(key);
+  //   for (var i = 0; i < question.answerSelected.length; i++) {
+  //     if (question.answerSelected[i].label == key.label) {
+  //       return "selected";
+  //     } else {
+  //       return "";
+  //     }
+  //   }
+  // };
+
+  // On New Cate Item Page Load
+  if ($scope.data.page == "sc_cat_item") {
+    // Check local Session
+    if (
+      localStorage.getItem("item") &&
+      localStorage.getItem("item") == $scope.data.catItem
+    ) {
+      // Set value to dataload field
+      var field = "dataload";
+      var dataStr = JSON.stringify(c.data.items);
+      g_form.setValue(field, dataStr);
+      c.data.items = JSON.parse(localStorage.getItem("examData"));
+    } else {
+      c.data.items = $scope.data.items;
+    }
+
+    for (var k in c.data.items) {
+      c.data.items[k].answerSelected = [];
+      for (var j in k.keys) {
+        k.keys[j].isSected = "unSelected";
+      }
+    }
+
+    if (!localStorage.getItem("item")) {
+      c.data.items = shuffle(c.data.items);
+    }
+  }
+
+  // On TicketPage
+  if ($scope.data.page == "ticket") {
+    c.data.items = $scope.data.items;
+    c.isBegun = true;
+    c.isTicketPage = true;
+  }
+
+  function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+      var temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+    }
+    return sourceArray;
+  }
+
+  //Pagination
+  c.indexStart = 0;
+  c.range = $scope.data.limit;
+  c.indexEnd = c.range - 1;
+  c.currentPage = 1;
+
+  $scope.goToPage = function (page) {
+    var pre = c.currentPage;
+    c.currentPage = page;
+    if (page == "end") c.currentPage = $scope.data.pages.length;
+    $scope.data.temp = c.currentPage;
+    c.indexStart = c.indexStart + c.range * (c.currentPage - pre);
+    c.indexEnd = c.indexEnd + c.range * (c.currentPage - pre);
+  };
+  var timeline = document.getElementsByClassName("timeline");
+  $scope.goNextPage = function (page) {
+    c.number = $scope.data.temp;
+    c.currentPage = page;
+    if (c.number != $scope.data.pages.length && page == "next") {
+      if (c.number == 0) {
+        c.number = 1;
+      }
+      c.indexStart = c.number;
+      c.indexEnd = c.number;
+      c.number = c.number + 1;
+      // console.log("Num : " + c.number);
+      c.updateProgress(c.number);
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+      document.getElementById("btn-button btn1").disabled = false;
+    } else if (c.number == $scope.data.pages.length && page == "next") {
+      // 			document.getElementById("btn-button btn2").disabled = true;
+      c.indexStart = 0;
+      c.indexEnd = 0;
+      c.number = 1;
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+    }
+  };
+
+  $scope.goPreviousPage = function (page) {
+    c.number = $scope.data.temp;
+    c.currentPage = page;
+
+    if (
+      c.number == 1 &&
+      c.indexStart < 1 &&
+      c.indexEnd < 1 &&
+      page == "previous"
+    ) {
+      c.indexStart = $scope.data.pages.length - 1;
+      c.indexEnd = $scope.data.pages.length - 1;
+      c.number = $scope.data.pages.length;
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+    } else if (
+      c.number > 0 &&
+      c.indexStart != -1 &&
+      c.indexEnd != -1 &&
+      page == "previous"
+    ) {
+      c.number = c.number - 1;
+      c.indexStart = c.number - 1;
+      c.indexEnd = c.number - 1;
+      c.updateProgress(c.number);
+      $scope.data.temp = c.number;
+      c.currentPage = c.number;
+    }
+  };
+
+  //Progress Bar
+  var total = c.data.pages.length;
+  c.updateProgress = function (number) {
+    var percent = (number / total) * 100;
+    var perString = percent.toString();
+    setTimeout(function () {
+      $("#timeline").css("width", perString + "%");
+    }, 100);
+    // console.log(perString);
+    // if (window)
+    //   // if CMS, don't run this
+    //   return;
+  };
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>.mainWrapper {
+  background-color: #fff;
+  border-radius: 10px;
+  height: 93vh;
+  max-height: 750px;
+  padding: 25px 45px;
+  // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  display: grid;
+  grid-auto-rows: 89% 10%;
+  gap: 1%;
+}
+
+/* Test Body */
+.test-body {
+  font-family: "Outfit";
+  color: #000a38;
+  display: grid;
+  grid-auto-rows: 10% 90%;
+}
+
+// Title and Description
+.test-header {
+  user-select: none;
+  .title {
+    font-weight: bold;
+    font-size: 35px;
+    text-transform: uppercase;
+    letter-spacing: 1.55px;
+  }
+  .description {
+    font-size: 18px;
+    letter-spacing: 1.25px;
+    margin-bottom: 0;
+  }
+}
+//Progess Bar
+.test-progressBar {
+  margin: 0px 0px 10px 0px;
+  .questionNumber {
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1.25px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5px;
+  }
+  .questionIndex {
+    margin-left: 7px;
+  }
+  .line {
+    width: 100%;
+    height: 10px;
+    background-color: #e9e9e9;
+    border-radius: 10px;
+    .timeline {
+      width: 0%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+      background-color: #5f249f;
+      border-radius: inherit;
+    }
+  }
+}
+// Question
+.test-content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  width: 100%;
+  // scroll-behavior: smooth;
+}
+.test-content::-webkit-scrollbar {
+  width: 7px;
+  border-radius: 10px;
+}
+.test-content::-webkit-scrollbar-thumb {
+  background: #5f249f !important;
+  border-radius: 10px;
+}
+.test-content::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.test-question {
+  display: inline-flex;
+  letter-spacing: 1px;
+  font-size: 20px;
+  line-height: 3rem;
+  font-weight: 700;
+  margin: 15px 0px;
+  .number {
+    margin-right: 5px;
+  }
+}
+
+.test-options {
+  width: 98%;
+  font-size: 16px;
+  list-style: none;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+//Selection css
+.selection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px 15px;
+  margin-left: -20px;
+  border-radius: 100px;
+  &amp;:hover {
+    background-color: #d6d6e5;
+    transition: 0.25s ease;
+  }
+  i {
+    margin-right: 1rem;
+  }
+  p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    &amp;::before {
+      display: flex;
+      flex-shrink: 0;
+      content: "";
+      background-color: #fff;
+      width: 2em;
+      height: 2em;
+      border-radius: 50%;
+      margin-right: 1em;
+      transition: 0.25s ease;
+      box-shadow: inset 0 0 0 0.135em #00005c;
+    }
+  }
+  .element-selected {
+    background-color: #d6d6e5 !important;
+    transition: 0.25s ease;
+  }
+  .element-unSelected {
+    background-color: transparent;
+    transition: 0.25s ease;
+  }
+}
+.element-selected p::before {
+  box-shadow: inset 0 0 0 0.6em #00005c;
+}
+.selection input:checked {
+  background-color: #5f249f;
+}
+
+// /* Button */
+.control {
+  margin-top: auto;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 46% 46%;
+  grid-auto-rows: 55px;
+  gap: 8%;
+  user-select: none;
+  button {
+    width: 100%;
+  }
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Outfit";
+    font-size: 15px;
+  }
+  .bi {
+    font-size: 25px;
+  }
+
+  #btn-button:first-child {
+    background-color: #2c2a2a;
+  }
+  .prev {
+    grid-column: 1;
+  }
+  .next {
+    grid-column: 2;
+    background-color: #5f249f !important;
+  }
+}
+
+#btn-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5f249f;
+  color: #fff;
+  min-width: 10rem;
+  min-height: 3.4rem;
+  height: 100%;
+  font-size: 1.4rem !important;
+  font-weight: 600;
+  border: 0.1rem solid transparent !important;
+  border-radius: 5rem !important;
+  // padding: 1.5rem 7rem !important;
+  text-transform: uppercase;
+}
+// //Close button
+
+// // Mark for review toggle
+.mark4review {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  p {
+    font-family: "Outfit";
+    font-size: 14px;
+    font-weight: 400;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    margin-left: 10px;
+  }
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  input:checked + label {
+    background: #bada55;
+  }
+  input:checked + label:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+  label:active:after {
+    width: 23px;
+  }
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 35px;
+    height: 20px;
+    background: rgb(83, 82, 82);
+    display: block;
+    border-radius: 100px;
+    position: relative;
+    margin-bottom: 0px;
+    &amp;::after {
+      content: "";
+      position: absolute;
+      // top: 1.3px;
+      // left: 3px;
+      // width: 17px;
+      // height: 17px;
+      top: 0.2rem;
+      left: 0.28rem;
+      width: 1.6rem;
+      height: 1.6rem;
+      background: #fff;
+      border-radius: 90px;
+      transition: 0.3s;
+    }
+  }
+}
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>exams_track</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Exams Track</name>
+        <option_schema/>
+        <public>true</public>
+        <roles/>
+        <script><![CDATA[(function () {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+  data.isAdmin = gs.hasRole("admin");
+  data.items = [];
+  data.password = "";
+  data.catItem = $sp.getParameter("sys_id");
+  //STRY0032407 - Get value of Record Producer
+  var grCat = new GlideRecord("sc_cat_item_producer");
+  grCat.get(data.catItem);
+  data.title = grCat.getValue("name");
+  data.short_description = grCat.getValue("short_description");
+  var util = new SnowPortalUtils(data.catItem);
+  data.table = $sp.getParameter("table");
+  data.page = $sp.getParameter("id");
+
+  var rec = new GlideRecord("sc_cat_item_producer");
+  if (rec.get(data.catItem)) {
+    data.password = rec.getValue("u_password");
+    data.duration = parseInt(rec.getValue("u_duration_minutes"));
+  }
+
+  //Load data for new Page
+  if (data.page == "sc_cat_item") {
+    // If this is normal snow scripting
+    var topicDetail = util.getTopicDetail(data.catItem);
+    var listTypes = util.getListType(topicDetail);
+    var list = util.getQBByTopic(topicDetail, listTypes);
+    data.items = list;
+  }
+
+  //Load data for Ticket Page
+  if (data.page == "ticket" || data.page == "form") {
+    var dataJSON = new GlideRecord(data.table);
+    if (dataJSON.get(data.catItem)) {
+      data.items = JSON.parse(dataJSON.variables.dataload);
+    }
+  }
+
+  //Pagination
+  data.limit = 1;
+  data.totalPages = 0;
+  data.totalQuestions = data.items.length;
+  data.pages = [];
+  data.temp = 0;
+
+  data.totalPages = Math.ceil(data.totalQuestions / data.limit);
+  for (var i = 0; i < data.totalPages; i++) {
+    data.pages.push(i + 1);
+  }
+  gs.info("PAGE 123 : " + JSON.stringify(data));
+
+  data.catalogItemWidget = $sp.getWidget("snow_countdown_timer");
+})();
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>nhuynh29</sys_created_by>
+        <sys_created_on>2023-10-19 08:00:34</sys_created_on>
+        <sys_id>cfe48ca007467d100eb2f61d7c1ed0e7</sys_id>
+        <sys_mod_count>32</sys_mod_count>
+        <sys_name>Exams Track</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_cfe48ca007467d100eb2f61d7c1ed0e7</sys_update_name>
+        <sys_updated_by>nhuynh29</sys_updated_by>
+        <sys_updated_on>2023-10-24 20:24:06</sys_updated_on>
+        <template><![CDATA[<div ng-if="c.isBegun" class="mainWrapper">
+  <!-- <div ng-if="!c.isTicketPage" class="test-timer">
+        ng-if="!c.isBegun"
+        <sp-widget widget="data.catalogItemWidget"></sp-widget>
+    </div> -->
+  <div
+    class="test-body"
+    ng-repeat="question in c.data.items"
+    ng-if="$index <= c.indexEnd && $index >= c.indexStart"
+  >
+    <!-- <div class="test-header">
+      <h2 class="title">{{data.title}}</h2>
+      <p class="description">{{data.short_description}}</p>
+    </div> -->
+    <div class="test-progressBar">
+      <div class="questionNumber">
+        Question <span class="questionIndex">{{$index+1}}</span>/<span
+          >{{data.pages.length}}</span
+        >
+      </div>
+      <div class="line">
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </div>
+    <div class="test-content">
+      <div class="test-question" ng-init="onLoadQuestion()">
+        <span class="number">{{$index+1}}.</span>
+        <span ng-bind-html="question.question"></span>
+      </div>
+
+      <div class="test-answer-wrapper">
+        <ul class="row test-options">
+          <li
+            ng-repeat="key in question.keys"
+            ng-if="!key.empty"
+            ng-click="selectKey($event,key,question)"
+            class="selection col-float-left element-{{key.isSected}}"
+          >
+            <i
+              ng-if="c.isTicketPage && data.isAdmin "
+              ng-class="checkCorrectAnswer(key,question)"
+            ></i>
+            <p>{{key.label}}</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class="pagination">
+        <div class="text-center">
+          <a
+            href="javascript:void(0)"
+            ng-click="goToPage(number)"
+            ng-repeat="number in data.pages"
+            ng-class="c.currentPage == number ? 'active' : '' "
+            >{{number}}</a
+          >
+          <a href="javascript:void(0)" ng-click="goToPage('end')">&raquo;</a>
+    </div>
+    </div> -->
+
+  <div class="control">
+    <button
+      class="prev"
+      id="btn-button"
+      ng-if="c.currentPage > 1"
+      href="javascript:void(0)"
+      ng-click="goPreviousPage('previous')"
+    >
+      <i class="bi bi-arrow-left-short"></i>
+      <span> Last Question</span>
+    </button>
+    <button
+      class="next"
+      id="btn-button"
+      ng-if="c.currentPage <  c.data.items.length"
+      href="javascript:void(0)"
+      ng-click="goNextPage('next')"
+    >
+      <span>Next Question</span>
+      <i class="bi bi-arrow-right-short"></i>
+    </button>
+  </div>
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
