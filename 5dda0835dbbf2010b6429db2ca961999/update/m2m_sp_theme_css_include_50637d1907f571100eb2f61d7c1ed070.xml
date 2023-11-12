@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="m2m_sp_theme_css_include">
+    <m2m_sp_theme_css_include action="INSERT_OR_UPDATE">
+        <order/>
+        <sp_css_include display_value="New exam css">d9e2fd9507f571100eb2f61d7c1ed04a</sp_css_include>
+        <sp_theme display_value="New Avenger Evolution">531429c1078c71500eb2f61d7c1ed049</sp_theme>
+        <sys_class_name>m2m_sp_theme_css_include</sys_class_name>
+        <sys_created_by>NHUYNH29</sys_created_by>
+        <sys_created_on>2023-10-09 13:43:20</sys_created_on>
+        <sys_id>50637d1907f571100eb2f61d7c1ed070</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>New exam css.New Avenger Evolution</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>m2m_sp_theme_css_include_50637d1907f571100eb2f61d7c1ed070</sys_update_name>
+        <sys_updated_by>NHUYNH29</sys_updated_by>
+        <sys_updated_on>2023-10-09 13:43:20</sys_updated_on>
+    </m2m_sp_theme_css_include>
+</record_update>
