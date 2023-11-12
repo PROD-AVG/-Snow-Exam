@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <category>custom</category>
+        <client_script><![CDATA[api.controller = function (
+  $rootScope,
+  $scope,
+  $sce,
+  spModal
+) {
+  /* widget controller */
+  var c = this;
+  c.isBegun = false;
+  c.isTicketPage = false;
+
+  //Show Exam
+  c.showTest = function () {
+    c.isBegun = !c.isBegun;
+  };
+  c.openPopUp = function () {
+    spModal.open({
+      widget: 'exams_new',
+      size: "popUpBox"
+    });
+    if ($scope.data.password == null || $scope.data.password == "") {
+      c.showTest();
+    } else {
+      spModal.prompt("Test Code, Please", c.name).then(function (name) {
+        c.name = name;
+
+        if (c.name == $scope.data.password) {
+          spModal
+            .alert(
+              "Your exam will last in " +
+              $scope.data.duration +
+              " minutes. Are you ready?"
+            )
+            .then(function (answer) {
+              c.simple = answer;
+              if (answer == true) {
+                c.showTest();
+              }
+            });
+        } else {
+          spModal
+            .alert("Incorrect Code, try again or reach out to ADMIN")
+            .then(function (answer) {
+              c.simple = answer;
+              if (answer == true) {
+                c.openPopUp();
+              }
+            });
+        }
+      });
+    }
+  };
+  var g_form = $scope.page.g_form;
+
+
+
+
+
+
+};]]></client_script>
+        <controller_as>c</controller_as>
+        <css>@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;800;900&amp;display=swap");&#13;
+#container {&#13;
+    margin-block: 100px;&#13;
+    font-family: "Outfit", sans-serif;&#13;
+    display: flex;&#13;
+    justify-content: center;&#13;
+}&#13;
+.start-button {&#13;
+    color: #5F249F;&#13;
+}&#13;
+#container .button {&#13;
+    overflow: hidden;&#13;
+    text-transform: uppercase;&#13;
+    position: relative;&#13;
+    padding: 16px 30px;&#13;
+    font-size: 18px;&#13;
+    font-weight: 600;&#13;
+    color: #5F249F;&#13;
+    // border: 2px solid rgba(0, 0, 0, 0.5);&#13;
+    // border: 2px solid #fff;&#13;
+    border: 2px solid hsla(269, 63%, 38%, 0.4);&#13;
+    border-radius: 12px;&#13;
+    text-shadow: 0 0 15px hsla(269, 63%, 38%, 0.8);&#13;
+    text-decoration: none;&#13;
+    text-transform: uppercase;&#13;
+    letter-spacing: 0.1rem;&#13;
+    transition: 0.3s;&#13;
+    z-index: 1;&#13;
+}&#13;
+#container .button:hover {&#13;
+    color: #fff;&#13;
+    // border: 2px solid rgba(0, 0, 0, 0, 0);&#13;
+    // box-shadow: 0 0 0px hsla(269, 63%, 38%, 0.3);&#13;
+    // border: 2px solid hsla(269, 63%, 38%, 0.3);&#13;
+    border-radius: 12px;&#13;
+    font-weight: 600;&#13;
+}&#13;
+.button::before {&#13;
+    content: "";&#13;
+    position: absolute;&#13;
+    top: 0;&#13;
+    left: 0;&#13;
+    width: 100%;&#13;
+    height: 100%;&#13;
+    background: #5F249F;&#13;
+    z-index: -1;&#13;
+    transform: scale(0);&#13;
+    transition: 0.3s;&#13;
+}&#13;
+.button:hover::before {&#13;
+    transform: scale(1);&#13;
+    border-radius: 10px;&#13;
+    transition-delay: 0.1s;&#13;
+    box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7), 0 0 30px hsla(269, 63%, 38%, 0.7), 0 0 60px hsla(269, 63%, 38%, 0.7);&#13;
+}&#13;
+.button span {&#13;
+    position: absolute;&#13;
+    background: hsla(269, 63%, 38%, 0.8);&#13;
+    pointer-events: none;&#13;
+    border-radius: 2px;&#13;
+    box-shadow: 0 0 10px hsla(269, 63%, 38%, 0.7),&#13;
+        0 0 20px hsla(269, 63%, 38%, 0.7),&#13;
+        0 0 30px hsla(269, 63%, 38%, 0.7),&#13;
+        0 0 50px hsla(269, 63%, 38%, 0.7),&#13;
+        0 0 100px hsla(269, 63%, 38%, 0.7);&#13;
+    transition: 0.3s ease-in-out;&#13;
+    transition-delay: 0.25s;&#13;
+}&#13;
+.button:hover span {&#13;
+    opacity: 0;&#13;
+    transition-delay: 0s;&#13;
+}&#13;
+.button span:nth-child(1),&#13;
+.button span:nth-child(3) {&#13;
+    width: 30px;&#13;
+    height: 4px;&#13;
+}&#13;
+.button:hover span:nth-child(1),&#13;
+.button:hover span:nth-child(3) {&#13;
+    transform: translateX(0);&#13;
+}&#13;
+.button span:nth-child(2),&#13;
+.button span:nth-child(4) {&#13;
+    width: 4px;&#13;
+    height: 30px;&#13;
+}&#13;
+.button:hover span:nth-child(1),&#13;
+.button:hover span:nth-child(3) {&#13;
+    transform: translateY(0);&#13;
+}&#13;
+.button span:nth-child(1) {&#13;
+    top: calc(50% - 2px);&#13;
+    left: -40px;&#13;
+    transform-origin: left;&#13;
+}&#13;
+.button:hover span:nth-child(1) {&#13;
+    left: 50%;&#13;
+}&#13;
+.button span:nth-child(3) {&#13;
+    top: calc(50% - 2px);&#13;
+    right: -40px;&#13;
+    transform-origin: right;&#13;
+}&#13;
+.button:hover span:nth-child(3) {&#13;
+    right: 50%;&#13;
+}&#13;
+.button span:nth-child(2) {&#13;
+    left: calc(50% - 2px);&#13;
+    top: -40px;&#13;
+    transform-origin: top;&#13;
+}&#13;
+.button:hover span:nth-child(2) {&#13;
+    top: 50%;&#13;
+}&#13;
+.button span:nth-child(4) {&#13;
+    left: calc(50% - 2px);&#13;
+    bottom: -40px;&#13;
+    transform-origin: bottom;&#13;
+}&#13;
+.button:hover span:nth-child(4) {&#13;
+    bottom: 50%;&#13;
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>start_ks_button</id>
+        <internal>false</internal>
+        <link><![CDATA[function link(scope, element, attrs, controller) {
+  
+}]]></link>
+        <name>Start KS button</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-10-05 05:58:58</sys_created_on>
+        <sys_id>d4c26ffb0725fd100eb2f61d7c1ed05d</sys_id>
+        <sys_mod_count>14</sys_mod_count>
+        <sys_name>Start KS button</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_widget_d4c26ffb0725fd100eb2f61d7c1ed05d</sys_update_name>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-10-05 07:10:53</sys_updated_on>
+        <template><![CDATA[<div id="container">
+    <div class="row">
+        <div class="col col-md-12">
+            <a class="button start-button" href="" ng-click="c.openPopUp()" ng-if="!c.isBegun">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Start
+            </a>
+        </div>
+    </div>
+    <!-- your widget template -->
+</div>
+]]></template>
+    </sp_widget>
+</record_update>
