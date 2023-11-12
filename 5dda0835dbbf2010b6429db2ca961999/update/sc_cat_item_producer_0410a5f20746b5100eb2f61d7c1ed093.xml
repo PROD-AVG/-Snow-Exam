@@ -45,7 +45,7 @@
         <omit_price>false</omit_price>
         <order>0</order>
         <ordered_item_link/>
-        <owner display_value="Van Dang Thi">86c932ce971265107fd7f97e6253afa7</owner>
+        <owner display_value="Van Dang Thi">ec8f26b72f1f2d1027114ae72799b620</owner>
         <picture/>
         <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=0410a5f20746b5100eb2f61d7c1ed093&amp;sysparm_preview=true", "summary");</preview>
@@ -70,21 +70,21 @@
         <sys_created_by>VDANG25</sys_created_by>
         <sys_created_on>2023-10-26 14:32:46</sys_created_on>
         <sys_id>0410a5f20746b5100eb2f61d7c1ed093</sys_id>
-        <sys_mod_count>6</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>ServiceNow Discovery mock exam</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_0410a5f20746b5100eb2f61d7c1ed093</sys_update_name>
-        <sys_updated_by>htran210</sys_updated_by>
-        <sys_updated_on>2023-10-27 07:03:21</sys_updated_on>
+        <sys_updated_by>VDANG25</sys_updated_by>
+        <sys_updated_on>2023-11-02 05:55:26</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
-        <u_duration_minutes/>
-        <u_number_of_questions/>
+        <u_duration_minutes>90</u_duration_minutes>
+        <u_number_of_questions>45</u_number_of_questions>
         <u_owner display_value="Thai Hoang Nam">5c9608c5dbd20010d606e04a4896190d</u_owner>
         <u_passing_score/>
         <u_password/>
