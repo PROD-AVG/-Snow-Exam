@@ -497,13 +497,23 @@ checkAndShowTest = function(){
       // Output the result in an element with id="demo"
 
       // Apply the blink effect using CSS animations
-      document.getElementById("timer").innerHTML =
+			
+			if (minutes <1){
+				document.getElementById("timer").innerHTML =
+        seconds + "<p style='color: gray; font-size: 12px;'>SECOND</p>";
+			}  else{
+				  document.getElementById("timer").innerHTML =
         minutes + "<p style='color: gray; font-size: 12px;'>MIN</p>";
+    	}
+			
+			
       if (minutes <= 2) {
         document.getElementById("timeout").classList.add("blink");
       } else {
         document.getElementById("timeout").classList.remove("blink");
       }
+			
+			
 
       // If the count down is over, write some text
       if (distance < 0) {
@@ -512,7 +522,7 @@ checkAndShowTest = function(){
         clearInterval(x);
         if (document.getElementById("timer")) {
           document.getElementById("timer").innerHTML =
-            "<span font-size: 18px;'>EXPIRED</span>";
+            "<span font-size: 12px;'>EXPIRED</span>";
         }
         //Auto submit
         g_form.setValue("is_expired", true);
@@ -1811,14 +1821,14 @@ label {
         <sys_created_by>NHUYNH29</sys_created_by>
         <sys_created_on>2023-09-21 19:56:56</sys_created_on>
         <sys_id>335c52ab071d7d100eb2f61d7c1ed036</sys_id>
-        <sys_mod_count>1737</sys_mod_count>
+        <sys_mod_count>1743</sys_mod_count>
         <sys_name>New Snow Exam Loader </sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_335c52ab071d7d100eb2f61d7c1ed036</sys_update_name>
-        <sys_updated_by>ndang8</sys_updated_by>
-        <sys_updated_on>2023-11-01 05:09:06</sys_updated_on>
+        <sys_updated_by>kvuong4</sys_updated_by>
+        <sys_updated_on>2023-11-01 14:13:50</sys_updated_on>
         <template><![CDATA[<div class="exam-wrapper">
   <img src="{{data.background}}" id="preload-background" onload="c.preloadImage()">
   <div id="container">
