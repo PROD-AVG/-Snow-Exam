@@ -70,14 +70,14 @@
         <sys_created_by>ndang8</sys_created_by>
         <sys_created_on>2023-10-26 02:20:02</sys_created_on>
         <sys_id>b61af6aa07ca75100eb2f61d7c1ed0a4</sys_id>
-        <sys_mod_count>3</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>ServiceNow PA mock exam</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_b61af6aa07ca75100eb2f61d7c1ed0a4</sys_update_name>
-        <sys_updated_by>htran210</sys_updated_by>
-        <sys_updated_on>2023-10-27 07:03:39</sys_updated_on>
+        <sys_updated_by>ndang8</sys_updated_by>
+        <sys_updated_on>2023-10-26 02:21:50</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
         <taxonomy_topic/>
         <template/>
@@ -85,7 +85,7 @@
         <type>item</type>
         <u_duration_minutes>90</u_duration_minutes>
         <u_number_of_questions>60</u_number_of_questions>
-        <u_owner display_value="Long Duong Boi">cc94248407d409500eb2f61d7c1ed0d6</u_owner>
+        <u_owner display_value="Danh Huynh Nguyen Thanh">d496c4c5dbd20010d606e04a489619d8</u_owner>
         <u_passing_score>70</u_passing_score>
         <u_password>abc123</u_password>
         <use_sc_layout>true</use_sc_layout>
