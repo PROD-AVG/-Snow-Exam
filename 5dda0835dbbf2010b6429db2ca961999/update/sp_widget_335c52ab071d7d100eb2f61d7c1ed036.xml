@@ -27,22 +27,8 @@
   //Show Exam
   c.showTest = function () {
     $scope.loadingIndicator = true;
-    //var imageLoaded = document.getElementById("nhu-image").complete;
-    /*alert(imageCompleted);*/
-    /*while (!imageLoaded) {
-			//alert(imageLoaded);
-			imageLoaded = document.getElementById("nhu-image").complete;
-		}*/
 
     snowCountDownTimerController();
-    // 		$scope.loadingIndicator = false;
-    // 		c.modalInstance = $uibModal.open({
-    // 			templateUrl: "modalTemplate",
-    // 			scope: $scope,
-    // 			size: "resize",
-    // 			// backdrop: "static",
-    // 		});
-    // 		c.isBegun = !c.isBegun;
     setTimeout(function () {
       snowCountDownTimerController();
       $scope.loadingIndicator = false;
@@ -50,10 +36,9 @@
         templateUrl: "modalTemplate",
         scope: $scope,
         size: "resize",
-        // 				backdrop: "static",
       });
       c.isBegun = !c.isBegun;
-    }, 200);
+    }, 1000);
   };
   //enter password
  c.onPrompt = function () {
@@ -1686,7 +1671,7 @@ label {
 }
 
 #preload-background {
-  //visibility: hidden;
+  visibility: hidden;
   //display: none;
   position: fixed;
   z-index: -1000;
@@ -1718,7 +1703,6 @@ label {
 	//Logics for getting random background
 	data.topic = getTopic();
 	data.background = getRndBackground(data.topic);
-	gs.info("1710 BACKGROUND: " + data.background);
 
 	data.isAdmin = gs.hasRole("admin");
 	data.items = [];
@@ -1795,7 +1779,6 @@ label {
 		var start = 0;
 		var end = images.length - 1;
 		var rndNum = Math.floor(Math.random() * (end - start + 1) ) + start;
-		// var backgroundName = 'x_292088_snow_exam.' + topic + '_ExamTest_Background_' + rndNum + '.jpg';
 		backgroundName = images[rndNum];
 		return backgroundName;
 	}
@@ -1804,7 +1787,6 @@ label {
 		var today = new GlideDate();
 		var events = JSON.parse(gs.getProperty('x_292088_snow_exam.dxc.snow-exam.background_topics'));
 		monthEvents = events[today.getMonthNoTZ()];
-		gs.info('1001: ' + today.getMonthNoTZ());
 		if (monthEvents){
 			for (var i = 0; i<monthEvents.length; i++){
 				var start = monthEvents[i]['start'];
@@ -1829,14 +1811,14 @@ label {
         <sys_created_by>NHUYNH29</sys_created_by>
         <sys_created_on>2023-09-21 19:56:56</sys_created_on>
         <sys_id>335c52ab071d7d100eb2f61d7c1ed036</sys_id>
-        <sys_mod_count>1731</sys_mod_count>
+        <sys_mod_count>1737</sys_mod_count>
         <sys_name>New Snow Exam Loader </sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_335c52ab071d7d100eb2f61d7c1ed036</sys_update_name>
-        <sys_updated_by>htran210</sys_updated_by>
-        <sys_updated_on>2023-10-27 05:48:03</sys_updated_on>
+        <sys_updated_by>ndang8</sys_updated_by>
+        <sys_updated_on>2023-11-01 05:09:06</sys_updated_on>
         <template><![CDATA[<div class="exam-wrapper">
   <img src="{{data.background}}" id="preload-background" onload="c.preloadImage()">
   <div id="container">
@@ -1876,7 +1858,7 @@ label {
         <div class="countdown-timer" id="timer"></div>
     </div>
       <!-- "Exam Test" text cách xa hình vuông -->
-      <div class="exam-text"><b>Exam <br> Time</div>
+      <div class="exam-text"><b>Exam <br> Time Start</div>
     </div>
 
   </div>
