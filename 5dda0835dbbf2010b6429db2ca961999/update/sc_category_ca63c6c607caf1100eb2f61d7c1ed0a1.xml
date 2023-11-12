@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_category">
+    <sc_category action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <description/>
+        <entitlement_script/>
+        <header_icon/>
+        <homepage_image/>
+        <homepage_renderer display_value="Category Items">47ebe8aa3742300054b6a3549dbe5dfa</homepage_renderer>
+        <icon/>
+        <image/>
+        <location/>
+        <mobile_hide_description>false</mobile_hide_description>
+        <mobile_picture/>
+        <mobile_subcategory_render_type>list</mobile_subcategory_render_type>
+        <module/>
+        <order>0</order>
+        <parent/>
+        <roles/>
+        <sc_catalog display_value="Snow Catalog">8ce7b327db7fe010b6429db2ca96192d</sc_catalog>
+        <sys_class_name>sc_category</sys_class_name>
+        <sys_created_by>htran210</sys_created_by>
+        <sys_created_on>2023-10-24 09:04:27</sys_created_on>
+        <sys_id>ca63c6c607caf1100eb2f61d7c1ed0a1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ServiceNow Mock Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sc_category_ca63c6c607caf1100eb2f61d7c1ed0a1</sys_update_name>
+        <sys_updated_by>htran210</sys_updated_by>
+        <sys_updated_on>2023-10-24 09:04:27</sys_updated_on>
+        <title>ServiceNow Mock Exam</title>
+    </sc_category>
+    <sys_translated_text action="delete_multiple" query="documentkey=ca63c6c607caf1100eb2f61d7c1ed0a1"/>
+</record_update>
