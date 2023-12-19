@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="user_criteria">
+    <user_criteria action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <advanced>false</advanced>
+        <company/>
+        <department/>
+        <group name="DXCV Nestle SNOW">eed2ee9507a255100eb2f61d7c1ed0e1</group>
+        <location/>
+        <match_all>false</match_all>
+        <name>DXCV Nestle SNOW</name>
+        <role/>
+        <script/>
+        <short_description/>
+        <sys_class_name>user_criteria</sys_class_name>
+        <sys_created_by>adang20</sys_created_by>
+        <sys_created_on>2023-12-08 09:46:43</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f4acb12c0787b5100eb2f61d7c1ed062</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>DXCV Nestle SNOW</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>user_criteria_f4acb12c0787b5100eb2f61d7c1ed062</sys_update_name>
+        <sys_updated_by>adang20</sys_updated_by>
+        <sys_updated_on>2023-12-08 09:46:43</sys_updated_on>
+        <user/>
+    </user_criteria>
+</record_update>
