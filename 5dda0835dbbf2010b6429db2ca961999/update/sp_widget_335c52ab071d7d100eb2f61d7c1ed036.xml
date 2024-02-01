@@ -1727,7 +1727,7 @@ label {
 	if (rec.get(data.catItem)) {
 		data.password = rec.getValue("u_password");
 		data.duration = parseInt(rec.getValue("u_duration_minutes"));
-		console.log('data.duration: ' + data.duration)
+		
 	}
 
 	//Load data for new Page
@@ -1797,9 +1797,9 @@ label {
 				var start = monthEvents[i]['start'];
 				var end = monthEvents[i]['end'];
 				var startDate = new GlideDate();
-				startDate.setValue('2023-' + start.split('-')[1] + '-' + start.split('-')[0]);
+				startDate.setValue('2024-' + start.split('-')[1] + '-' + start.split('-')[0]);
 				var endDate = new GlideDate();
-				endDate.setValue('2023-' + end.split('-')[1] + '-' + end.split('-')[0]);
+				endDate.setValue('2024-' + end.split('-')[1] + '-' + end.split('-')[0]);
 				if (today >= startDate && today <= endDate){
 					return monthEvents[i]['topic'];
 				}
@@ -1816,14 +1816,14 @@ label {
         <sys_created_by>NHUYNH29</sys_created_by>
         <sys_created_on>2023-09-21 19:56:56</sys_created_on>
         <sys_id>335c52ab071d7d100eb2f61d7c1ed036</sys_id>
-        <sys_mod_count>1756</sys_mod_count>
+        <sys_mod_count>1758</sys_mod_count>
         <sys_name>New Snow Exam Loader </sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sp_widget_335c52ab071d7d100eb2f61d7c1ed036</sys_update_name>
-        <sys_updated_by>kvuong4</sys_updated_by>
-        <sys_updated_on>2023-12-13 14:46:08</sys_updated_on>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2024-02-01 06:56:23</sys_updated_on>
         <template><![CDATA[<div class="exam-wrapper">
   <img src="{{data.background}}" id="preload-background" onload="c.preloadImage()">
   <div id="container">
