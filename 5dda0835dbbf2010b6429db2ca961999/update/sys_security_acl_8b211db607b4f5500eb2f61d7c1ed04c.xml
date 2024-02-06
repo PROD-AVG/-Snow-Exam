@@ -5,9 +5,11 @@
         <advanced>false</advanced>
         <condition/>
         <description>Allow write for records in x_292088_snow_exam_snow_exam_case, for users with role x_424363_ski_eva_1.se_user.</description>
+        <local_or_existing>Local</local_or_existing>
         <name>x_292088_snow_exam_snow_exam_case</name>
         <operation display_value="write">write</operation>
         <script/>
+        <security_attribute/>
         <sys_class_name>sys_security_acl</sys_class_name>
         <sys_created_by>dnguyen322</sys_created_by>
         <sys_created_on>2023-08-25 10:01:32</sys_created_on>

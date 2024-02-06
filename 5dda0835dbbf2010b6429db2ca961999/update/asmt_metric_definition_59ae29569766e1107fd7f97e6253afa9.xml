@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_definition">
+    <asmt_metric_definition action="INSERT_OR_UPDATE">
+        <display>I cannot join</display>
+        <metric display_value="Bạn có thể tham gia ngày nào">9dae29569766e1107fd7f97e6253af98</metric>
+        <normalization_input>0</normalization_input>
+        <order>2</order>
+        <selected_image/>
+        <sys_class_name>asmt_metric_definition</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:32:06</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>59ae29569766e1107fd7f97e6253afa9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>I cannot join</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>asmt_metric_definition_59ae29569766e1107fd7f97e6253afa9</sys_update_name>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:32:06</sys_updated_on>
+        <unselected_image/>
+        <value>3</value>
+    </asmt_metric_definition>
+    <sys_translated_text action="delete_multiple" query="documentkey=59ae29569766e1107fd7f97e6253afa9"/>
+</record_update>

@@ -3,6 +3,7 @@
         <description/>
         <execution_script/>
         <name>Edit (SNOW Exam Case)</name>
+        <parameter_screen/>
         <query_condition table="x_292088_snow_exam_snow_exam_case">sys_idSTARTSWITH{{SNOW Exam Case sys_id}}^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="STARTSWITH" or="false" value="{{SNOW Exam Case sys_id}}"/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </query_condition>
@@ -22,6 +23,7 @@
         <template>priority={{SNOW Exam Case priority}}^state={{SNOW Exam Case state}}^short_description={{SNOW Exam Case short_description}}^description={{SNOW Exam Case description}}^assigned_to={{SNOW Exam Case assigned_to}}^assignment_group={{SNOW Exam Case assignment_group}}^company={{SNOW Exam Case company}}^location={{SNOW Exam Case location}}^cmdb_ci={{SNOW Exam Case cmdb_ci}}^business_service={{SNOW Exam Case business_service}}^EQ</template>
         <type>update</type>
         <use_current_record_as_condition>true</use_current_record_as_condition>
+        <use_fields_for_ref_lookup>false</use_fields_for_ref_lookup>
     </sys_sg_write_back_action_item>
     <sys_translated_text action="delete_multiple" query="documentkey=daebc8f5dbbf2010b6429db2ca961998"/>
 </record_update>

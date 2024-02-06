@@ -15,7 +15,6 @@
         <header_config_opened_for display_value="Default for opened for/approver">86d9872eb3900300f5302ddc16a8dc8b</header_config_opened_for>
         <header_config_subject_person display_value="Default for subject person/task assigned to">c4e9872eb3900300f5302ddc16a8dc91</header_config_subject_person>
         <hr_criteria/>
-        <le_type/>
         <name>OTPPB</name>
         <producer display_value="OTPPB">fc6bad1d079c71900eb2f61d7c1ed0a0</producer>
         <service_table>x_292088_snow_exam_snow_exam_case</service_table>

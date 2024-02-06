@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_category">
+    <asmt_metric_category action="DELETE">
+        <create_stakeholders>false</create_stakeholders>
+        <description/>
+        <details/>
+        <filter table="asmt_metric_type">sys_id=f80e2d169766e1107fd7f97e6253af6d^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="f80e2d169766e1107fd7f97e6253af6d"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <metric_type display_value="">f80e2d169766e1107fd7f97e6253af6d</metric_type>
+        <name>Register: Delivery trip - Phan Thiet</name>
+        <order>100</order>
+        <qb_evaluation_method/>
+        <roles/>
+        <scoring_type>percent</scoring_type>
+        <sys_class_name>asmt_metric_category</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:29:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>b00e2d169766e1107fd7f97e6253af73</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>Register: Delivery trip - Phan Thiet</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>asmt_metric_category_b00e2d169766e1107fd7f97e6253af73</sys_update_name>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:30:28</sys_updated_on>
+        <table>asmt_metric_type</table>
+        <total_metrics>0</total_metrics>
+        <weight>10</weight>
+    </asmt_metric_category>
+    <sys_translated_text action="DELETE" query="documentkey=b00e2d169766e1107fd7f97e6253af73"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>asmt_metric_category_b00e2d169766e1107fd7f97e6253af73</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_category"><asmt_metric_category action="INSERT_OR_UPDATE"><create_stakeholders>false</create_stakeholders><description/><details/><filter table="asmt_metric_type">sys_id=f80e2d169766e1107fd7f97e6253af6d^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="f80e2d169766e1107fd7f97e6253af6d"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></filter><metric_type display_value="">f80e2d169766e1107fd7f97e6253af6d</metric_type><name>Register: Delivery trip - Phan Thiet</name><order>100</order><qb_evaluation_method/><roles/><scoring_type>percent</scoring_type><sys_class_name>asmt_metric_category</sys_class_name><sys_created_by>TTRAN332</sys_created_by><sys_created_on>2023-05-04 02:29:20</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>b00e2d169766e1107fd7f97e6253af73</sys_id><sys_mod_count>4</sys_mod_count><sys_name>Register: Delivery trip - Phan Thiet</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>asmt_metric_category_b00e2d169766e1107fd7f97e6253af73</sys_update_name><sys_updated_by>TTRAN332</sys_updated_by><sys_updated_on>2023-05-04 02:30:28</sys_updated_on><table>asmt_metric_type</table><total_metrics>0</total_metrics><weight>10</weight></asmt_metric_category><sys_translated_text action="delete_multiple" query="documentkey=b00e2d169766e1107fd7f97e6253af73"/></record_update>]]></payload>
+        <payload_hash>553401507</payload_hash>
+        <record_name>Register: Delivery trip - Phan Thiet</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:30:28</sys_created_on>
+        <sys_id>6d4e61569766e1107fd7f97e6253af8b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>187e498c0280000001</sys_recorded_at>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:30:28</sys_updated_on>
+        <type>Metric Category</type>
+        <update_guid>254e61560066e11032d3bf2a628f508b</update_guid>
+        <update_guid_history>254e61560066e11032d3bf2a628f508b:553401507,e94e61567966e11054c0e95a3aece482:1420453732,b80e2d16bb66e110077848907065c580:1535814414,780e2d165066e1103a0bb3052ab17677:668762189,7c0e2d169d66e110e98a96c9558c6474:1535814414</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Register: Delivery trip - Phan Thiet">654e61569766e1107fd7f97e6253af93</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:30:28</sys_created_on>
+        <sys_db_object display_value="" name="asmt_metric_category">asmt_metric_category</sys_db_object>
+        <sys_id>49d865f2bc8c4d5ab00e7368172145b9</sys_id>
+        <sys_metadata>b00e2d169766e1107fd7f97e6253af73</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Register: Delivery trip - Phan Thiet</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>asmt_metric_category_b00e2d169766e1107fd7f97e6253af73</sys_update_name>
+        <sys_update_version display_value="asmt_metric_category_b00e2d169766e1107fd7f97e6253af73">6d4e61569766e1107fd7f97e6253af8b</sys_update_version>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:30:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

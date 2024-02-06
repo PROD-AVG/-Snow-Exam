@@ -17,6 +17,7 @@
         <messages/>
         <name>Populate Line Manager</name>
         <order/>
+        <published_ref/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading) {
 	if (newValue == '') {
 		g_form.clearValue('line_manager');

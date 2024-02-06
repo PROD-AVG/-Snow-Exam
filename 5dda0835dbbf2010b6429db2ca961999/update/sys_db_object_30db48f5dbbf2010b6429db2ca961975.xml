@@ -9,7 +9,6 @@
         <create_access>true</create_access>
         <create_access_controls>false</create_access_controls>
         <delete_access>false</delete_access>
-        <extension_model/>
         <is_extendable>true</is_extendable>
         <label>SNOW Exam Case</label>
         <live_feed_enabled>false</live_feed_enabled>
@@ -18,10 +17,8 @@
         <provider_class/>
         <read_access>true</read_access>
         <scriptable_table>false</scriptable_table>
-        <super_class display_value="HR Case" name="sn_hr_core_case">194855301b1f60109ef242e4cc4bcb1f</super_class>
-        <sys_class_code/>
+        <super_class display_value="HR Case" name="sn_hr_core_case">78612a27db4cbc10411fc8da0b961958</super_class>
         <sys_class_name>sys_db_object</sys_class_name>
-        <sys_class_path/>
         <sys_created_by>KNGUYEN236</sys_created_by>
         <sys_created_on>2021-04-29 00:37:15</sys_created_on>
         <sys_id>30db48f5dbbf2010b6429db2ca961975</sys_id>

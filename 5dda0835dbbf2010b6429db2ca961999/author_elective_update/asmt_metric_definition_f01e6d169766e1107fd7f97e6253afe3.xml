@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_definition">
+    <asmt_metric_definition action="DELETE">
+        <display>17,18 June</display>
+        <metric display_value="Bạn có thể tham gia ngày nào">701e69169766e1107fd7f97e6253af73</metric>
+        <normalization_input>0</normalization_input>
+        <order>0</order>
+        <selected_image/>
+        <sys_class_name>asmt_metric_definition</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:29:36</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f01e6d169766e1107fd7f97e6253afe3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>17,18 June</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>asmt_metric_definition_f01e6d169766e1107fd7f97e6253afe3</sys_update_name>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:29:36</sys_updated_on>
+        <unselected_image/>
+        <value>0</value>
+    </asmt_metric_definition>
+    <sys_translated_text action="DELETE" query="documentkey=f01e6d169766e1107fd7f97e6253afe3"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>asmt_metric_definition_f01e6d169766e1107fd7f97e6253afe3</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_definition"><asmt_metric_definition action="INSERT_OR_UPDATE"><display>17,18 June</display><metric display_value="Bạn có thể tham gia ngày nào">701e69169766e1107fd7f97e6253af73</metric><normalization_input>0</normalization_input><order>0</order><selected_image/><sys_class_name>asmt_metric_definition</sys_class_name><sys_created_by>TTRAN332</sys_created_by><sys_created_on>2023-05-04 02:29:36</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>f01e6d169766e1107fd7f97e6253afe3</sys_id><sys_mod_count>0</sys_mod_count><sys_name>17,18 June</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>asmt_metric_definition_f01e6d169766e1107fd7f97e6253afe3</sys_update_name><sys_updated_by>TTRAN332</sys_updated_by><sys_updated_on>2023-05-04 02:29:36</sys_updated_on><unselected_image/><value>0</value></asmt_metric_definition><sys_translated_text action="delete_multiple" query="documentkey=f01e6d169766e1107fd7f97e6253afe3"/></record_update>]]></payload>
+        <payload_hash>-338697711</payload_hash>
+        <record_name>17,18 June</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:29:36</sys_created_on>
+        <sys_id>bc1e6d169766e1107fd7f97e6253afe4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>187e497f4f60000001</sys_recorded_at>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:29:36</sys_updated_on>
+        <type>Assessment Metric Definition</type>
+        <update_guid>b41e6d167a66e110b02ca0940217bfe4</update_guid>
+        <update_guid_history>b41e6d167a66e110b02ca0940217bfe4:-338697711</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="17,18 June">914e61569766e1107fd7f97e6253af39</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:30:27</sys_created_on>
+        <sys_db_object display_value="" name="asmt_metric_definition">asmt_metric_definition</sys_db_object>
+        <sys_id>627ed95b38a4462e8e14c4ef590e46e1</sys_id>
+        <sys_metadata>f01e6d169766e1107fd7f97e6253afe3</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>17,18 June</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>asmt_metric_definition_f01e6d169766e1107fd7f97e6253afe3</sys_update_name>
+        <sys_update_version display_value="asmt_metric_definition_f01e6d169766e1107fd7f97e6253afe3">bc1e6d169766e1107fd7f97e6253afe4</sys_update_version>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:30:27</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

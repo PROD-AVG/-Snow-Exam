@@ -7,7 +7,7 @@
         <applies_sc_task>false</applies_sc_task>
         <applies_target_record>false</applies_target_record>
         <applies_to>item</applies_to>
-        <cat_item display_value="Airbus">8bc8ad7407e23d500eb2f61d7c1ed061</cat_item>
+        <cat_item display_value="Airbus Operation ">8bc8ad7407e23d500eb2f61d7c1ed061</cat_item>
         <cat_variable/>
         <condition/>
         <description/>
@@ -17,6 +17,7 @@
         <messages/>
         <name>Clear Session onSubmit</name>
         <order/>
+        <published_ref/>
         <script><![CDATA[function onSubmit() {
    //Type appropriate comment here, and begin script below
 	localStorage.removeItem("item");

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sysauto_report">
+    <sysauto_report action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <address_list/>
+        <business_calendar/>
+        <condition/>
+        <conditional>false</conditional>
+        <entered_time/>
+        <group_list/>
+        <include_detail>false</include_detail>
+        <include_with/>
+        <max_drift/>
+        <name>Monthly Report pDXC members taking exam</name>
+        <offset/>
+        <offset_type/>
+        <omit_if_no_records>false</omit_if_no_records>
+        <output_type>XLSX</output_type>
+        <page_height_in_pixels>612</page_height_in_pixels>
+        <page_size>Letter</page_size>
+        <page_width_in_pixels>792</page_width_in_pixels>
+        <report display_value="Last Month Report pDXC Support members taking exam">10ebafb89713a1107fd7f97e6253af00</report>
+        <report_body><![CDATA[<p>Hi all,</p>
+<p>This is the report of all members of pDXC Support that have taken the process exam for previous month.</p>
+<p>Regards!</p>]]></report_body>
+        <report_title>Report pDXC members taking exam for last month</report_title>
+        <run_as display_value="Anh Dang Le Tuan">e2f440239701e1107fd7f97e6253af84</run_as>
+        <run_as_tz/>
+        <run_dayofmonth>1</run_dayofmonth>
+        <run_dayofweek>7</run_dayofweek>
+        <run_period/>
+        <run_start>2023-06-06 02:35:56</run_start>
+        <run_time>1969-12-31 17:30:00</run_time>
+        <run_type>monthly</run_type>
+        <sys_class_name>sysauto_report</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-06 02:37:01</sys_created_on>
+        <sys_id>2bfb2ff89713a1107fd7f97e6253af97</sys_id>
+        <sys_mod_count>20</sys_mod_count>
+        <sys_name>Monthly Report pDXC members taking exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sysauto_report_2bfb2ff89713a1107fd7f97e6253af97</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2024-02-01 04:45:49</sys_updated_on>
+        <time_zone/>
+        <upgrade_safe>false</upgrade_safe>
+        <user_list>dc96c4c5dbd20010d606e04a489619e2,5896c4c5dbd20010d606e04a489619e5,dc96c4c5dbd20010d606e04a489619fe,e2f440239701e1107fd7f97e6253af84,d80623fcdb223c50411fc8da0b9619ee</user_list>
+        <zip>false</zip>
+    </sysauto_report>
+</record_update>

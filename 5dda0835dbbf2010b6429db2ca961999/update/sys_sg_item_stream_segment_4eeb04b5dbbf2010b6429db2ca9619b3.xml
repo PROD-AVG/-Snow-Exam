@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_sg_item_stream_segment">
     <sys_sg_item_stream_segment action="INSERT_OR_UPDATE">
+        <empty_state/>
         <interleave_order_direction>asc</interleave_order_direction>
+        <max_offline_rows>1000</max_offline_rows>
         <name>SNOW Exam Case Item Stream Segment</name>
         <order>0</order>
         <screen display_value="SNOW Exam Cases">c2eb04b5dbbf2010b6429db2ca9619b2</screen>

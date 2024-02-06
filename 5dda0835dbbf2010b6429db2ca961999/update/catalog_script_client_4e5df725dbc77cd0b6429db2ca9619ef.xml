@@ -17,6 +17,7 @@
         <messages/>
         <name>Clear Session</name>
         <order/>
+        <published_ref/>
         <script><![CDATA[function onSubmit() {
 	localStorage.removeItem("item");
 	localStorage.removeItem("examData");

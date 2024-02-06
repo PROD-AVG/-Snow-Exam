@@ -49,7 +49,7 @@
         <omit_price>false</omit_price>
         <order>0</order>
         <ordered_item_link/>
-        <owner display_value="Dang Le Tuan Anh">1e3267a3076ea5900eb2f61d7c1ed08c</owner>
+        <owner display_value="">1e3267a3076ea5900eb2f61d7c1ed08c</owner>
         <picture/>
         <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=b09a466e079235500eb2f61d7c1ed0dc&amp;sysparm_preview=true", "summary");</preview>
@@ -95,6 +95,7 @@
         <u_password>Elux2023</u_password>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version/>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

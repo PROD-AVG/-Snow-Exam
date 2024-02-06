@@ -51,7 +51,6 @@ Ex: if system has 100 existing questions,
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>VDANG25</sys_created_by>
         <sys_created_on>2023-11-05 01:47:56</sys_created_on>
-        <sys_id>fbfd8c272f517d1027114ae72799b6bc</sys_id>
         <sys_name>Ex: 40, 20, 30, etc.
 Ex: if system has 100 existing questions,
      =&gt;  Input = 20 means system will random 20 of 100 questions each time.

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane">
+    <sys_grid_canvas_pane action="DELETE">
+        <grid_canvas display_value="PA pDXC Data Support Mo - New Tab">6d12cf0f975ba9107fd7f97e6253af6b</grid_canvas>
+        <height>10</height>
+        <portal_widget display_value="Created 13/06/2023 06:20:31">0d620b0f975ba9107fd7f97e6253af77</portal_widget>
+        <posx>0</posx>
+        <posy>0</posy>
+        <sys_class_name>sys_grid_canvas_pane</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-12 23:20:31</sys_created_on>
+        <sys_id>49620b0f975ba9107fd7f97e6253af7a</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>6d12cf0f975ba9107fd7f97e6253af6b</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_grid_canvas_pane_49620b0f975ba9107fd7f97e6253af7a</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-12 23:20:58</sys_updated_on>
+        <width>12</width>
+    </sys_grid_canvas_pane>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sys_grid_canvas_pane_49620b0f975ba9107fd7f97e6253af7a</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_grid_canvas_pane"><sys_grid_canvas_pane action="INSERT_OR_UPDATE"><grid_canvas display_value="PA pDXC Data Support Mo - New Tab">6d12cf0f975ba9107fd7f97e6253af6b</grid_canvas><height>10</height><portal_widget display_value="Created 13/06/2023 06:20:31">0d620b0f975ba9107fd7f97e6253af77</portal_widget><posx>0</posx><posy>0</posy><sys_class_name>sys_grid_canvas_pane</sys_class_name><sys_created_by>ADANG20</sys_created_by><sys_created_on>2023-06-12 23:20:31</sys_created_on><sys_id>49620b0f975ba9107fd7f97e6253af7a</sys_id><sys_mod_count>4</sys_mod_count><sys_name>6d12cf0f975ba9107fd7f97e6253af6b</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>sys_grid_canvas_pane_49620b0f975ba9107fd7f97e6253af7a</sys_update_name><sys_updated_by>ADANG20</sys_updated_by><sys_updated_on>2023-06-12 23:20:58</sys_updated_on><width>12</width></sys_grid_canvas_pane></record_update>]]></payload>
+        <payload_hash>-1335620978</payload_hash>
+        <record_name>6d12cf0f975ba9107fd7f97e6253af6b</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-12 23:20:58</sys_created_on>
+        <sys_id>ab7203cf975ba9107fd7f97e6253af5d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>188b1e9a1c80000001</sys_recorded_at>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-12 23:20:58</sys_updated_on>
+        <type>Grid Canvas Pane</type>
+        <update_guid>637203cf3c5ba9105a54036646cb405d</update_guid>
+        <update_guid_history>637203cf3c5ba9105a54036646cb405d:-1335620978,6a72c3cfaf5ba9108f9141590687620a:-1387072251,d572c3cf755ba910caf876fbcc718216:-1335620978,a472cf8fe55ba9104e769dffc1cd3f72:-1387072251,09620b0feb5ba910da89e9ee155a637c:-1335620978</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-14 02:08:49</sys_created_on>
+        <sys_db_object display_value="" name="sys_grid_canvas_pane">sys_grid_canvas_pane</sys_db_object>
+        <sys_id>1a87161153a745a488329c5b7346aa10</sys_id>
+        <sys_metadata>49620b0f975ba9107fd7f97e6253af7a</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>6d12cf0f975ba9107fd7f97e6253af6b</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sys_grid_canvas_pane_49620b0f975ba9107fd7f97e6253af7a</sys_update_name>
+        <sys_update_version display_value="sys_grid_canvas_pane_49620b0f975ba9107fd7f97e6253af7a">ab7203cf975ba9107fd7f97e6253af5d</sys_update_version>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-14 02:08:49</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

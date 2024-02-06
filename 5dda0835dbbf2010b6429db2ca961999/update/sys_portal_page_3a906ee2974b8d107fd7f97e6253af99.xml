@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update node_type="sys_portal_page" unload_date="2024-02-06 05:13:53">
+    <sys_portal_page action="INSERT_OR_UPDATE">
+        <layout/>
+        <order/>
+        <read_roles>snc_internal</read_roles>
+        <roles/>
+        <selectable>false</selectable>
+        <sys_class_name>sys_portal_page</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2022-04-27 04:57:56</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3a906ee2974b8d107fd7f97e6253af99</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>PA Delivery Trip - New Tab</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_portal_page_3a906ee2974b8d107fd7f97e6253af99</sys_update_name>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2022-04-27 04:57:56</sys_updated_on>
+        <title>PA Delivery Trip - New Tab</title>
+        <user/>
+        <view>pa_delivery_trip_-_new_tab</view>
+        <related_items_node>
+            <sys_portal action="INSERT_OR_UPDATE">
+                <dropzone/>
+                <offset/>
+                <page display_value="PA Delivery Trip - New Tab">3a906ee2974b8d107fd7f97e6253af99</page>
+                <summary>Delivery trip - May 2022</summary>
+                <sys_created_by>TTRAN332</sys_created_by>
+                <sys_created_on>2022-04-27 04:58:17</sys_created_on>
+                <sys_id>84b06ae2974b8d107fd7f97e6253afa9</sys_id>
+                <sys_mod_count>1</sys_mod_count>
+                <sys_updated_by>TTRAN332</sys_updated_by>
+                <sys_updated_on>2022-04-27 04:58:18</sys_updated_on>
+                <related_items_node>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>report_type</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:18</sys_created_on>
+                        <sys_id>00b06ae2974b8d107fd7f97e6253afab</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:18</sys_updated_on>
+                        <value>list</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>sys_id</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:17</sys_created_on>
+                        <sys_id>4cb06ae2974b8d107fd7f97e6253afa9</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:17</sys_updated_on>
+                        <value>57dc86ee97c78d107fd7f97e6253affb</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>can_subscribe</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:18</sys_created_on>
+                        <sys_id>4cb06ae2974b8d107fd7f97e6253afaa</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:18</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>help_text_window</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:18</sys_created_on>
+                        <sys_id>88b06ae2974b8d107fd7f97e6253afaa</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:18</sys_updated_on>
+                        <value>report_widget_description</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:18</sys_created_on>
+                        <sys_id>c0b06ae2974b8d107fd7f97e6253afab</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:18</sys_updated_on>
+                        <value>Delivery trip - May 2022</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_header</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>c3b0eee2974b8d107fd7f97e6253afad</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>subscriber_widget</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>c3b0eee2974b8d107fd7f97e6253afae</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>renderer</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:18</sys_created_on>
+                        <sys_id>c4b06ae2974b8d107fd7f97e6253afaa</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:18</sys_updated_on>
+                        <value>com.glide.ui.portal.RenderReport</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>title_align</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>c7b0eee2974b8d107fd7f97e6253afad</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>left</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>filter_indicator</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>c7b0eee2974b8d107fd7f97e6253afae</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_border</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>cbb0eee2974b8d107fd7f97e6253afad</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>real_time</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>cbb0eee2974b8d107fd7f97e6253afae</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>show_title</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>cfb0eee2974b8d107fd7f97e6253afac</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>true</value>
+                    </sys_portal_preferences>
+                    <sys_portal_preferences action="INSERT_OR_UPDATE">
+                        <name>publisher_widget</name>
+                        <portal_section display_value="Created 2022-04-27 11:58:17">84b06ae2974b8d107fd7f97e6253afa9</portal_section>
+                        <sys_created_by>TTRAN332</sys_created_by>
+                        <sys_created_on>2022-04-27 04:58:30</sys_created_on>
+                        <sys_id>cfb0eee2974b8d107fd7f97e6253afad</sys_id>
+                        <sys_mod_count>0</sys_mod_count>
+                        <sys_updated_by>TTRAN332</sys_updated_by>
+                        <sys_updated_on>2022-04-27 04:58:30</sys_updated_on>
+                        <value>false</value>
+                    </sys_portal_preferences>
+                </related_items_node>
+            </sys_portal>
+        </related_items_node>
+    </sys_portal_page>
+</record_update>

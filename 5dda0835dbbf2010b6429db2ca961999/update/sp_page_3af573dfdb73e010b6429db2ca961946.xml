@@ -4,10 +4,13 @@
         <css/>
         <draft>false</draft>
         <dynamic_title_structure>Catalog - Browse</dynamic_title_structure>
+        <human_readable_url_structure/>
         <id>snow_cat_home</id>
         <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
         <public>false</public>
         <roles>snc_external,snc_internal</roles>
+        <seo_script/>
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>VVUONG2</sys_created_by>
@@ -22,6 +25,7 @@
         <sys_updated_by>VVUONG2</sys_updated_by>
         <sys_updated_on>2021-05-04 09:31:35</sys_updated_on>
         <title>Snow Exam Service Catalog </title>
+        <use_seo_script>false</use_seo_script>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=3af573dfdb73e010b6429db2ca961946"/>
 </record_update>

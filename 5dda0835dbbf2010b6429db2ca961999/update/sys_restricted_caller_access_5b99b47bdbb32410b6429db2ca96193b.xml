@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_restricted_caller_access">
     <sys_restricted_caller_access action="INSERT_OR_UPDATE">
+        <description/>
         <operation>read</operation>
+        <rca_type/>
         <source/>
         <source_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</source_scope>
         <source_table/>

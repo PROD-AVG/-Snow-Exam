@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Bar on MTOM Answer Sheets table by question_id.sub_category created by Kim Hoang Quoc Tran: 2021-11-">130af638db7b7010411fc8da0b96193c</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>quockimhoang.tran@dxc.com</sys_created_by>
+        <sys_created_on>2021-11-11 06:55:41</sys_created_on>
+        <sys_id>970af638db7b7010411fc8da0b96193c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>130af638db7b7010411fc8da0b96193c</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_report_users_groups_970af638db7b7010411fc8da0b96193c</sys_update_name>
+        <sys_updated_by>quockimhoang.tran@dxc.com</sys_updated_by>
+        <sys_updated_on>2021-11-11 06:55:41</sys_updated_on>
+        <user_id display_value="Quoc Tran Kim Hoang">da0d7e21dbaff810411fc8da0b9619a1</user_id>
+    </sys_report_users_groups>
+</record_update>

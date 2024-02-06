@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="res3_string_value" label="3. Do you prefer Q&amp;A section or Sharing Article section from the recent offline " language="en" table="u_metric_d87badfe975e75507fd7f97e6253af11_result">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>res3_string_value</element>
+            <help/>
+            <hint/>
+            <label>3. Do you prefer Q&amp;A section or Sharing Article section from the recent offline </label>
+            <language>en</language>
+            <name>u_metric_d87badfe975e75507fd7f97e6253af11_result</name>
+            <plural>3. Do you prefer Q&amp;A section or Sharing Article section from the recent offline </plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-12-01 05:53:38</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>3. Do you prefer Q&amp;A section or Sharing Article section from the recent offline </sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_documentation_u_metric_d87badfe975e75507fd7f97e6253af11_result_res3_string_value_en</sys_update_name>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-12-01 05:53:38</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

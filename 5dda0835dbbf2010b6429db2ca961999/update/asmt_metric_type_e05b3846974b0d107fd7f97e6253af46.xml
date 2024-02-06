@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_type">
+    <asmt_metric_type action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <allow_public>false</allow_public>
+        <allow_retake>false</allow_retake>
+        <anonymize>false</anonymize>
+        <business_rule/>
+        <chat_survey>false</chat_survey>
+        <condition table="asmt_metric_type">sys_id=e05b3846974b0d107fd7f97e6253af46^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="e05b3846974b0d107fd7f97e6253af46"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <default_filter/>
+        <delete_business_rule/>
+        <description/>
+        <disable_ui_action/>
+        <display_all_filters>false</display_all_filters>
+        <display_field>name</display_field>
+        <duration>1970-01-03 00:00:00</duration>
+        <enable_ui_action/>
+        <end_note><![CDATA[<p class="MsoNormal">Một số th&ocirc;ng tin quan trọng:</p>
+<ul style="margin-top: 0in;" type="disc">
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">Đ&acirc;y l&agrave; chương tr&igrave;nh Team Building n&ecirc;n kh&ocirc;ng tổ chức cho gia đ&igrave;nh. Th&agrave;nh vi&ecirc;n n&agrave;o thật sự cần dắt theo&nbsp;người th&acirc;n vui l&ograve;ng li&ecirc;n lạc&nbsp;trực tiếp&nbsp;với PM/BTC (Như Ho&agrave;ng/ Yến Ho&agrave;ng/ Trinh Tran)</li>
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">Chương tr&igrave;nh Team Building&nbsp;sẽ sẽ sử dụng quỹ team, company team building&hellip; BTC sẽ cố gắng FREE cho tất cả th&agrave;nh vi&ecirc;n trong team tham gia, nhưng v&igrave; chi ph&iacute; chưa "chốt" n&ecirc;n c&oacute; thể cần đến sự đ&oacute;ng g&oacute;p của anh em ở mức tối thiểu nh&eacute;!</li>
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">BTC sẽ th&ocirc;ng b&aacute;o cho c&aacute;c th&agrave;nh vi&ecirc;n về chương tr&igrave;nh cụ thể dựa tr&ecirc;n kết quả survey n&agrave;y (theo số đ&ocirc;ng), chi ph&iacute; v&agrave;&nbsp;nội dung&nbsp;ph&ugrave; hợp</li>
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">BTC sẽ c&oacute; nhiều tr&ograve; chơi theo đội nh&oacute;m, team&hellip; c&aacute;c team vui l&ograve;ng chuẩn bị th&agrave;nh vi&ecirc;n, tinh thần để c&ugrave;ng tham gia thật nhiệt t&igrave;nh</li>
+</ul>]]></end_note>
+        <enforce_condition>false</enforce_condition>
+        <evaluation_method>survey</evaluation_method>
+        <filter_condition/>
+        <filter_table/>
+        <introduction><![CDATA[<p class="MsoNormal">Một số th&ocirc;ng tin quan trọng:</p>
+<ul style="margin-top: 0in;" type="disc">
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">Đ&acirc;y l&agrave; chương tr&igrave;nh Team Building n&ecirc;n kh&ocirc;ng tổ chức cho gia đ&igrave;nh. Th&agrave;nh vi&ecirc;n n&agrave;o thật sự cần dắt theo&nbsp;người th&acirc;n vui l&ograve;ng li&ecirc;n lạc&nbsp;trực tiếp&nbsp;với PM/BTC (Như Ho&agrave;ng/ Yến Ho&agrave;ng/ Trinh Tran)</li>
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">Chương tr&igrave;nh Team Building&nbsp;sẽ sẽ sử dụng quỹ team, company team building&hellip; BTC sẽ cố gắng FREE cho tất cả th&agrave;nh vi&ecirc;n trong team tham gia, nhưng v&igrave; chi ph&iacute; chưa "chốt" n&ecirc;n c&oacute; thể cần đến sự đ&oacute;ng g&oacute;p của anh em ở mức tối thiểu nh&eacute;!</li>
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">BTC sẽ th&ocirc;ng b&aacute;o cho c&aacute;c th&agrave;nh vi&ecirc;n về chương tr&igrave;nh cụ thể dựa tr&ecirc;n kết quả survey n&agrave;y (theo số đ&ocirc;ng), chi ph&iacute; v&agrave;&nbsp;nội dung&nbsp;ph&ugrave; hợp</li>
+<li class="MsoListParagraph" style="margin-left: 0in; mso-list: l0 level1 lfo1;">BTC sẽ c&oacute; nhiều tr&ograve; chơi theo đội nh&oacute;m, team&hellip; c&aacute;c team vui l&ograve;ng chuẩn bị th&agrave;nh vi&ecirc;n, tinh thần để c&ugrave;ng tham gia thật nhiệt t&igrave;nh</li>
+</ul>]]></introduction>
+        <job/>
+        <live_feed>false</live_feed>
+        <name>Delivery trip</name>
+        <not_show_intro_note>false</not_show_intro_note>
+        <notify_if_overdue>false</notify_if_overdue>
+        <notify_user>true</notify_user>
+        <one_click_survey>false</one_click_survey>
+        <overdue_notify_user/>
+        <portal_pagination>category</portal_pagination>
+        <publish_state>published</publish_state>
+        <roles>survey_admin,survey_reader</roles>
+        <sample_metric/>
+        <scale_factor>10</scale_factor>
+        <schedule_period>2</schedule_period>
+        <schedule_type>on_demand</schedule_type>
+        <scoring_type>percent</scoring_type>
+        <signature/>
+        <source_table/>
+        <survey_owners>4961f714dbc40d10411fc8da0b9619e7</survey_owners>
+        <sys_class_name>asmt_metric_type</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2022-04-25 08:18:27</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>e05b3846974b0d107fd7f97e6253af46</sys_id>
+        <sys_mod_count>9</sys_mod_count>
+        <sys_name>Delivery trip</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>asmt_metric_type_e05b3846974b0d107fd7f97e6253af46</sys_update_name>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2022-04-25 08:59:03</sys_updated_on>
+        <table>asmt_metric_type</table>
+        <url/>
+        <user_field/>
+        <user_field_business_rule/>
+    </asmt_metric_type>
+    <sys_translated_text action="delete_multiple" query="documentkey=e05b3846974b0d107fd7f97e6253af46"/>
+</record_update>

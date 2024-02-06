@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom">
+    <sc_cat_item_user_criteria_mtom action="DELETE">
+        <sc_cat_item display_value="Nissan SDSM">2eff318807dbb5500eb2f61d7c1ed031</sc_cat_item>
+        <sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name>
+        <sys_created_by>adang20</sys_created_by>
+        <sys_created_on>2023-12-19 07:07:13</sys_created_on>
+        <sys_id>44b1064c07dbb5500eb2f61d7c1ed023</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Nissan SDSM.DXCV Nissan NML SNOW</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_44b1064c07dbb5500eb2f61d7c1ed023</sys_update_name>
+        <sys_updated_by>adang20</sys_updated_by>
+        <sys_updated_on>2023-12-19 07:07:13</sys_updated_on>
+        <user_criteria display_value="DXCV Nissan NML SNOW">0ca08ec807dbb5500eb2f61d7c1ed03c</user_criteria>
+    </sc_cat_item_user_criteria_mtom>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sc_cat_item_user_criteria_mtom_44b1064c07dbb5500eb2f61d7c1ed023</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_mtom"><sc_cat_item_user_criteria_mtom action="INSERT_OR_UPDATE"><sc_cat_item display_value="Nissan SDSM">2eff318807dbb5500eb2f61d7c1ed031</sc_cat_item><sys_class_name>sc_cat_item_user_criteria_mtom</sys_class_name><sys_created_by>adang20</sys_created_by><sys_created_on>2023-12-19 07:07:13</sys_created_on><sys_id>44b1064c07dbb5500eb2f61d7c1ed023</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Nissan SDSM.DXCV Nissan NML SNOW</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>sc_cat_item_user_criteria_mtom_44b1064c07dbb5500eb2f61d7c1ed023</sys_update_name><sys_updated_by>adang20</sys_updated_by><sys_updated_on>2023-12-19 07:07:13</sys_updated_on><user_criteria display_value="DXCV Nissan NML SNOW">0ca08ec807dbb5500eb2f61d7c1ed03c</user_criteria></sc_cat_item_user_criteria_mtom></record_update>]]></payload>
+        <payload_hash>-1464944293</payload_hash>
+        <record_name>Nissan SDSM.DXCV Nissan NML SNOW</record_name>
+        <reverted_from/>
+        <source>ccb49688971bf5107fd7f97e6253af2f</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-12-19 08:30:14</sys_created_on>
+        <sys_id>d0b4d688971bf5107fd7f97e6253af87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>18c81326d840000001</sys_recorded_at>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-12-19 08:30:14</sys_updated_on>
+        <type>Catalog Item Available for</type>
+        <update_guid>c0b1064cb2dbb550bdcad0b2c36d6d26</update_guid>
+        <update_guid_history>c0b1064cb2dbb550bdcad0b2c36d6d26:-1464944293</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Nissan SDSM.DXCV Nissan NML SNOW">533596c8971bf5107fd7f97e6253af4d</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-12-19 08:32:38</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_user_criteria_mtom">sc_cat_item_user_criteria_mtom</sys_db_object>
+        <sys_id>1f9d44dd890b421888d3feb2fbe6a240</sys_id>
+        <sys_metadata>44b1064c07dbb5500eb2f61d7c1ed023</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Nissan SDSM.DXCV Nissan NML SNOW</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sc_cat_item_user_criteria_mtom_44b1064c07dbb5500eb2f61d7c1ed023</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_user_criteria_mtom_44b1064c07dbb5500eb2f61d7c1ed023">d0b4d688971bf5107fd7f97e6253af87</sys_update_version>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-12-19 08:32:38</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

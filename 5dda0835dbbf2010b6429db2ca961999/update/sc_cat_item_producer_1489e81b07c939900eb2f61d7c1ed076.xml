@@ -49,7 +49,7 @@
         <omit_price>false</omit_price>
         <order>0</order>
         <ordered_item_link/>
-        <owner display_value="Dang Le Tuan Anh">1e3267a3076ea5900eb2f61d7c1ed08c</owner>
+        <owner display_value="">1e3267a3076ea5900eb2f61d7c1ed08c</owner>
         <picture/>
         <post_insert_script/>
         <preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=1489e81b07c939900eb2f61d7c1ed076&amp;sysparm_preview=true", "summary");</preview>
@@ -90,11 +90,12 @@
         <type>item</type>
         <u_duration_minutes>25</u_duration_minutes>
         <u_number_of_questions>20</u_number_of_questions>
-        <u_owner display_value="Khanh Le Hung">c2901aca075195100eb2f61d7c1ed045</u_owner>
+        <u_owner display_value="Khanh Le Hung">c4498b9c979dd9907fd7f97e6253af7a</u_owner>
         <u_passing_score>100</u_passing_score>
         <u_password>ITSM2023</u_password>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version/>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

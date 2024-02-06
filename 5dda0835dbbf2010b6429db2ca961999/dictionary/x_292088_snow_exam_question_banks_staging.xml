@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="73ff0a18dbcc7410b6429db2ca9619bd" extends="sys_import_set_row" label="Question Bank Sheet" max_length="40" name="x_292088_snow_exam_question_banks_staging" type="collection">
+        <element label="Level" max_length="40" name="level" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=A" label="A" max_length="1000" name="u_a" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=B" label="B" max_length="1000" name="u_b" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=C" label="C" max_length="1000" name="u_c" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Correct Answer" label="Correct Answer" max_length="1000" name="u_correct_answer" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=D" label="D" max_length="1000" name="u_d" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Display Value" label="Display Value" max_length="4000" name="u_display_value" type="string"/>
+        <element label="E" max_length="1000" name="u_e" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Entitlement" label="Entitlement" max_length="40" name="u_entitlement" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Explaination" max_length="40" name="u_explaination" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=explanation" label="explanation" max_length="40" name="u_explanation" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=EX: 30 mins" label="EX: 30 mins" max_length="40" name="u_ex__30_mins" type="string"/>
+        <element attributes="=&gt;  Input = 20 means system will random 20 of 100 questions each time.&#10;     =&gt; input = 100 means system will show all 100 existing questions each time.,20=true,30=true,edge_encryption_enabled=true,etc.&#10;Ex: if system has 100 existing questions=true,import_attribute_name=Ex: 40" label="Ex: 40, 20, 30, etc.&#10;Ex: if system has 100 existing questions,&#10;     =&gt;  Input = " max_length="40" name="u_ex__40__20___ons_each_time_" type="string"/>
+        <element attributes="100%=true,80%=true,edge_encryption_enabled=true,import_attribute_name=Ex: 70%,….=true" label="Ex: 70%, 80%, 100%,…." max_length="40" name="u_ex__70___80___100____" type="string"/>
+        <element label="F" max_length="1000" name="u_f" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Field in SNOW" label="Field in SNOW" max_length="40" name="u_field_in_snow" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=G" label="G" max_length="40" name="u_g" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=INSTRUCTIONS" label="INSTRUCTIONS" max_length="40" name="u_instructions" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=level" label="level" max_length="40" name="u_level" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Module ID" label="Module ID" max_length="40" name="u_module_id" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Number" label="Number" max_length="40" name="u_number" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Number of questions per a test" label="Number of questions per a test" max_length="40" name="u_number_of_qu_ons_per_a_test" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Owner" label="Owner" max_length="40" name="u_owner" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Owner of the exam who will receive the test result via email." label="Owner of the exam who will receive the test result via email." max_length="40" name="u_owner_of_the_ult_via_email_" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Pass Code" label="Pass Code" max_length="40" name="u_pass_code" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Pass percentage" label="Pass percentage" max_length="40" name="u_pass_percentage" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Question" label="Question" max_length="40" name="u_question" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=SNOW EXAM TEMPLATE APPLIES TO:&#10;&#10;1. SCRIPTING IN SERVICENOW&#10;2. ServiceNow SysAdmin&#10;3. ServiceNow Application Creation&#10;4. ServiceNow CSA mock exam" label="SNOW EXAM TEMPLATE APPLIES TO:&#10;&#10;1. SCRIPTING IN SERVICENOW&#10;2. ServiceNow SysAdmi" max_length="40" name="u_snow_exam_te__csa_mock_exam" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Sub Category" max_length="40" name="u_sub_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Test duration (min)" label="Test duration (min)" max_length="40" name="u_test_duration__min_" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Topic category" label="Topic category" max_length="40" name="u_topic_category" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Topic Details" label="Topic Details" max_length="40" name="u_topic_details" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=To restrict people who can take the exam" label="To restrict people who can take the exam" max_length="40" name="u_to_restrict___take_the_exam" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Type" label="Type" max_length="40" name="u_type" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=- Who will see the exam in SNOW. &#10;- Please list down people who should see the exam. &#10;- Blank value means everyone can see the exam" label="- Who will see the exam in SNOW. &#10;- Please list down people who should see the e" max_length="40" name="u___who_will_s_n_see_the_exam" type="string"/>
+    </element>
+</database>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="pDXCSupport_Process_Exam">a1c768d0077221d00eb2f61d7c1ed065</sc_cat_item>
+        <sc_category display_value="Project Exam">90927baa074fed580eb2f61d7c1ed0d9</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-05 01:31:18</sys_created_on>
+        <sys_id>f293de60971f21107fd7f97e6253aff1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Project Exam.pDXCSupport_Process_Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sc_cat_item_category_f293de60971f21107fd7f97e6253aff1</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-05 01:31:18</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sc_cat_item_category_f293de60971f21107fd7f97e6253aff1</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="pDXCSupport_Process_Exam">a1c768d0077221d00eb2f61d7c1ed065</sc_cat_item><sc_category display_value="Project Exam">90927baa074fed580eb2f61d7c1ed0d9</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>ADANG20</sys_created_by><sys_created_on>2023-06-05 01:31:18</sys_created_on><sys_id>f293de60971f21107fd7f97e6253aff1</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Project Exam.pDXCSupport_Process_Exam</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>sc_cat_item_category_f293de60971f21107fd7f97e6253aff1</sys_update_name><sys_updated_by>ADANG20</sys_updated_by><sys_updated_on>2023-06-05 01:31:18</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>-47009723</payload_hash>
+        <record_name>Project Exam.pDXCSupport_Process_Exam</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-05 01:31:18</sys_created_on>
+        <sys_id>f293de60971f21107fd7f97e6253aff4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>188892e13230000001</sys_recorded_at>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-05 01:31:18</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>fa93de60ad1f2110c7abc3bc7ac62bf3</update_guid>
+        <update_guid_history>fa93de60ad1f2110c7abc3bc7ac62bf3:-47009723</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Project Exam.pDXCSupport_Process_Exam">e375762997ff25107fd7f97e6253af6c</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-07-03 03:04:41</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>7882beeeb90c4d25ba79065309b09891</sys_id>
+        <sys_metadata>f293de60971f21107fd7f97e6253aff1</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Project Exam.pDXCSupport_Process_Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_f293de60971f21107fd7f97e6253aff1</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_f293de60971f21107fd7f97e6253aff1">f293de60971f21107fd7f97e6253aff4</sys_update_version>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-07-03 03:04:41</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="all_tables.text_index_translations=true" audit="true" db_object_id="6cdbc6c8dbc07410b6429db2ca961914" label="Question Banks" max_length="40" name="x_292088_snow_exam_question_banks" type="collection">
+        <element attributes="edge_encryption_enabled=true" default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Correct Answer" max_length="400" name="correct_answer" type="string"/>
+        <element display="true" label="Display Value" max_length="4000" name="display_value" type="string"/>
+        <element choice="3" default="fresher" label="Level" mandatory="true" max_length="40" name="level" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Fresher" sequence="1" value="fresher"/>
+                <element inactive_on_update="false" label="Experienced" sequence="2" value="experienced"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Module ID" max_length="32" name="module_id" reference="x_292088_snow_exam_snow_modules" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Number" max_length="40" name="number" type="integer"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false,serializer=com.glide.script.TranslatedTextXMLSerializer" label="Question" max_length="4000" name="question" type="translated_html"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" dependent="topic_details.name" dependent_on_field="topic_details.name" label="Sub Category" max_length="40" name="sub_category" type="choice" use_dependent_field="true">
+            <choice>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Account Handover" value="account_handover"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Account Handover" value="account_handover"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="AR" value="ar"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="AR" value="ar"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Bulk load" value="bulk_load"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Bulk load" value="bulk_load"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Business Rule" value="business_rule"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Catalog" value="catalog"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Catalog" value="catalog"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Client script" value="client_script"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="CMDB" value="cmdb"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="CMDB" value="cmdb"/>
+                <element dependent_value="L'Oreal" inactive_on_update="false" label="Common" value="common"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Data management" value="data_management"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Debugging" value="debugging"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Group" value="group"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Group" value="group"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Holiday Calendar/Schedule" value="holiday_schedule"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Holiday Calendar/Schedule" value="holiday_schedule"/>
+                <element dependent_value="L'Oreal" inactive_on_update="false" label="Incident" value="incident"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Out Scope" value="out_scope"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Out Scope" value="out_scope"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Permission" value="permission"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Permission" value="permission"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Portal/Chat" value="portal_chat"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Portal/Chat" value="portal_chat"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="Process" value="process"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="Process" value="process"/>
+                <element dependent_value="L'Oreal" inactive_on_update="false" label="Requested items" value="req_items"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Scripting" value="scripting"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Service Catalog" value="service_catalog"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="SLA" value="sla"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="SLA" value="sla"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Update Set" value="update_set"/>
+                <element dependent_value="pDXCSupport_1" hint="pDXCSupport (Part 1)" inactive_on_update="false" label="User" value="user"/>
+                <element dependent_value="pDXCSupport_2" hint="pDXCSupport (Part 2)" inactive_on_update="false" label="User" value="user"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="User Experience" value="ux"/>
+                <element dependent_value="ServiceNow Best Practices" inactive_on_update="false" label="Workflow/Flow Designer" value="workflow_flow_designer"/>
+                <element inactive_on_update="false" label="Admin" sequence="0" value="Admin"/>
+                <element inactive_on_update="false" label="Airbus Operation process" sequence="0" value="Airbus Operation process"/>
+                <element dependent_value="AirLiquide" inactive_on_update="false" label="AirLiquide Process" sequence="0" value="AirLiquide Process"/>
+                <element dependent_value="ANZ" inactive_on_update="false" label="ANZ Process" sequence="0" value="ANZ Process"/>
+                <element inactive_on_update="false" label="Catalog item" sequence="0" value="Catalog item"/>
+                <element dependent_value="DaiichiSankyo" inactive_on_update="false" label="DaiichiSankyo Process" sequence="0" value="DaiichiSankyo Process"/>
+                <element dependent_value="DaiichiSankyo" inactive_on_update="false" label="DaiichiSankyo Validation Process" sequence="0" value="DaiichiSankyo Validation Process"/>
+                <element inactive_on_update="false" label="Data Management" sequence="0" value="Data Management"/>
+                <element inactive_on_update="false" label="Defect" sequence="0" value="Defect"/>
+                <element inactive_on_update="false" label="Dev" sequence="0" value="Dev"/>
+                <element inactive_on_update="false" label="Enhancement" sequence="0" value="Enhancement"/>
+                <element dependent_value="FIFA" inactive_on_update="false" label="FIFA Process" sequence="0" value="FIFA Process"/>
+                <element inactive_on_update="false" label="Holiday Calendar (or Schedule)" sequence="0" value="Holiday Calendar (or Schedule)"/>
+                <element inactive_on_update="false" label="HRSD Process" sequence="0" value="HRSD Process"/>
+                <element inactive_on_update="false" label="ITSM Process" sequence="0" value="ITSM Process"/>
+                <element inactive_on_update="false" label="kaban" sequence="0" value="kaban"/>
+                <element dependent_value="OTPPB" inactive_on_update="false" label="OTPPB Process" sequence="0" value="OTPPB Process"/>
+                <element inactive_on_update="false" label="PPM" sequence="0" value="PPM"/>
+                <element dependent_value="ANZ" inactive_on_update="false" label="QLR Process" sequence="0" value="QLR Process"/>
+                <element inactive_on_update="false" label="Request" sequence="0" value="Request"/>
+                <element dependent_value="Tobaco" inactive_on_update="false" label="Tobaco Process" sequence="0" value="Tobaco Process"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Client Side" sequence="1" value="client_side"/>
+                <element dependent_value="ServiceNow SysAdmin" inactive_on_update="false" label="Core Configuration and User Interface" sequence="1" value="core_configuration"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Server Side" sequence="2" value="server_side"/>
+                <element dependent_value="ServiceNow SysAdmin" inactive_on_update="false" label="User Administration" sequence="2" value="user_admin"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Catalog Item" sequence="3" value="catalog_item"/>
+                <element dependent_value="ServiceNow SysAdmin" inactive_on_update="false" label="Data Management" sequence="3" value="data_management"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Debug" sequence="4" value="debug"/>
+                <element dependent_value="ServiceNow SysAdmin" inactive_on_update="false" label="Service Automation Platform" sequence="4" value="service_automation"/>
+                <element dependent_value="ServiceNow SysAdmin" inactive_on_update="false" label="Core Application Administration" sequence="5" value="core_app_admin"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Load Data" sequence="5" value="load_data"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Mobile" sequence="6" value="mobile"/>
+                <element dependent_value="ServiceNow SysAdmin" inactive_on_update="false" label="Ongoing Maintenance" sequence="6" value="ongoing_maintenance"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Notification" sequence="7" value="notification"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="REST API" sequence="8" value="rest_api"/>
+                <element dependent_value="Scripting In ServiceNow" inactive_on_update="false" label="Update Set" sequence="9" value="update_set"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Topic Details" max_length="32" name="topic_details" reference="sn_hr_core_topic_detail" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Type" max_length="40" name="type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Multiple Choice" sequence="0" value="Multiple Choice"/>
+                <element inactive_on_update="false" label="Single Choice" sequence="0" value="Single Choice"/>
+                <element inactive_on_update="false" label="Yes/No" sequence="0" value="Yes/No"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Article" max_length="32" name="u_article_kb" reference="kb_knowledge" type="reference"/>
+        <index name="index">
+            <element name="u_article_kb"/>
+        </index>
+        <index name="index2">
+            <element name="module_id"/>
+        </index>
+        <index name="index3">
+            <element name="topic_details"/>
+        </index>
+    </element>
+</database>

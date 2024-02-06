@@ -4,6 +4,7 @@
         <angular_module/>
         <formatter>com_glideapp_questionset_default_question_editor</formatter>
         <name>Variable Editor</name>
+        <seismic_component/>
         <sys_class_name>sys_ui_formatter</sys_class_name>
         <sys_created_by>KNGUYEN236</sys_created_by>
         <sys_created_on>2021-05-06 09:54:42</sys_created_on>

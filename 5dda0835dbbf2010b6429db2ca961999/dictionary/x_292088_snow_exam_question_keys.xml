@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="89eda31bdb33e010b6429db2ca961980" label="Question Keys" max_length="40" name="x_292088_snow_exam_question_keys" type="collection">
+        <element label="Option A" max_length="1000" name="option_a" type="string"/>
+        <element label="Option B" max_length="1000" name="option_b" type="string"/>
+        <element label="Option C" max_length="1000" name="option_c" type="string"/>
+        <element label="Option D" max_length="1000" name="option_d" type="string"/>
+        <element label="Option E" max_length="1000" name="option_e" type="string"/>
+        <element label="Option F" max_length="1000" name="option_f" type="string"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Question ID" max_length="32" name="question_id" reference="x_292088_snow_exam_question_banks" type="reference"/>
+        <index name="index">
+            <element name="question_id"/>
+        </index>
+    </element>
+</database>

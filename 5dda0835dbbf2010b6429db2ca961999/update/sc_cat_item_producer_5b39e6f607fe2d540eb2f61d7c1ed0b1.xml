@@ -13,7 +13,7 @@
         <delivery_plan display_value="DEFAULT">523da512c611228900811a37c97c2014</delivery_plan>
         <delivery_plan_script/>
         <delivery_time>1970-01-03 00:00:00</delivery_time>
-        <description><![CDATA[<p>KS test</p>]]></description>
+        <description/>
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
         <flow_designer_flow/>
@@ -70,26 +70,27 @@
         <sys_created_by>DHUYNH28</sys_created_by>
         <sys_created_on>2023-05-18 06:20:45</sys_created_on>
         <sys_id>5b39e6f607fe2d540eb2f61d7c1ed0b1</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>49</sys_mod_count>
         <sys_name>KS test</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_5b39e6f607fe2d540eb2f61d7c1ed0b1</sys_update_name>
         <sys_updated_by>DHUYNH28</sys_updated_by>
-        <sys_updated_on>2023-05-18 06:47:24</sys_updated_on>
+        <sys_updated_on>2024-01-18 11:43:07</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
         <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
-        <u_duration_minutes>90</u_duration_minutes>
-        <u_number_of_questions>1</u_number_of_questions>
+        <u_duration_minutes>15</u_duration_minutes>
+        <u_number_of_questions>10</u_number_of_questions>
         <u_owner display_value="Danh Huynh Nguyen Thanh">d496c4c5dbd20010d606e04a489619d8</u_owner>
-        <u_passing_score>70</u_passing_score>
-        <u_password/>
+        <u_passing_score>100</u_passing_score>
+        <u_password>HappyNewYear2024</u_password>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version>2</version>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

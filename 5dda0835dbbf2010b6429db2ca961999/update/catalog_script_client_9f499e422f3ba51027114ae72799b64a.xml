@@ -17,6 +17,7 @@
         <messages/>
         <name>Clear storage when open</name>
         <order/>
+        <published_ref/>
         <script><![CDATA[function onLoad() {
    //Type appropriate comment here, and begin script below
 	localStorage.removeItem("item");

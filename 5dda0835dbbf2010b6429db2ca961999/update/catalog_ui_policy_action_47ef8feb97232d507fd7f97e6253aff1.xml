@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="catalog_ui_policy_action">
+    <catalog_ui_policy_action action="INSERT_OR_UPDATE">
+        <catalog_item display_value="FastRetail">6d90fa2a074bad580eb2f61d7c1ed037</catalog_item>
+        <catalog_variable>IO:e40d9f6fdbfbe010b6429db2ca961931</catalog_variable>
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field/>
+        <mandatory>ignore</mandatory>
+        <order>100</order>
+        <sys_class_name>catalog_ui_policy_action</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-26 23:52:23</sys_created_on>
+        <sys_id>47ef8feb97232d507fd7f97e6253aff1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>mentor</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>catalog_ui_policy_action_47ef8feb97232d507fd7f97e6253aff1</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-26 23:52:23</sys_updated_on>
+        <table/>
+        <ui_policy display_value="Hide Mentor">26df4feb97232d507fd7f97e6253af66</ui_policy>
+        <variable>mentor</variable>
+        <variable_set/>
+        <visible>false</visible>
+    </catalog_ui_policy_action>
+</record_update>

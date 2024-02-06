@@ -17,6 +17,7 @@
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
         <flow_designer_flow/>
+        <fulfillment_automation_level>unspecified</fulfillment_automation_level>
         <group/>
         <hide_sp>false</hide_sp>
         <icon/>
@@ -55,7 +56,7 @@
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
         <request_method/>
-        <roles/>
+        <roles>snc_internal</roles>
         <save_options/>
         <save_script/>
         <sc_catalogs>8ce7b327db7fe010b6429db2ca96192d</sc_catalogs>
@@ -71,15 +72,16 @@
         <sys_created_by>TDO55</sys_created_by>
         <sys_created_on>2021-05-08 05:20:16</sys_created_on>
         <sys_id>cae2eba0dbccb410b6429db2ca96197d</sys_id>
-        <sys_mod_count>14</sys_mod_count>
+        <sys_mod_count>47</sys_mod_count>
         <sys_name>ServiceNow SysAdmin</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_cae2eba0dbccb410b6429db2ca96197d</sys_update_name>
-        <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-06-27 08:28:38</sys_updated_on>
+        <sys_updated_by>TDUONG42</sys_updated_by>
+        <sys_updated_on>2023-09-18 02:26:32</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
+        <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
@@ -87,14 +89,15 @@
         <u_number_of_questions>40</u_number_of_questions>
         <u_owner display_value="Nam Vy Hoang">dc96c4c5dbd20010d606e04a489619fe</u_owner>
         <u_passing_score>70</u_passing_score>
+        <u_password>Alu@123</u_password>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version/>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
-        <u_password>ADMIN2021</u_password>
     </sc_cat_item_producer>
     <sys_translated_text action="delete_multiple" query="documentkey=cae2eba0dbccb410b6429db2ca96197d"/>
     <fx_price action="delete_multiple" query="id=cae2eba0dbccb410b6429db2ca96197d"/>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="DaiichiSankyo_Process_Exam">b24f640b07c7e1100eb2f61d7c1ed054</sc_cat_item>
+        <sc_category display_value="ServiceNow Test">5288fb27db7fe010b6429db2ca961919</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-15 07:50:13</sys_created_on>
+        <sys_id>ba3a83bf971b6d107fd7f97e6253af67</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ServiceNow Test.DaiichiSankyo_Process_Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sc_cat_item_category_ba3a83bf971b6d107fd7f97e6253af67</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-15 07:50:13</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sc_cat_item_category_ba3a83bf971b6d107fd7f97e6253af67</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="DaiichiSankyo_Process_Exam">b24f640b07c7e1100eb2f61d7c1ed054</sc_cat_item><sc_category display_value="ServiceNow Test">5288fb27db7fe010b6429db2ca961919</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>ADANG20</sys_created_by><sys_created_on>2023-06-15 07:50:13</sys_created_on><sys_id>ba3a83bf971b6d107fd7f97e6253af67</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ServiceNow Test.DaiichiSankyo_Process_Exam</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>sc_cat_item_category_ba3a83bf971b6d107fd7f97e6253af67</sys_update_name><sys_updated_by>ADANG20</sys_updated_by><sys_updated_on>2023-06-15 07:50:13</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>1586872216</payload_hash>
+        <record_name>ServiceNow Test.DaiichiSankyo_Process_Exam</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-15 07:50:13</sys_created_on>
+        <sys_id>323a47bf971b6d107fd7f97e6253af87</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>188be0894970000001</sys_recorded_at>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-15 07:50:13</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>3a3a47bf3b1b6d104002b39447af7b86</update_guid>
+        <update_guid_history>3a3a47bf3b1b6d104002b39447af7b86:1586872216</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="ServiceNow Test.DaiichiSankyo_Process_Exam">df4a83bf971b6d107fd7f97e6253af5b</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-15 07:50:31</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>6db79c6e830e41258f537a2bfe146629</sys_id>
+        <sys_metadata>ba3a83bf971b6d107fd7f97e6253af67</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ServiceNow Test.DaiichiSankyo_Process_Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_ba3a83bf971b6d107fd7f97e6253af67</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_ba3a83bf971b6d107fd7f97e6253af67">323a47bf971b6d107fd7f97e6253af87</sys_update_version>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-15 07:50:31</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

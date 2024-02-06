@@ -4,10 +4,13 @@
         <css/>
         <draft>false</draft>
         <dynamic_title_structure/>
+        <human_readable_url_structure/>
         <id>snow_requests</id>
         <internal>false</internal>
+        <omit_watcher>false</omit_watcher>
         <public>false</public>
         <roles/>
+        <seo_script/>
         <short_description/>
         <sys_class_name>sp_page</sys_class_name>
         <sys_created_by>KNGUYEN232</sys_created_by>
@@ -22,6 +25,7 @@
         <sys_updated_by>KNGUYEN232</sys_updated_by>
         <sys_updated_on>2021-05-05 08:58:19</sys_updated_on>
         <title>Snow Requests</title>
+        <use_seo_script>false</use_seo_script>
     </sp_page>
     <sys_translated_text action="delete_multiple" query="documentkey=7ee7b0f7dbb32410b6429db2ca961928"/>
 </record_update>

@@ -3,6 +3,7 @@
         <description/>
         <execution_script/>
         <name>Delete (SNOW Exam Case)</name>
+        <parameter_screen/>
         <query_condition/>
         <sys_class_name>sys_sg_write_back_action_item</sys_class_name>
         <sys_created_by>KNGUYEN236</sys_created_by>
@@ -20,6 +21,7 @@
         <template/>
         <type>delete</type>
         <use_current_record_as_condition>true</use_current_record_as_condition>
+        <use_fields_for_ref_lookup>false</use_fields_for_ref_lookup>
     </sys_sg_write_back_action_item>
     <sys_translated_text action="delete_multiple" query="documentkey=4aebc8f5dbbf2010b6429db2ca96198b"/>
 </record_update>

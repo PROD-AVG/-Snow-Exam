@@ -2,6 +2,7 @@
     <sp_row action="INSERT_OR_UPDATE">
         <class_name/>
         <order>1</order>
+        <semantic_tag/>
         <sp_column/>
         <sp_container display_value="Snow Requests - Container 1">bae7b0f7dbb32410b6429db2ca96192b</sp_container>
         <sys_class_name>sp_row</sys_class_name>

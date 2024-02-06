@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_hp_publisher">
+    <sys_ui_hp_publisher action="INSERT_OR_UPDATE">
+        <allow_database_view_filter>false</allow_database_view_filter>
+        <allow_extended_table>false</allow_extended_table>
+        <boolean_field/>
+        <boolean_table/>
+        <date_filter/>
+        <default_boolean_field/>
+        <default_choice/>
+        <default_date_filter/>
+        <default_reference_field_value/>
+        <description/>
+        <exclusion_choice_list/>
+        <look_up_name/>
+        <name>Topic Detail</name>
+        <reference_conditions table="sn_hr_core_topic_detail">active=true^topic_category=46546088db0c3410b6429db2ca961904<item endquery="false" field="active" goto="false" newquery="false" operator="=" or="false" value="true"/>
+            <item display_table="sn_hr_core_topic_category" display_value="ServiceNow Test" endquery="false" field="topic_category" goto="false" newquery="false" operator="=" or="false" value="46546088db0c3410b6429db2ca961904"/>
+        </reference_conditions>
+        <reference_table>sn_hr_core_topic_detail</reference_table>
+        <remove_all_option>false</remove_all_option>
+        <source_field/>
+        <source_table/>
+        <sys_class_name>sys_ui_hp_publisher</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-06-26 02:09:07</sys_created_on>
+        <sys_id>e3e3aa9797afa9507fd7f97e6253afbf</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Topic Detail</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sys_ui_hp_publisher_e3e3aa9797afa9507fd7f97e6253afbf</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-06-26 02:09:07</sys_updated_on>
+        <type>2</type>
+        <ui_control_type>2</ui_control_type>
+        <use_starts_with_on_search_keyword>false</use_starts_with_on_search_keyword>
+    </sys_ui_hp_publisher>
+</record_update>

@@ -4,12 +4,13 @@
         <advanced>false</advanced>
         <company/>
         <department/>
-        <group name="DXCV Airbus Support">d45a0a2807f1e5900eb2f61d7c1ed062</group>
+        <group name="DXCV Airbus Support SNOW">d45a0a2807f1e5900eb2f61d7c1ed062</group>
         <location/>
         <match_all>false</match_all>
         <name>DXCV Airbus Support</name>
         <role/>
         <script/>
+        <short_description/>
         <sys_class_name>user_criteria</sys_class_name>
         <sys_created_by>adang20</sys_created_by>
         <sys_created_on>2023-11-15 15:20:50</sys_created_on>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="30db48f5dbbf2010b6429db2ca961975" extends="sn_hr_core_case" label="SNOW Exam Case" max_length="40" name="x_292088_snow_exam_snow_exam_case" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Correct Answers" max_length="40" name="correct_answers" type="integer"/>
+        <element attributes="edge_encryption_enabled=true" label="Percentage" max_length="15" name="percentage" type="decimal"/>
+        <element active="false" attributes="edge_encryption_enabled=true" function_definition="glidefunction:length(percentage)" function_field="true" label="length" max_length="255" name="rpt_length" read_only="true" type="string"/>
+        <element active="false" function_definition="glidefunction:length(percentage)" function_field="true" label="Pass" max_length="40" name="rpt_pass" read_only="true" type="boolean"/>
+    </element>
+</database>

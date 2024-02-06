@@ -8,6 +8,7 @@
         <container_class_name/>
         <name>Snow Exam Service Catalog  - Container 2</name>
         <order>2</order>
+        <semantic_tag/>
         <sp_page display_value="snow_cat_home">3af573dfdb73e010b6429db2ca961946</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>

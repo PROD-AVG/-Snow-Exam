@@ -85,108 +85,35 @@
         <type>item</type>
         <u_duration_minutes>90</u_duration_minutes>
         <u_number_of_questions>60</u_number_of_questions>
-        <u_owner display_value="Thang Do Thanh">f0c5b2532f5320100e5f49e72799b6db</u_owner>
+        <u_owner display_value="Thang Do Thanh">ef5f24d7dbe060105a2ff36f299619e1</u_owner>
         <u_passing_score>70</u_passing_score>
         <u_password/>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version/>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</sc_cat_item_producer>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=81fa450b07c2f5100eb2f61d7c1ed0ae"/>
+    <fx_price action="delete_multiple" query="id=81fa450b07c2f5100eb2f61d7c1ed0ae"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>price</field>
+        <id>81fa450b07c2f5100eb2f61d7c1ed0ae</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>HTRAN210</sys_created_by>
+        <sys_created_on>2023-11-12 17:02:37</sys_created_on>
+        <sys_id>d527291497eaf9507fd7f97e6253af19</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-11-12 17:02:37</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
 </record_update>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="x_292088_snow_exam_snow_exam_case" relationship="" sys_domain="global" table="x_292088_snow_exam_mtom_answer_sheets" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>case_id</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>9548daa4971f21107fd7f97e6253af46</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>case_id.opened_for</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>1d48daa4971f21107fd7f97e6253af46</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>question_id.topic_details</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>9d48daa4971f21107fd7f97e6253af46</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>case_id.correct_answers</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>1148daa4971f21107fd7f97e6253af47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>case_id.percentage</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>9148daa4971f21107fd7f97e6253af47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>question_id</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>1548daa4971f21107fd7f97e6253af47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>question_id.correct_answer</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>9548daa4971f21107fd7f97e6253af47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>selected_answers</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>1948daa4971f21107fd7f97e6253af47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>result</element>
+            <list_id display_value="x_292088_snow_exam_mtom_answer_sheets" element="NULL" name="x_292088_snow_exam_mtom_answer_sheets" parent="x_292088_snow_exam_snow_exam_case" relationship="NULL" sys_domain="global" view="Default view">5948daa4971f21107fd7f97e6253af45</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_id>9948daa4971f21107fd7f97e6253af47</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_292088_snow_exam_mtom_answer_sheets</name>
+            <parent>x_292088_snow_exam_snow_exam_case</parent>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-06-05 01:51:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5948daa4971f21107fd7f97e6253af45</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_292088_snow_exam_mtom_answer_sheets</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_ui_list_x_292088_snow_exam_mtom_answer_sheets_x_292088_snow_exam_snow_exam_case_null</sys_update_name>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-06-05 01:51:41</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

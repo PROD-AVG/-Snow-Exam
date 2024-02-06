@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="a0ca4688dbc07410b6429db2ca9619fa" label="Snow Modules" max_length="40" name="x_292088_snow_exam_snow_modules" type="collection">
+        <element display="true" label="Display Name" max_length="400" name="display_name" type="string"/>
+        <element label="Module Name" max_length="400" name="module_name" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Version" max_length="40" name="version" type="choice">
+            <choice/>
+        </element>
+    </element>
+</database>

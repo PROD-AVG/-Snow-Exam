@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_hr_core_service">
+    <sn_hr_core_service action="DELETE">
+        <active>true</active>
+        <approval_options/>
+        <auto_close_case>false</auto_close_case>
+        <auto_close_offset>0</auto_close_offset>
+        <badge display_value="HR">6439a617c3b00300b599b4ad81d3ae57</badge>
+        <case_creation_service_config/>
+        <case_options>64e89b75531312003066a5f4a11c08b3</case_options>
+        <close_when/>
+        <description/>
+        <flow/>
+        <fulfillment_instructions/>
+        <fulfillment_type>simple</fulfillment_type>
+        <header_config_opened_for display_value="Default for opened for/approver">86d9872eb3900300f5302ddc16a8dc8b</header_config_opened_for>
+        <header_config_subject_person display_value="Default for subject person/task assigned to">c4e9872eb3900300f5302ddc16a8dc91</header_config_subject_person>
+        <hr_criteria/>
+        <name>pDXC Support_Process_Exam</name>
+        <producer display_value="pDXC Support_Process_Exam">9f0413c5970b6d507fd7f97e6253af05</producer>
+        <service_table>x_292088_snow_exam_snow_exam_case</service_table>
+        <service_table_fields/>
+        <subject_person_access>true</subject_person_access>
+        <subject_person_related_lists/>
+        <sys_class_name>sn_hr_core_service</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-05-31 03:00:37</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_id>9a187087974b25907fd7f97e6253af2c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>pDXC Support_Process_Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sn_hr_core_service_9a187087974b25907fd7f97e6253af2c</sys_update_name>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-05-31 03:00:37</sys_updated_on>
+        <template/>
+        <topic_detail display_value="pDXC Data Support">c7db4f4d97c76d507fd7f97e6253af8d</topic_detail>
+        <value>pdxc_support_process_exam</value>
+        <workflow_detail/>
+    </sn_hr_core_service>
+    <sys_translated_text action="DELETE" query="documentkey=9a187087974b25907fd7f97e6253af2c"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sn_hr_core_service_9a187087974b25907fd7f97e6253af2c</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sn_hr_core_service"><sn_hr_core_service action="INSERT_OR_UPDATE"><active>true</active><approval_options/><auto_close_case>false</auto_close_case><auto_close_offset>0</auto_close_offset><badge display_value="HR">6439a617c3b00300b599b4ad81d3ae57</badge><case_creation_service_config/><case_options>64e89b75531312003066a5f4a11c08b3</case_options><close_when/><description/><flow/><fulfillment_instructions/><fulfillment_type>simple</fulfillment_type><header_config_opened_for display_value="Default for opened for/approver">86d9872eb3900300f5302ddc16a8dc8b</header_config_opened_for><header_config_subject_person display_value="Default for subject person/task assigned to">c4e9872eb3900300f5302ddc16a8dc91</header_config_subject_person><hr_criteria/><name>pDXC Support_Process_Exam</name><producer display_value="pDXC Support_Process_Exam">9f0413c5970b6d507fd7f97e6253af05</producer><service_table>x_292088_snow_exam_snow_exam_case</service_table><service_table_fields/><subject_person_access>true</subject_person_access><subject_person_related_lists/><sys_class_name>sn_hr_core_service</sys_class_name><sys_created_by>ADANG20</sys_created_by><sys_created_on>2023-05-31 03:00:37</sys_created_on><sys_domain>global</sys_domain><sys_id>9a187087974b25907fd7f97e6253af2c</sys_id><sys_mod_count>0</sys_mod_count><sys_name>pDXC Support_Process_Exam</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>sn_hr_core_service_9a187087974b25907fd7f97e6253af2c</sys_update_name><sys_updated_by>ADANG20</sys_updated_by><sys_updated_on>2023-05-31 03:00:37</sys_updated_on><template/><topic_detail display_value="pDXC Data Support">c7db4f4d97c76d507fd7f97e6253af8d</topic_detail><value>pdxc_support_process_exam</value><workflow_detail/></sn_hr_core_service><sys_translated_text action="delete_multiple" query="documentkey=9a187087974b25907fd7f97e6253af2c"/></record_update>]]></payload>
+        <payload_hash>-2145033805</payload_hash>
+        <record_name>pDXC Support_Process_Exam</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-05-31 03:00:37</sys_created_on>
+        <sys_id>de187087974b25907fd7f97e6253af2e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>1886fc00ee90000001</sys_recorded_at>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-05-31 03:00:37</sys_updated_on>
+        <type>HR Service</type>
+        <update_guid>d61870870e4b2590882184ea2c89022e</update_guid>
+        <update_guid_history>d61870870e4b2590882184ea2c89022e:-2145033805</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="pDXC Support_Process_Exam">9c6cf48b974b25907fd7f97e6253afa2</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>ADANG20</sys_created_by>
+        <sys_created_on>2023-05-31 03:19:19</sys_created_on>
+        <sys_db_object display_value="" name="sn_hr_core_service">sn_hr_core_service</sys_db_object>
+        <sys_id>34f5fe713c7b43f2a951f9ee97372e19</sys_id>
+        <sys_metadata>9a187087974b25907fd7f97e6253af2c</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>pDXC Support_Process_Exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sn_hr_core_service_9a187087974b25907fd7f97e6253af2c</sys_update_name>
+        <sys_update_version display_value="sn_hr_core_service_9a187087974b25907fd7f97e6253af2c">de187087974b25907fd7f97e6253af2e</sys_update_version>
+        <sys_updated_by>ADANG20</sys_updated_by>
+        <sys_updated_on>2023-05-31 03:19:19</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

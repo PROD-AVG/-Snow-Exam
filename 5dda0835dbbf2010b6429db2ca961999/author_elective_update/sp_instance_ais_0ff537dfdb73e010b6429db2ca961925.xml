@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sp_instance_ais">
+    <sp_instance_ais action="DELETE">
+        <active>true</active>
+        <ai_search_source_filter display_value="Service Portal Catalogs">e1f88209772300102d71af6168106172</ai_search_source_filter>
+        <class_name/>
+        <color>default</color>
+        <css> </css>
+        <disable_all_suggestions>false</disable_all_suggestions>
+        <glyph/>
+        <id/>
+        <order>1</order>
+        <placeholder/>
+        <roles/>
+        <search_application/>
+        <search_results_configuration/>
+        <short_description/>
+        <size>md</size>
+        <sp_column display_value="2">8ff537dfdb73e010b6429db2ca961923</sp_column>
+        <sp_widget display_value="Typeahead Search">fa20ec02cb31020000f8d856634c9ce9</sp_widget>
+        <spell_check_font_size>xl</spell_check_font_size>
+        <sys_class_name>sp_instance_ais</sys_class_name>
+        <sys_created_by>VVUONG2</sys_created_by>
+        <sys_created_on>2021-05-04 09:31:12</sys_created_on>
+        <sys_id>0ff537dfdb73e010b6429db2ca961925</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sp_instance_ais_0ff537dfdb73e010b6429db2ca961925</sys_update_name>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2021-07-15 11:45:11</sys_updated_on>
+        <title/>
+        <url/>
+        <widget_parameters><![CDATA[{
+	"title": {
+		"value": "",
+		"displayValue": ""
+	},
+	"color": {
+		"value": "",
+		"displayValue": ""
+	},
+	"glyph": {
+		"value": "",
+		"displayValue": ""
+	},
+	"size": {
+		"value": "",
+		"displayValue": ""
+	},
+	"limit": {
+		"value": null,
+		"displayValue": ""
+	},
+	"contextual_search_sources": {
+		"value": "c96eb1686721220023c82e08f585efff",
+		"displayValue": "Service Catalog"
+	}
+}]]></widget_parameters>
+    </sp_instance_ais>
+    <sys_translated_text action="DELETE" query="documentkey=0ff537dfdb73e010b6429db2ca961925"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sp_instance_ais_0ff537dfdb73e010b6429db2ca961925</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sp_instance_ais"&gt;&lt;sp_instance_ais action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;ai_search_source_filter display_value="Service Portal Catalogs"&gt;e1f88209772300102d71af6168106172&lt;/ai_search_source_filter&gt;&lt;class_name/&gt;&lt;color&gt;default&lt;/color&gt;&lt;css&gt; &lt;/css&gt;&lt;disable_all_suggestions&gt;false&lt;/disable_all_suggestions&gt;&lt;glyph/&gt;&lt;id/&gt;&lt;order&gt;1&lt;/order&gt;&lt;placeholder/&gt;&lt;roles/&gt;&lt;search_application/&gt;&lt;search_results_configuration/&gt;&lt;short_description/&gt;&lt;size&gt;md&lt;/size&gt;&lt;sp_column display_value="2"&gt;8ff537dfdb73e010b6429db2ca961923&lt;/sp_column&gt;&lt;sp_widget display_value="Typeahead Search"&gt;fa20ec02cb31020000f8d856634c9ce9&lt;/sp_widget&gt;&lt;spell_check_font_size&gt;xl&lt;/spell_check_font_size&gt;&lt;sys_class_name&gt;sp_instance_ais&lt;/sys_class_name&gt;&lt;sys_created_by&gt;VVUONG2&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2021-05-04 09:31:12&lt;/sys_created_on&gt;&lt;sys_id&gt;0ff537dfdb73e010b6429db2ca961925&lt;/sys_id&gt;&lt;sys_mod_count&gt;1&lt;/sys_mod_count&gt;&lt;sys_name/&gt;&lt;sys_package display_value="Snow Exam" source="x_292088_snow_exam"&gt;5dda0835dbbf2010b6429db2ca961999&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Snow Exam"&gt;5dda0835dbbf2010b6429db2ca961999&lt;/sys_scope&gt;&lt;sys_update_name&gt;sp_instance_ais_0ff537dfdb73e010b6429db2ca961925&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;system&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2021-07-15 11:45:11&lt;/sys_updated_on&gt;&lt;title/&gt;&lt;url/&gt;&lt;widget_parameters&gt;&lt;![CDATA[{
+	"title": {
+		"value": "",
+		"displayValue": ""
+	},
+	"color": {
+		"value": "",
+		"displayValue": ""
+	},
+	"glyph": {
+		"value": "",
+		"displayValue": ""
+	},
+	"size": {
+		"value": "",
+		"displayValue": ""
+	},
+	"limit": {
+		"value": null,
+		"displayValue": ""
+	},
+	"contextual_search_sources": {
+		"value": "c96eb1686721220023c82e08f585efff",
+		"displayValue": "Service Catalog"
+	}
+}]]&gt;&lt;/widget_parameters&gt;&lt;/sp_instance_ais&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=0ff537dfdb73e010b6429db2ca961925"/&gt;&lt;/record_update&gt;</payload>
+        <payload_hash>-1554694593</payload_hash>
+        <record_name/>
+        <reverted_from/>
+        <source/>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>system</sys_created_by>
+        <sys_created_on>2022-07-02 12:36:39</sys_created_on>
+        <sys_id>f1828000976411107fd7f97e6253afa4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>181bee9c3640000001</sys_recorded_at>
+        <sys_updated_by>system</sys_updated_by>
+        <sys_updated_on>2022-07-02 12:36:39</sys_updated_on>
+        <type>Instance with Search</type>
+        <update_guid>b18280005a6411109a74803f8ecafca4</update_guid>
+        <update_guid_history>77174326cb1530101ca37099b2df2424:-604956447</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="">6541211c97aaf9507fd7f97e6253af46</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>HTRAN210</sys_created_by>
+        <sys_created_on>2023-11-12 16:36:58</sys_created_on>
+        <sys_db_object display_value="" name="sp_instance_ais">sp_instance_ais</sys_db_object>
+        <sys_id>669d45a428684f529d74fc1a840e19e4</sys_id>
+        <sys_metadata>0ff537dfdb73e010b6429db2ca961925</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sp_instance_ais_0ff537dfdb73e010b6429db2ca961925</sys_update_name>
+        <sys_update_version display_value="sp_instance_ais_0ff537dfdb73e010b6429db2ca961925">f1828000976411107fd7f97e6253afa4</sys_update_version>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-11-12 16:36:58</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

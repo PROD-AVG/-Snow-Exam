@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="1116e033db332410b6429db2ca9619dc" label="MTOM Answer Sheets" max_length="40" name="x_292088_snow_exam_mtom_answer_sheets" type="collection">
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Case ID" max_length="32" name="case_id" reference="x_292088_snow_exam_snow_exam_case" type="reference"/>
+        <element attributes="edge_encryption_enabled=true,encode_utf8=false" label="Question ID" max_length="32" name="question_id" reference="x_292088_snow_exam_question_banks" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Result" max_length="40" name="result" type="integer"/>
+        <element label="Selected Answers" max_length="400" name="selected_answers" type="string"/>
+        <index name="index">
+            <element name="case_id"/>
+        </index>
+        <index name="index2">
+            <element name="question_id"/>
+        </index>
+    </element>
+</database>

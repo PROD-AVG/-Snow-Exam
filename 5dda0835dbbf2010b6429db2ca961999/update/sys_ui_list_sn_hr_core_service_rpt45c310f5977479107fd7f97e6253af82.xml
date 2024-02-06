@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="sn_hr_core_service" version="2" view="RPT45c310f5977479107fd7f97e6253af82">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>ef4974ce97f4b9107fd7f97e6253afa8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>topic_detail</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>634974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_on</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>e34974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_updated_by</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>674974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>producer.u_number_of_questions</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>e74974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>producer.u_duration_minutes</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>6b4974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>producer.u_passing_score</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>eb4974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>producer.u_owner</element>
+            <list_id display_value="sn_hr_core_service" element="NULL" name="sn_hr_core_service" parent="NULL" relationship="NULL" sys_domain="global" view="81c39cf5977479107fd7f97e6253af2a">274974ce97f4b9107fd7f97e6253afa8</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_id>6f4974ce97f4b9107fd7f97e6253afa9</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sn_hr_core_service</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2023-08-23 00:21:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>274974ce97f4b9107fd7f97e6253afa8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>sn_hr_core_service</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_ui_list_sn_hr_core_service_RPT45c310f5977479107fd7f97e6253af82</sys_update_name>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2023-08-23 00:21:50</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rpt45c310f5977479107fd7f97e6253af82" name="RPT45c310f5977479107fd7f97e6253af82">81c39cf5977479107fd7f97e6253af2a</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

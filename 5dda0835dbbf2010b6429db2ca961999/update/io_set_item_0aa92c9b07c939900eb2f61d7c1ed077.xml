@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>100</order>
-        <sc_cat_item display_value="AMS_HRSD(TKE)">1489e81b07c939900eb2f61d7c1ed076</sc_cat_item>
+        <sc_cat_item display_value="AMS_ITSM(TKE)">1489e81b07c939900eb2f61d7c1ed076</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>adang20</sys_created_by>
         <sys_created_on>2023-09-08 06:41:33</sys_created_on>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>200</order>
-        <sc_cat_item display_value="Nissan_NML">44b803f2075675500eb2f61d7c1ed014</sc_cat_item>
+        <sc_cat_item display_value="Nissan NML">44b803f2075675500eb2f61d7c1ed014</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>adang20</sys_created_by>
         <sys_created_on>2023-11-08 08:18:21</sys_created_on>

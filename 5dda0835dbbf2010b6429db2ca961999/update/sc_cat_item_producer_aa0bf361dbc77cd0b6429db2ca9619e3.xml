@@ -17,6 +17,7 @@
         <display_price_property>non_zero</display_price_property>
         <entitlement_script/>
         <flow_designer_flow/>
+        <fulfillment_automation_level>unspecified</fulfillment_automation_level>
         <group/>
         <hide_sp>false</hide_sp>
         <icon/>
@@ -55,7 +56,7 @@
         <recurring_price>0</recurring_price>
         <redirect_url>generated_record</redirect_url>
         <request_method/>
-        <roles/>
+        <roles>snc_internal</roles>
         <save_options/>
         <save_script/>
         <sc_catalogs>8ce7b327db7fe010b6429db2ca96192d</sc_catalogs>
@@ -71,25 +72,27 @@
         <sys_created_by>CPHAN20</sys_created_by>
         <sys_created_on>2021-10-07 12:47:59</sys_created_on>
         <sys_id>aa0bf361dbc77cd0b6429db2ca9619e3</sys_id>
-        <sys_mod_count>2</sys_mod_count>
+        <sys_mod_count>7</sys_mod_count>
         <sys_name>ServiceNow Interview Preparation</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
         <sys_update_name>sc_cat_item_producer_aa0bf361dbc77cd0b6429db2ca9619e3</sys_update_name>
-        <sys_updated_by>CPHAN20</sys_updated_by>
-        <sys_updated_on>2021-10-07 12:49:18</sys_updated_on>
+        <sys_updated_by>TDUONG42</sys_updated_by>
+        <sys_updated_on>2023-11-08 12:44:15</sys_updated_on>
         <table_name>x_292088_snow_exam_snow_exam_case</table_name>
+        <taxonomy_topic/>
         <template/>
         <template_manager_roles/>
         <type>item</type>
         <u_duration_minutes>30</u_duration_minutes>
         <u_number_of_questions>30</u_number_of_questions>
         <u_owner display_value="Nam Vy Hoang">dc96c4c5dbd20010d606e04a489619fe</u_owner>
-        <u_passing_score>70</u_passing_score>
-        <u_password/>
+        <u_passing_score>80</u_passing_score>
+        <u_password>ANewWorld2024</u_password>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version/>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>

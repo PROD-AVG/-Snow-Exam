@@ -17,6 +17,7 @@
         <messages/>
         <name>Clear Session onSubmit</name>
         <order/>
+        <published_ref/>
         <script><![CDATA[function onSubmit() {
    //Type appropriate comment here, and begin script below
 	localStorage.removeItem("item");

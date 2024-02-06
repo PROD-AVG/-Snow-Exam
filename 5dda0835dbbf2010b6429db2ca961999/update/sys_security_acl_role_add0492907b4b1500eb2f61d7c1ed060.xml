@@ -9,7 +9,7 @@
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
         <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
-        <sys_security_acl display_value="x_292088_snow_exam_snow_exam_case.comments">26c0452907b4b1500eb2f61d7c1ed042</sys_security_acl>
+        <sys_security_acl display_value="">26c0452907b4b1500eb2f61d7c1ed042</sys_security_acl>
         <sys_update_name>sys_security_acl_role_add0492907b4b1500eb2f61d7c1ed060</sys_update_name>
         <sys_updated_by>dnguyen322</sys_updated_by>
         <sys_updated_on>2023-08-21 11:38:20</sys_updated_on>

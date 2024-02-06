@@ -90,103 +90,30 @@
         <u_password/>
         <use_sc_layout>true</use_sc_layout>
         <vendor/>
+        <version/>
         <view/>
         <visible_bundle>true</visible_bundle>
         <visible_guide>true</visible_guide>
         <visible_standalone>true</visible_standalone>
         <workflow/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</sc_cat_item_producer>
+    </sc_cat_item_producer>
+    <sys_translated_text action="delete_multiple" query="documentkey=07fa4c8307ceb5100eb2f61d7c1ed07b"/>
+    <fx_price action="delete_multiple" query="id=07fa4c8307ceb5100eb2f61d7c1ed07b"/>
+    <fx_price action="INSERT_OR_UPDATE">
+        <amount>0</amount>
+        <currency display_value="USD">USD</currency>
+        <field>price</field>
+        <id>07fa4c8307ceb5100eb2f61d7c1ed07b</id>
+        <parent/>
+        <reference_amount>0</reference_amount>
+        <reference_currency display_value="USD">USD</reference_currency>
+        <sys_created_by>DDOAN30</sys_created_by>
+        <sys_created_on>2023-10-27 02:54:35</sys_created_on>
+        <sys_id>b69b48c307ceb5100eb2f61d7c1ed0a0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>DDOAN30</sys_updated_by>
+        <sys_updated_on>2023-10-27 02:54:35</sys_updated_on>
+        <table>sc_cat_item_producer</table>
+        <type>calculated</type>
+    </fx_price>
 </record_update>

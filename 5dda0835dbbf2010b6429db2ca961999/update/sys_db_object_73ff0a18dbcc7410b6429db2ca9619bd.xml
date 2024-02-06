@@ -9,7 +9,6 @@
         <create_access>false</create_access>
         <create_access_controls>false</create_access_controls>
         <delete_access>false</delete_access>
-        <extension_model/>
         <is_extendable>false</is_extendable>
         <label>Question Bank Sheet</label>
         <live_feed_enabled>false</live_feed_enabled>
@@ -18,10 +17,8 @@
         <provider_class/>
         <read_access>true</read_access>
         <scriptable_table>false</scriptable_table>
-        <super_class display_value="Import Set Row" name="sys_import_set_row">78c612a4db020010d606e04a4896192a</super_class>
-        <sys_class_code/>
+        <super_class display_value="Import Set Row" name="sys_import_set_row">27cc01b4373100108d0d03a973990e51</super_class>
         <sys_class_name>sys_db_object</sys_class_name>
-        <sys_class_path/>
         <sys_created_by>HLE81</sys_created_by>
         <sys_created_on>2021-05-07 04:39:32</sys_created_on>
         <sys_id>73ff0a18dbcc7410b6429db2ca9619bd</sys_id>

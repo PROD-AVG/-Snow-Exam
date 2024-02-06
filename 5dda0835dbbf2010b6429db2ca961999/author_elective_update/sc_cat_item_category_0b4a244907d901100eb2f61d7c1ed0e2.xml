@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category">
+    <sc_cat_item_category action="DELETE">
+        <sc_cat_item display_value="ServiceNow CSA mock exam">cd59e40907d901100eb2f61d7c1ed0e3</sc_cat_item>
+        <sc_category display_value="ServiceNow Test">5288fb27db7fe010b6429db2ca961919</sc_category>
+        <sys_class_name>sc_cat_item_category</sys_class_name>
+        <sys_created_by>DHUYNH28</sys_created_by>
+        <sys_created_on>2022-01-25 04:40:16</sys_created_on>
+        <sys_id>0b4a244907d901100eb2f61d7c1ed0e2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ServiceNow Test.ServiceNow CSA mock exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>sc_cat_item_category_0b4a244907d901100eb2f61d7c1ed0e2</sys_update_name>
+        <sys_updated_by>DHUYNH28</sys_updated_by>
+        <sys_updated_on>2022-01-25 04:40:16</sys_updated_on>
+    </sc_cat_item_category>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>sc_cat_item_category_0b4a244907d901100eb2f61d7c1ed0e2</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="ServiceNow CSA mock exam">cd59e40907d901100eb2f61d7c1ed0e3</sc_cat_item><sc_category display_value="ServiceNow Test">5288fb27db7fe010b6429db2ca961919</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>DHUYNH28</sys_created_by><sys_created_on>2022-01-25 04:40:16</sys_created_on><sys_id>0b4a244907d901100eb2f61d7c1ed0e2</sys_id><sys_mod_count>0</sys_mod_count><sys_name>ServiceNow Test.ServiceNow CSA mock exam</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>sc_cat_item_category_0b4a244907d901100eb2f61d7c1ed0e2</sys_update_name><sys_updated_by>DHUYNH28</sys_updated_by><sys_updated_on>2022-01-25 04:40:16</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+        <payload_hash>1726554090</payload_hash>
+        <record_name>ServiceNow Test.ServiceNow CSA mock exam</record_name>
+        <reverted_from/>
+        <source>4c978989979d01107fd7f97e6253af94</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>DHUYNH28</sys_created_by>
+        <sys_created_on>2022-01-25 06:48:13</sys_created_on>
+        <sys_id>c1978989979d01107fd7f97e6253afdb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>17e8ffdf82a0000001</sys_recorded_at>
+        <sys_updated_by>DHUYNH28</sys_updated_by>
+        <sys_updated_on>2022-01-25 06:48:13</sys_updated_on>
+        <type>Catalog Item Category</type>
+        <update_guid>034a244927d90110b3967c9cef36c4f2</update_guid>
+        <update_guid_history>034a244927d90110b3967c9cef36c4f2:1726554090</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>HTRAN210</sys_created_by>
+        <sys_created_on>2023-11-12 16:36:52</sys_created_on>
+        <sys_db_object display_value="" name="sc_cat_item_category">sc_cat_item_category</sys_db_object>
+        <sys_id>765789cb57704869955307347e61a079</sys_id>
+        <sys_metadata>0b4a244907d901100eb2f61d7c1ed0e2</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ServiceNow Test.ServiceNow CSA mock exam</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>sc_cat_item_category_0b4a244907d901100eb2f61d7c1ed0e2</sys_update_name>
+        <sys_update_version display_value="sc_cat_item_category_0b4a244907d901100eb2f61d7c1ed0e2">c1978989979d01107fd7f97e6253afdb</sys_update_version>
+        <sys_updated_by>HTRAN210</sys_updated_by>
+        <sys_updated_on>2023-11-12 16:36:52</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

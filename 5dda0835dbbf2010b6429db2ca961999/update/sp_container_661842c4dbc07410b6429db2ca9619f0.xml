@@ -8,6 +8,7 @@
         <container_class_name/>
         <name>Snow Cat Item - Container 3</name>
         <order>3</order>
+        <semantic_tag/>
         <sp_page display_value="snow_cat_item">a6180a84dbc07410b6429db2ca9619cd</sp_page>
         <subheader>false</subheader>
         <sys_class_name>sp_container</sys_class_name>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_292088_snow_exam_snow_exam_case" version="2" view="RPT10ebafb89713a1107fd7f97e6253af00">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>number</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>1c67cc16974cc6907fd7f97e6253afd3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>hr_service</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>9067cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>topic_detail</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>1467cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>short_description</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>9467cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>opened_for</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>1867cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>correct_answers</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>9867cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>percentage</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>1c67cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_created_on</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>9c67cc16974cc6907fd7f97e6253afd4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sys_created_by</element>
+            <list_id display_value="x_292088_snow_exam_snow_exam_case" element="NULL" name="x_292088_snow_exam_snow_exam_case" parent="NULL" relationship="NULL" sys_domain="global" view="64ebabf89713a1107fd7f97e6253af64">1867cc16974cc6907fd7f97e6253afd2</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_id>1067cc16974cc6907fd7f97e6253afd5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_292088_snow_exam_snow_exam_case</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>ADANG20</sys_created_by>
+            <sys_created_on>2024-02-01 04:46:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1867cc16974cc6907fd7f97e6253afd2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_292088_snow_exam_snow_exam_case</sys_name>
+            <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+            <sys_update_name>sys_ui_list_x_292088_snow_exam_snow_exam_case_RPT10ebafb89713a1107fd7f97e6253af00</sys_update_name>
+            <sys_updated_by>ADANG20</sys_updated_by>
+            <sys_updated_on>2024-02-01 04:46:15</sys_updated_on>
+            <sys_user/>
+            <view display_value="Rpt10ebafb89713a1107fd7f97e6253af00" name="RPT10ebafb89713a1107fd7f97e6253af00">64ebabf89713a1107fd7f97e6253af64</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>

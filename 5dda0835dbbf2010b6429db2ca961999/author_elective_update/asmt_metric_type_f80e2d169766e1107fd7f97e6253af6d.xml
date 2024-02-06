@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_type">
+    <asmt_metric_type action="DELETE">
+        <active>true</active>
+        <allow_public>false</allow_public>
+        <allow_retake>false</allow_retake>
+        <anonymize>false</anonymize>
+        <business_rule/>
+        <chat_survey>false</chat_survey>
+        <condition table="asmt_metric_type">sys_id=3ffde1169766e1107fd7f97e6253af5e^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="3ffde1169766e1107fd7f97e6253af5e"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </condition>
+        <default_filter/>
+        <delete_business_rule/>
+        <description/>
+        <disable_ui_action/>
+        <display_all_filters>false</display_all_filters>
+        <display_field>name</display_field>
+        <duration>1970-01-15 00:00:00</duration>
+        <enable_ui_action/>
+        <end_note/>
+        <enforce_condition>false</enforce_condition>
+        <evaluation_method>survey</evaluation_method>
+        <filter_condition/>
+        <filter_table/>
+        <introduction/>
+        <job/>
+        <live_feed>false</live_feed>
+        <name>Copy of Delivery trip - Phan Thiet</name>
+        <not_show_intro_note>false</not_show_intro_note>
+        <notify_if_overdue>false</notify_if_overdue>
+        <notify_user>true</notify_user>
+        <one_click_survey>false</one_click_survey>
+        <overdue_notify_user/>
+        <portal_pagination>category</portal_pagination>
+        <publish_state>draft</publish_state>
+        <roles>survey_admin,survey_reader</roles>
+        <sample_metric/>
+        <scale_factor>10</scale_factor>
+        <schedule_period>0</schedule_period>
+        <schedule_type>on_demand</schedule_type>
+        <scoring_type>percent</scoring_type>
+        <signature/>
+        <source_table/>
+        <survey_owners>4961f714dbc40d10411fc8da0b9619e7</survey_owners>
+        <sys_class_name>asmt_metric_type</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:29:20</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f80e2d169766e1107fd7f97e6253af6d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Delivery trip - Phan Thiet</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_update_name>asmt_metric_type_f80e2d169766e1107fd7f97e6253af6d</sys_update_name>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:29:20</sys_updated_on>
+        <table>asmt_metric_type</table>
+        <url/>
+        <user_field/>
+        <user_field_business_rule/>
+    </asmt_metric_type>
+    <sys_translated_text action="DELETE" query="documentkey=f80e2d169766e1107fd7f97e6253af6d"/>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</application>
+        <file_path/>
+        <instance_id>af36c45ddb2e1fc03353f22ebf961932</instance_id>
+        <instance_name>dev60781</instance_name>
+        <name>asmt_metric_type_f80e2d169766e1107fd7f97e6253af6d</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="asmt_metric_type"><asmt_metric_type action="INSERT_OR_UPDATE"><active>true</active><allow_public>false</allow_public><allow_retake>false</allow_retake><anonymize>false</anonymize><business_rule/><chat_survey>false</chat_survey><condition table="asmt_metric_type">sys_id=3ffde1169766e1107fd7f97e6253af5e^EQ<item endquery="false" field="sys_id" goto="false" newquery="false" operator="=" or="false" value="3ffde1169766e1107fd7f97e6253af5e"/><item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/></condition><default_filter/><delete_business_rule/><description/><disable_ui_action/><display_all_filters>false</display_all_filters><display_field>name</display_field><duration>1970-01-15 00:00:00</duration><enable_ui_action/><end_note/><enforce_condition>false</enforce_condition><evaluation_method>survey</evaluation_method><filter_condition/><filter_table/><introduction/><job/><live_feed>false</live_feed><name>Copy of Delivery trip - Phan Thiet</name><not_show_intro_note>false</not_show_intro_note><notify_if_overdue>false</notify_if_overdue><notify_user>true</notify_user><one_click_survey>false</one_click_survey><overdue_notify_user/><portal_pagination>category</portal_pagination><publish_state>draft</publish_state><roles>survey_admin,survey_reader</roles><sample_metric/><scale_factor>10</scale_factor><schedule_period>0</schedule_period><schedule_type>on_demand</schedule_type><scoring_type>percent</scoring_type><signature/><source_table/><survey_owners>4961f714dbc40d10411fc8da0b9619e7</survey_owners><sys_class_name>asmt_metric_type</sys_class_name><sys_created_by>TTRAN332</sys_created_by><sys_created_on>2023-05-04 02:29:20</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>f80e2d169766e1107fd7f97e6253af6d</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Copy of Delivery trip - Phan Thiet</sys_name><sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package><sys_policy/><sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope><sys_update_name>asmt_metric_type_f80e2d169766e1107fd7f97e6253af6d</sys_update_name><sys_updated_by>TTRAN332</sys_updated_by><sys_updated_on>2023-05-04 02:29:20</sys_updated_on><table>asmt_metric_type</table><url/><user_field/><user_field_business_rule/></asmt_metric_type><sys_translated_text action="delete_multiple" query="documentkey=f80e2d169766e1107fd7f97e6253af6d"/></record_update>]]></payload>
+        <payload_hash>-1916619884</payload_hash>
+        <record_name>Copy of Delivery trip - Phan Thiet</record_name>
+        <reverted_from/>
+        <source>9315e26fdb8cbc10411fc8da0b961977</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:29:20</sys_created_on>
+        <sys_id>b80e2d169766e1107fd7f97e6253af72</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>187e497b4970000001</sys_recorded_at>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:29:20</sys_updated_on>
+        <type>Assessment Metric Type</type>
+        <update_guid>700e2d16d266e110cd7635f1c4bab772</update_guid>
+        <update_guid_history>700e2d16d266e110cd7635f1c4bab772:-1916619884,b00e2d164366e110a4fad7a463b1f070:295390432,b00e2d167266e110de501a59af99d26f:-1916619884</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Copy of Delivery trip - Phan Thiet">2d4e61569766e1107fd7f97e6253af98</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>TTRAN332</sys_created_by>
+        <sys_created_on>2023-05-04 02:30:28</sys_created_on>
+        <sys_db_object display_value="" name="asmt_metric_type">asmt_metric_type</sys_db_object>
+        <sys_id>1f657c893cfc42c4bc0fd9f05607a164</sys_id>
+        <sys_metadata>f80e2d169766e1107fd7f97e6253af6d</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Copy of Delivery trip - Phan Thiet</sys_name>
+        <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Snow Exam">5dda0835dbbf2010b6429db2ca961999</sys_scope>
+        <sys_scope_delete display_value="">48f88ae665924eb89b6a3a05c3d83490</sys_scope_delete>
+        <sys_update_name>asmt_metric_type_f80e2d169766e1107fd7f97e6253af6d</sys_update_name>
+        <sys_update_version display_value="asmt_metric_type_f80e2d169766e1107fd7f97e6253af6d">b80e2d169766e1107fd7f97e6253af72</sys_update_version>
+        <sys_updated_by>TTRAN332</sys_updated_by>
+        <sys_updated_on>2023-05-04 02:30:28</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

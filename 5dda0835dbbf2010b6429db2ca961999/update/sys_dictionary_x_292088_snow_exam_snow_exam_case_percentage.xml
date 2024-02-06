@@ -2,8 +2,7 @@
     <sys_dictionary action="INSERT_OR_UPDATE" element="percentage" table="x_292088_snow_exam_snow_exam_case">
         <active>true</active>
         <array>false</array>
-        <array_denormalized>false</array_denormalized>
-        <attributes/>
+        <attributes>edge_encryption_enabled=true</attributes>
         <audit>false</audit>
         <calculation/>
         <choice>0</choice>
@@ -25,6 +24,7 @@
         <element>percentage</element>
         <element_reference>false</element_reference>
         <foreign_database/>
+        <formula/>
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Decimal">decimal</internal_type>
@@ -42,14 +42,11 @@
         <reference_qual/>
         <reference_qual_condition/>
         <reference_type/>
-        <sizeclass/>
         <spell_check>false</spell_check>
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>KNGUYEN236</sys_created_by>
         <sys_created_on>2021-04-29 00:37:16</sys_created_on>
-        <sys_id>4ddb48f5dbbf2010b6429db2ca961997</sys_id>
-        <sys_mod_count>0</sys_mod_count>
         <sys_name>Percentage</sys_name>
         <sys_package display_value="Snow Exam" source="x_292088_snow_exam">5dda0835dbbf2010b6429db2ca961999</sys_package>
         <sys_policy/>
@@ -64,6 +61,7 @@
         <use_dynamic_default>false</use_dynamic_default>
         <use_reference_qualifier>simple</use_reference_qualifier>
         <virtual>false</virtual>
+        <virtual_type>script</virtual_type>
         <widget/>
         <write_roles/>
         <xml_view>false</xml_view>

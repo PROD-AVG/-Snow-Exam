@@ -2,6 +2,7 @@
     <sp_row action="INSERT_OR_UPDATE">
         <class_name/>
         <order>1</order>
+        <semantic_tag/>
         <sp_column/>
         <sp_container display_value="Snow Exam Service Catalog  - Container 1">f6f573dfdb73e010b6429db2ca961949</sp_container>
         <sys_class_name>sp_row</sys_class_name>

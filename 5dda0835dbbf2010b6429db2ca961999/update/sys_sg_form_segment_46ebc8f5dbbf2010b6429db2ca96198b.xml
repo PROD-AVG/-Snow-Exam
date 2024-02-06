@@ -2,6 +2,8 @@
     <sys_sg_form_segment action="INSERT_OR_UPDATE">
         <embedded_screen display_value="Activity Stream">c2eb04b5dbbf2010b6429db2ca9619b3</embedded_screen>
         <form display_value="SNOW Exam Case Form Screen">4aeb04b5dbbf2010b6429db2ca9619b2</form>
+        <header_view_config/>
+        <is_sticky>false</is_sticky>
         <order>20</order>
         <sys_class_name>sys_sg_form_segment</sys_class_name>
         <sys_created_by>KNGUYEN236</sys_created_by>

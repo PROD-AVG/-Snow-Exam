@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="io_set_item">
     <io_set_item action="INSERT_OR_UPDATE">
         <order>200</order>
-        <sc_cat_item display_value="Airbus">8bc8ad7407e23d500eb2f61d7c1ed061</sc_cat_item>
+        <sc_cat_item display_value="Airbus Operation ">8bc8ad7407e23d500eb2f61d7c1ed061</sc_cat_item>
         <sys_class_name>io_set_item</sys_class_name>
         <sys_created_by>adang20</sys_created_by>
         <sys_created_on>2023-11-14 06:28:36</sys_created_on>
